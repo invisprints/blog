@@ -17,36 +17,36 @@ markdown 文章格式遵从 markdown 格式，如不了解，请自行搜索相�
 
 除了标准markdown格式，fastpages还允许你增添一些额外的内容。
 
-### 图注
-你可以仿照下面格式显示图注
+### 图片与图注
+如果你想显示本地图片，可将图片放入 `images` 文件夹中，然后用 `{{site.baseurl}}/images` 表示图片路径，同时你可以仿照下面格式显示图注
 ```markdown
-![](https://www.fast.ai/images/fastai_paper/show_batch.png "Credit: https://www.fast.ai/2020/02/13/fastai-A-Layered-API-for-Deep-Learning/")
+![]({{ site.baseurl }}/images/logo.png "fast.ai's logo")
 ```
-![](https://www.fast.ai/images/fastai_paper/show_batch.png "Credit: https://www.fast.ai/2020/02/13/fastai-A-Layered-API-for-Deep-Learning/")
+![]({{ site.baseurl }}/images/logo.png "fast.ai's logo")
 
 ### Tweet 卡片
-输入 `> twitter: https://twitter.com/jakevdp/status/1204765621767901185?s=20` 会显示如下内容
-> twitter: https://twitter.com/jakevdp/status/1204765621767901185?s=20
-
-### Youtube
+输入 `{% twitter https://twitter.com/jakevdp/status/1204765621767901185?s=20 %}` 会显示如下内容
+{% twitter https://twitter.com/jakevdp/status/1204765621767901185?s=20 %}
 
 ### Boxes / Callouts
-```markdown
-> Warning: There will be no second warning!
 ```
-> Warning: There will be no second warning!
-```markdown
-> Important: Pay attention! It's important.
+{% include warning.html text="There will be no second warning!" %}
 ```
-> Important: Pay attention! It's important.
-```markdown
-> Tip: This is my tip.
+{% include warning.html text="There will be no second warning!" %}
+
 ```
-> Tip: This is my tip.
-```markdown
-> Note: Take note of this.
+{% include important.html text="Pay attention! It's important." %}
 ```
-> Note: Take note of this.
+{% include important.html text="Pay attention! It's important." %}
+```
+{% include tip.html text="This is my tip." %}
+```
+{% include tip.html text="This is my tip." %}
+```
+{% include note.html text="Take note of this." %}
+```
+{% include note.html text="Take note of this." %}
+
 
 ## FrontMatter
 FrontMatter 相当于每篇博文的配置文件，它控制着每篇博文该如何展现内容。
