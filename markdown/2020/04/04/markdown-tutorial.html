@@ -91,7 +91,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -111,12 +111,42 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#基本设置">基本设置</a></li>
 <li class="toc-entry toc-h2"><a href="#格式">格式</a>
 <ul>
+<li class="toc-entry toc-h3"><a href="#标题">标题</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#第一级标题-h1">第一级标题 &lt;h1&gt;</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#第二级标题-h2">第二级标题 &lt;h2&gt;</a>
+<ul>
+<li class="toc-entry toc-h6"><a href="#第六级标题-h6">第六级标题 &lt;h6&gt;</a></li>
+<li class="toc-entry toc-h3"><a href="#强调">强调</a></li>
+<li class="toc-entry toc-h3"><a href="#换行">换行</a></li>
+<li class="toc-entry toc-h3"><a href="#列表">列表</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#无序列表">无序列表</a></li>
+<li class="toc-entry toc-h4"><a href="#有序列表">有序列表</a></li>
+<li class="toc-entry toc-h4"><a href="#任务列表task-lists">任务列表（Task lists）</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#图片">图片</a></li>
+<li class="toc-entry toc-h3"><a href="#链接">链接</a></li>
+<li class="toc-entry toc-h3"><a href="#区块引用">区块引用</a></li>
+<li class="toc-entry toc-h3"><a href="#行内代码">行内代码</a></li>
+<li class="toc-entry toc-h3"><a href="#多行或者一段代码">多行或者一段代码</a></li>
+<li class="toc-entry toc-h3"><a href="#表格">表格</a></li>
+<li class="toc-entry toc-h3"><a href="#删除线">删除线</a></li>
+<li class="toc-entry toc-h3"><a href="#分隔线">分隔线</a></li>
+<li class="toc-entry toc-h3"><a href="#脚注footnote">脚注（Footnote）</a></li>
+<li class="toc-entry toc-h3"><a href="#注释和阅读更多">注释和阅读更多</a></li>
+<li class="toc-entry toc-h3"><a href="#toc">TOC</a></li>
 <li class="toc-entry toc-h3"><a href="#图片与图注">图片与图注</a></li>
 <li class="toc-entry toc-h3"><a href="#tweet-卡片">Tweet 卡片</a></li>
 <li class="toc-entry toc-h3"><a href="#boxes--callouts">Boxes / Callouts</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#frontmatter">FrontMatter</a></li>
+</ul>
+</li>
 </ul><h2 id="基本设置">
 <a class="anchor" href="#%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>基本设置</h2>
 <p>fastpages 会将存放在 <code class="highlighter-rouge">_post</code> 文件夹内的 markdown 文章自动转换成博文，因此你应该将所有的markdown博文放在该文件夹下。
@@ -126,7 +156,307 @@ fastpages 也会将存放在 <code class="highlighter-rouge">_notesbooks</code> 
 
 <h2 id="格式">
 <a class="anchor" href="#%E6%A0%BC%E5%BC%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>格式</h2>
-<p>markdown 文章格式遵从 markdown 格式，如不了解，请自行搜索相关内容。</p>
+<p>markdown 文章格式遵从 markdown 格式，如不了解，请自行搜索相关内容。
+以下内容引用自MWeb</p>
+
+<h3 id="标题">
+<a class="anchor" href="#%E6%A0%87%E9%A2%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>标题</h3>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 第一级标题 `&lt;h1&gt;` 
+## 第二级标题 `&lt;h2&gt;` 
+###### 第六级标题 `&lt;h6&gt;` 
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<h1 id="第一级标题-h1">
+<a class="anchor" href="#%E7%AC%AC%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98-h1" aria-hidden="true"><span class="octicon octicon-link"></span></a>第一级标题 <code class="highlighter-rouge">&lt;h1&gt;</code>
+</h1>
+<h2 id="第二级标题-h2">
+<a class="anchor" href="#%E7%AC%AC%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98-h2" aria-hidden="true"><span class="octicon octicon-link"></span></a>第二级标题 <code class="highlighter-rouge">&lt;h2&gt;</code>
+</h2>
+<h6 id="第六级标题-h6">
+<a class="anchor" href="#%E7%AC%AC%E5%85%AD%E7%BA%A7%E6%A0%87%E9%A2%98-h6" aria-hidden="true"><span class="octicon octicon-link"></span></a>第六级标题 <code class="highlighter-rouge">&lt;h6&gt;</code>
+</h6>
+
+<h3 id="强调">
+<a class="anchor" href="#%E5%BC%BA%E8%B0%83" aria-hidden="true"><span class="octicon octicon-link"></span></a>强调</h3>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*这些文字会生成`&lt;em&gt;`*
+_这些文字会生成`&lt;u&gt;`_
+
+**这些文字会生成`&lt;strong&gt;`**
+__这些文字会生成`&lt;strong&gt;`__
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<p><em>这些文字会生成<code class="highlighter-rouge">&lt;em&gt;</code></em>
+<em>这些文字会生成<code class="highlighter-rouge">&lt;u&gt;</code></em></p>
+
+<p><strong>这些文字会生成<code class="highlighter-rouge">&lt;strong&gt;</code></strong>
+<strong>这些文字会生成<code class="highlighter-rouge">&lt;strong&gt;</code></strong></p>
+
+<h3 id="换行">
+<a class="anchor" href="#%E6%8D%A2%E8%A1%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>换行</h3>
+
+<p>四个及以上空格加回车。</p>
+
+<h3 id="列表">
+<a class="anchor" href="#%E5%88%97%E8%A1%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>列表</h3>
+
+<h4 id="无序列表">
+<a class="anchor" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>无序列表</h4>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* 项目一 无序列表 `* + 空格键`
+* 项目二
+* 项目二的子项目一 无序列表 `TAB + * + 空格键`
+* 项目二的子项目二
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<ul>
+  <li>项目一 无序列表 <code class="highlighter-rouge">* + 空格键</code>
+</li>
+  <li>项目二</li>
+  <li>项目二的子项目一 无序列表 <code class="highlighter-rouge">TAB + * + 空格键</code>
+</li>
+  <li>项目二的子项目二</li>
+</ul>
+
+<h4 id="有序列表">
+<a class="anchor" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>有序列表</h4>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 项目一 有序列表 `数字 + . + 空格键`
+2. 项目二 
+3. 项目三
+    1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键`
+    2. 项目三的子项目二
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<ol>
+  <li>项目一 有序列表 <code class="highlighter-rouge">数字 + . + 空格键</code>
+</li>
+  <li>项目二</li>
+  <li>项目三
+    <ol>
+      <li>项目三的子项目一 有序列表 <code class="highlighter-rouge">TAB + 数字 + . + 空格键</code>
+</li>
+      <li>项目三的子项目二</li>
+    </ol>
+  </li>
+</ol>
+
+<h4 id="任务列表task-lists">
+<a class="anchor" href="#%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8task-lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>任务列表（Task lists）</h4>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- [ ] 任务一 未做任务 `- + 空格 + [ ]`
+- [x] 任务二 已做任务 `- + 空格 + [x]`
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<ul class="task-list">
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>任务一 未做任务 <code class="highlighter-rouge">- + 空格 + [ ]</code>
+</li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>任务二 已做任务 <code class="highlighter-rouge">- + 空格 + [x]</code>
+</li>
+</ul>
+
+<h3 id="图片">
+<a class="anchor" href="#%E5%9B%BE%E7%89%87" aria-hidden="true"><span class="octicon octicon-link"></span></a>图片</h3>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![GitHub set up](http://zh.mweb.im/asset/img/set-up-git.gif)
+格式: ![Alt Text](url)
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up"></p>
+
+<h3 id="链接">
+<a class="anchor" href="#%E9%93%BE%E6%8E%A5" aria-hidden="true"><span class="octicon octicon-link"></span></a>链接</h3>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>email &lt;example@example.com&gt;
+[GitHub](http://github.com)
+自动生成连接  &lt;http://www.github.com/&gt;
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<p>Email 连接： <a href="mailto:example@example.com">example@example.com</a>
+<a href="http://github.com">连接标题Github网站</a>
+自动生成连接像： <a href="http://www.github.com/">http://www.github.com/</a> 这样</p>
+
+<h3 id="区块引用">
+<a class="anchor" href="#%E5%8C%BA%E5%9D%97%E5%BC%95%E7%94%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>区块引用</h3>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>某某说:
+&gt; 第一行引用
+&gt; 第二行费用文字
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<p>某某说:</p>
+<blockquote>
+  <p>第一行引用
+第二行费用文字</p>
+</blockquote>
+
+<h3 id="行内代码">
+<a class="anchor" href="#%E8%A1%8C%E5%86%85%E4%BB%A3%E7%A0%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>行内代码</h3>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>像这样即可：`&lt;addr&gt;` `code`
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<p>像这样即可：<code class="highlighter-rouge">&lt;addr&gt;</code> <code class="highlighter-rouge">code</code></p>
+
+<h3 id="多行或者一段代码">
+<a class="anchor" href="#%E5%A4%9A%E8%A1%8C%E6%88%96%E8%80%85%E4%B8%80%E6%AE%B5%E4%BB%A3%E7%A0%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>多行或者一段代码</h3>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```js
+function fancyAlert(arg) {
+    if(arg) {
+    $.facebox({div:'#foo'})
+    }
+
+}
+```
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fancyAlert</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">facebox</span><span class="p">({</span><span class="na">div</span><span class="p">:</span><span class="dl">'</span><span class="s1">#foo</span><span class="dl">'</span><span class="p">})</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="表格">
+<a class="anchor" href="#%E8%A1%A8%E6%A0%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>表格</h3>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>第一格表头 | 第二格表头
+--------- | -------------
+内容单元格 第一列第一格 | 内容单元格第二列第一格
+内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>第一格表头</th>
+      <th>第二格表头</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>内容单元格 第一列第一格</td>
+      <td>内容单元格第二列第一格</td>
+    </tr>
+    <tr>
+      <td>内容单元格 第一列第二格 多加文字</td>
+      <td>内容单元格第二列第二格</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="删除线">
+<a class="anchor" href="#%E5%88%A0%E9%99%A4%E7%BA%BF" aria-hidden="true"><span class="octicon octicon-link"></span></a>删除线</h3>
+
+<p>Markdown 语法：</p>
+
+<p>加删除线像这样用： <del>删除这些</del></p>
+
+<p>效果如下：</p>
+
+<p>加删除线像这样用： <del>删除这些</del></p>
+
+<h3 id="分隔线">
+<a class="anchor" href="#%E5%88%86%E9%9A%94%E7%BA%BF" aria-hidden="true"><span class="octicon octicon-link"></span></a>分隔线</h3>
+
+<p>以下三种方式都可以生成分隔线：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>***
+
+*****
+
+- - -
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<hr>
+
+<hr>
+
+<hr>
+
+<h3 id="脚注footnote">
+<a class="anchor" href="#%E8%84%9A%E6%B3%A8footnote" aria-hidden="true"><span class="octicon octicon-link"></span></a>脚注（Footnote）</h3>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是一个脚注：[^sample_footnote]
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<p>这是一个脚注：<sup id="fnref:sample_footnote"><a href="#fn:sample_footnote" class="footnote">1</a></sup></p>
+
+<h3 id="注释和阅读更多">
+<a class="anchor" href="#%E6%B3%A8%E9%87%8A%E5%92%8C%E9%98%85%E8%AF%BB%E6%9B%B4%E5%A4%9A" aria-hidden="true"><span class="octicon octicon-link"></span></a>注释和阅读更多</h3>
+
+<!-- comment -->
+<!-- more -->
+
+<p>Actions-&gt;Insert Read More Comment <em>或者</em> <code class="highlighter-rouge">Command + .</code>
+<strong>注</strong> 阅读更多的功能只用在生成网站或博客时，插入时注意要后空一行。</p>
+
+<h3 id="toc">
+<a class="anchor" href="#toc" aria-hidden="true"><span class="octicon octicon-link"></span></a>TOC</h3>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[TOC]
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<p>[TOC]</p>
 
 <p>除了标准markdown格式，fastpages还允许你增添一些额外的内容。</p>
 
@@ -140,16 +470,9 @@ fastpages 也会将存放在 <code class="highlighter-rouge">_notesbooks</code> 
 <h3 id="tweet-卡片">
 <a class="anchor" href="#tweet-%E5%8D%A1%E7%89%87" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tweet 卡片</h3>
 
-<p>输入 <code class="highlighter-rouge">&lt;div class='jekyll-twitter-plugin'&gt;&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Altair 4.0 is released! &lt;a href="https://t.co/PCyrIOTcvv"&gt;https://t.co/PCyrIOTcvv&lt;/a&gt;&lt;br&gt;Try it with:&lt;br&gt;&lt;br&gt;  pip install -U altair&lt;br&gt;&lt;br&gt;The full list of changes is at &lt;a href="https://t.co/roXmzcsT58"&gt;https://t.co/roXmzcsT58&lt;/a&gt; ...read on for some highlights. &lt;a href="https://t.co/vWJ0ZveKbZ"&gt;pic.twitter.com/vWJ0ZveKbZ&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jake VanderPlas (@jakevdp) &lt;a href="https://twitter.com/jakevdp/status/1204765621767901185?ref_src=twsrc%5Etfw"&gt;December 11, 2019&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
-&lt;/div&gt;</code> 会显示如下内容</p>
-
-<div class="jekyll-twitter-plugin">
-<blockquote class="twitter-tweet">
-<p lang="en" dir="ltr">Altair 4.0 is released! <a href="https://t.co/PCyrIOTcvv">https://t.co/PCyrIOTcvv</a><br>Try it with:<br><br>  pip install -U altair<br><br>The full list of changes is at <a href="https://t.co/roXmzcsT58">https://t.co/roXmzcsT58</a> ...read on for some highlights. <a href="https://t.co/vWJ0ZveKbZ">pic.twitter.com/vWJ0ZveKbZ</a></p>— Jake VanderPlas (@jakevdp) <a href="https://twitter.com/jakevdp/status/1204765621767901185?ref_src=twsrc%5Etfw">December 11, 2019</a>
-</blockquote>
+<p>输入 `&lt;div class=’jekyll-twitter-plugin’&gt;&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Altair 4.0 is released! <a href="https://t.co/PCyrIOTcvv">https://t.co/PCyrIOTcvv</a><br>Try it with:<br><br>  pip install -U altair<br><br>The full list of changes is at <a href="https://t.co/roXmzcsT58">https://t.co/roXmzcsT58</a> …read on for some highlights. <a href="https://t.co/vWJ0ZveKbZ">pic.twitter.com/vWJ0ZveKbZ</a>&lt;/p&gt;— Jake VanderPlas (@jakevdp) <a href="https://twitter.com/jakevdp/status/1204765621767901185?ref_src=twsrc%5Etfw">December 11, 2019</a>&lt;/blockquote&gt;
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+&lt;/div&gt;</p>
 
 <h3 id="boxes--callouts">
 <a class="anchor" href="#boxes--callouts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Boxes / Callouts</h3>
@@ -190,6 +513,13 @@ fastpages 也会将存放在 <code class="highlighter-rouge">_notesbooks</code> 
 <p>FrontMatter允许用户自定义额外选项，但必须遵守YAML格式规则。</p>
 
 <p>可以访问 <a href="fastpages.fast.ai">fastpages 主页</a> 了解更多内容</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:sample_footnote">
+      <p>这里是脚注信息 <a href="#fnref:sample_footnote" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
 
   </div><a class="u-url" href="/blog/markdown/2020/04/04/markdown-tutorial.html" hidden></a>
 </article>
