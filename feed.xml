@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://invisprints.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://invisprints.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-04-04T08:37:01-05:00</updated><id>https://invisprints.github.io/blog/feed.xml</id><title type="html">invisprints blog</title><subtitle>Github 探索</subtitle><entry><title type="html">Fastpages Notebook Blog Post</title><link href="https://invisprints.github.io/blog/jupyter/2020/02/20/test.html" rel="alternate" type="text/html" title="Fastpages Notebook Blog Post" /><published>2020-02-20T00:00:00-06:00</published><updated>2020-02-20T00:00:00-06:00</updated><id>https://invisprints.github.io/blog/jupyter/2020/02/20/test</id><content type="html" xml:base="https://invisprints.github.io/blog/jupyter/2020/02/20/test.html">&lt;!--
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://invisprints.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://invisprints.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-04-04T09:34:56-05:00</updated><id>https://invisprints.github.io/blog/feed.xml</id><title type="html">invisprints blog</title><subtitle>Github 探索</subtitle><entry><title type="html">markdown 博文发布教程</title><link href="https://invisprints.github.io/blog/markdown/2020/04/04/markdown-tutorial.html" rel="alternate" type="text/html" title="markdown 博文发布教程" /><published>2020-04-04T00:00:00-05:00</published><updated>2020-04-04T00:00:00-05:00</updated><id>https://invisprints.github.io/blog/markdown/2020/04/04/markdown-tutorial</id><content type="html" xml:base="https://invisprints.github.io/blog/markdown/2020/04/04/markdown-tutorial.html">&lt;h2 id=&quot;基本设置&quot;&gt;基本设置&lt;/h2&gt;
+&lt;p&gt;fastpages 会将存放在 &lt;code class=&quot;highlighter-rouge&quot;&gt;_post&lt;/code&gt; 文件夹内的 markdown 文章自动转换成博文，因此你应该将所有的markdown博文放在该文件夹下。
+fastpages 也会将存放在 &lt;code class=&quot;highlighter-rouge&quot;&gt;_notesbooks&lt;/code&gt; 中的 jupyter notebook 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;_word&lt;/code&gt; 中的 word文章自动转换成博文。因此你的博文应该存放在这三个文件夹内。&lt;/p&gt;
+
+&lt;p&gt;所有的博文遵循同一套命名规范，即 &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-filename.ext&lt;/code&gt;，如本篇 markdown 教程的文件名为 &lt;code class=&quot;highlighter-rouge&quot;&gt;2020-04-04-markdown-tutorial.md&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;格式&quot;&gt;格式&lt;/h2&gt;
+&lt;p&gt;markdown 文章格式遵从 markdown 格式，如不了解，请自行搜索相关内容。&lt;/p&gt;
+
+&lt;p&gt;除了标准markdown格式，fastpages还允许你增添一些额外的内容。&lt;/p&gt;
+
+&lt;h3 id=&quot;图注&quot;&gt;图注&lt;/h3&gt;
+&lt;p&gt;你可以仿照下面格式显示图注&lt;/p&gt;
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;![](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;https://www.fast.ai/images/fastai_paper/show_batch.png&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;&quot;Credit: https://www.fast.ai/2020/02/13/fastai-A-Layered-API-for-Deep-Learning/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.fast.ai/images/fastai_paper/show_batch.png&quot; alt=&quot;&quot; title=&quot;Credit: https://www.fast.ai/2020/02/13/fastai-A-Layered-API-for-Deep-Learning/&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tweet-卡片&quot;&gt;Tweet 卡片&lt;/h3&gt;
+&lt;p&gt;输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt; twitter: https://twitter.com/jakevdp/status/1204765621767901185?s=20&lt;/code&gt; 会显示如下内容&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;twitter: https://twitter.com/jakevdp/status/1204765621767901185?s=20&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;youtube&quot;&gt;Youtube&lt;/h3&gt;
+
+&lt;h3 id=&quot;boxes--callouts&quot;&gt;Boxes / Callouts&lt;/h3&gt;
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gt&quot;&gt;&amp;gt; Warning: There will be no second warning!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Warning: There will be no second warning!&lt;/p&gt;
+  &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Important: Pay attention! It's important.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;p&gt;Important: Pay attention! It’s important.&lt;/p&gt;
+  &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Tip: This is my tip.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;p&gt;Tip: This is my tip.&lt;/p&gt;
+  &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Note: Take note of this.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;p&gt;Note: Take note of this.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;frontmatter&quot;&gt;FrontMatter&lt;/h2&gt;
+&lt;p&gt;FrontMatter 相当于每篇博文的配置文件，它控制着每篇博文该如何展现内容。
+在 markdown 博文中，我们会将 FrontMatter 写在文章的开头&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;My&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Title&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Awesome&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;summary&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;images/some_folder/your_image.png&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;hide&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;search_exclude&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fastpages&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;jupyter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;metadata_key1&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;metadata_value1&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;metadata_key2&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;metadata_value2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;FrontMatter允许用户自定义额外选项，但必须遵守YAML格式规则。&lt;/p&gt;
+
+&lt;p&gt;可以访问 &lt;a href=&quot;fastpages.fast.ai&quot;&gt;fastpages 主页&lt;/a&gt; 了解更多内容&lt;/p&gt;</content><author><name></name></author><summary type="html">基本设置 fastpages 会将存放在 _post 文件夹内的 markdown 文章自动转换成博文，因此你应该将所有的markdown博文放在该文件夹下。 fastpages 也会将存放在 _notesbooks 中的 jupyter notebook 和 _word 中的 word文章自动转换成博文。因此你的博文应该存放在这三个文件夹内。</summary></entry><entry><title type="html">Fastpages Notebook Blog Post</title><link href="https://invisprints.github.io/blog/jupyter/2020/02/20/test.html" rel="alternate" type="text/html" title="Fastpages Notebook Blog Post" /><published>2020-02-20T00:00:00-06:00</published><updated>2020-02-20T00:00:00-06:00</updated><id>https://invisprints.github.io/blog/jupyter/2020/02/20/test</id><content type="html" xml:base="https://invisprints.github.io/blog/jupyter/2020/02/20/test.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################

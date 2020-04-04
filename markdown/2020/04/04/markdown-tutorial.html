@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>markdown 博文发布教程 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="markdown 博文发布教程" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="如何在 fastpages 上发布 markdown 格式的博文" />
+<meta property="og:description" content="如何在 fastpages 上发布 markdown 格式的博文" />
+<link rel="canonical" href="https://invisprints.github.io/blog/markdown/2020/04/04/markdown-tutorial.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/markdown/2020/04/04/markdown-tutorial.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-04T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-04-04T00:00:00-05:00","dateModified":"2020-04-04T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/markdown/2020/04/04/markdown-tutorial.html"},"description":"如何在 fastpages 上发布 markdown 格式的博文","@type":"BlogPosting","url":"https://invisprints.github.io/blog/markdown/2020/04/04/markdown-tutorial.html","headline":"markdown 博文发布教程","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>markdown 博文发布教程 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="markdown 博文发布教程" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="如何在 fastpages 上发布 markdown 格式的博文" />
+<meta property="og:description" content="如何在 fastpages 上发布 markdown 格式的博文" />
+<link rel="canonical" href="https://invisprints.github.io/blog/markdown/2020/04/04/markdown-tutorial.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/markdown/2020/04/04/markdown-tutorial.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-04T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-04-04T00:00:00-05:00","dateModified":"2020-04-04T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/markdown/2020/04/04/markdown-tutorial.html"},"description":"如何在 fastpages 上发布 markdown 格式的博文","@type":"BlogPosting","url":"https://invisprints.github.io/blog/markdown/2020/04/04/markdown-tutorial.html","headline":"markdown 博文发布教程","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">invisprints blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">🥳About Me</a><a class="page-link" href="/blog/search/">🔍 Search</a><a class="page-link" href="/blog/categories/">🏷️ Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">markdown 博文发布教程</h1><p class="page-description">如何在 fastpages 上发布 markdown 格式的博文</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-04-04T00:00:00-05:00" itemprop="datePublished">
+        Apr 4, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#基本设置">基本设置</a></li>
+<li class="toc-entry toc-h2"><a href="#格式">格式</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#图注">图注</a></li>
+<li class="toc-entry toc-h3"><a href="#tweet-卡片">Tweet 卡片</a></li>
+<li class="toc-entry toc-h3"><a href="#youtube">Youtube</a></li>
+<li class="toc-entry toc-h3"><a href="#boxes--callouts">Boxes / Callouts</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#frontmatter">FrontMatter</a></li>
+</ul><h2 id="基本设置">
+<a class="anchor" href="#%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>基本设置</h2>
+<p>fastpages 会将存放在 <code class="highlighter-rouge">_post</code> 文件夹内的 markdown 文章自动转换成博文，因此你应该将所有的markdown博文放在该文件夹下。
+fastpages 也会将存放在 <code class="highlighter-rouge">_notesbooks</code> 中的 jupyter notebook 和 <code class="highlighter-rouge">_word</code> 中的 word文章自动转换成博文。因此你的博文应该存放在这三个文件夹内。</p>
+
+<p>所有的博文遵循同一套命名规范，即 <code class="highlighter-rouge">YYYY-MM-DD-filename.ext</code>，如本篇 markdown 教程的文件名为 <code class="highlighter-rouge">2020-04-04-markdown-tutorial.md</code></p>
+
+<h2 id="格式">
+<a class="anchor" href="#%E6%A0%BC%E5%BC%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>格式</h2>
+<p>markdown 文章格式遵从 markdown 格式，如不了解，请自行搜索相关内容。</p>
+
+<p>除了标准markdown格式，fastpages还允许你增添一些额外的内容。</p>
+
+<h3 id="图注">
+<a class="anchor" href="#%E5%9B%BE%E6%B3%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>图注</h3>
+<p>你可以仿照下面格式显示图注</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![](</span><span class="sx">https://www.fast.ai/images/fastai_paper/show_batch.png</span> <span class="nn">"Credit: https://www.fast.ai/2020/02/13/fastai-A-Layered-API-for-Deep-Learning/"</span><span class="p">)</span>
+</code></pre></div></div>
+<p><img src="https://www.fast.ai/images/fastai_paper/show_batch.png" alt="" title="Credit: https://www.fast.ai/2020/02/13/fastai-A-Layered-API-for-Deep-Learning/"></p>
+
+<h3 id="tweet-卡片">
+<a class="anchor" href="#tweet-%E5%8D%A1%E7%89%87" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tweet 卡片</h3>
+<p>输入 <code class="highlighter-rouge">&gt; twitter: https://twitter.com/jakevdp/status/1204765621767901185?s=20</code> 会显示如下内容</p>
+<blockquote>
+  <p>twitter: https://twitter.com/jakevdp/status/1204765621767901185?s=20</p>
+</blockquote>
+
+<h3 id="youtube">
+<a class="anchor" href="#youtube" aria-hidden="true"><span class="octicon octicon-link"></span></a>Youtube</h3>
+
+<h3 id="boxes--callouts">
+<a class="anchor" href="#boxes--callouts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Boxes / Callouts</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; Warning: There will be no second warning!</span>
+</code></pre></div></div>
+<blockquote>
+  <p>Warning: There will be no second warning!</p>
+  <div class="language-markdown highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Important: Pay attention! It's important.
+</code></pre></div>  </div>
+  <p>Important: Pay attention! It’s important.</p>
+  <div class="language-markdown highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Tip: This is my tip.
+</code></pre></div>  </div>
+  <p>Tip: This is my tip.</p>
+  <div class="language-markdown highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Note: Take note of this.
+</code></pre></div>  </div>
+  <p>Note: Take note of this.</p>
+</blockquote>
+
+<h2 id="frontmatter">
+<a class="anchor" href="#frontmatter" aria-hidden="true"><span class="octicon octicon-link"></span></a>FrontMatter</h2>
+<p>FrontMatter 相当于每篇博文的配置文件，它控制着每篇博文该如何展现内容。
+在 markdown 博文中，我们会将 FrontMatter 写在文章的开头</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">My</span><span class="nv"> </span><span class="s">Title"</span>
+<span class="na">summary</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Awesome</span><span class="nv"> </span><span class="s">summary"</span>
+<span class="na">toc</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">comments</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">image</span><span class="pi">:</span> <span class="s">images/some_folder/your_image.png</span>
+<span class="na">hide</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">search_exclude</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">fastpages</span><span class="pi">,</span> <span class="nv">jupyter</span><span class="pi">]</span>
+<span class="na">metadata_key1</span><span class="pi">:</span> <span class="s">metadata_value1</span>
+<span class="na">metadata_key2</span><span class="pi">:</span> <span class="s">metadata_value2</span>
+</code></pre></div></div>
+<p>FrontMatter允许用户自定义额外选项，但必须遵守YAML格式规则。</p>
+
+<p>可以访问 <a href="fastpages.fast.ai">fastpages 主页</a> 了解更多内容</p>
+
+  </div><a class="u-url" href="/blog/markdown/2020/04/04/markdown-tutorial.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Github 探索</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
