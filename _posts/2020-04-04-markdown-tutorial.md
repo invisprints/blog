@@ -32,27 +32,19 @@ markdown 文章格式遵从 markdown 格式，如不了解，请自行搜索相�
 
 ### Boxes / Callouts
 
-```
-{% include warning.html text="There will be no second warning!" %}
-```
+    {% include warning.html text="There will be no second warning!" %}
 
 {% include warning.html text="There will be no second warning!" %}
 
-```
-{% include important.html text="Pay attention! It's important." %}
-```
+    {% include important.html text="Pay attention! It's important." %}
 
 {% include important.html text="Pay attention! It's important." %}
 
-```
-{% include tip.html text="This is my tip." %}
-```
+    {% include tip.html text="This is my tip." %}
 
 {% include tip.html text="This is my tip." %}
 
-```
-{% include note.html text="Take note of this." %}
-```
+    {% include note.html text="Take note of this." %}
 
 {% include note.html text="Take note of this." %}
 
