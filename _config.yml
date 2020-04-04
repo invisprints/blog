@@ -37,11 +37,11 @@ url: "https://invisprints.github.io" # the base hostname & protocol for your sit
 baseurl: "/blog" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
-# minima:
-# social_links:
-#     twitter: invisprints
-#     github: invisprints
-twitter_username: "invisprints"
+minima:
+social_links:
+    twitter: invisprints
+    github: invisprints
+#twitter_username: "invisprints"
 
 # Set this to true to get LaTeX math equation support
 use_math: 
