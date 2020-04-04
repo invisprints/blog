@@ -270,19 +270,16 @@ Markdown 语法：
 ![]({{ site.baseurl }}/images/logo.png "fast.ai's logo")
 
 ### Tweet 卡片
+请查看源文件医疗界如何使用这些功能
 
 {% twitter https://twitter.com/jakevdp/status/1204765621767901185?s=20 %}
 
 ### Boxes / Callouts
+请查看源文件医疗界如何使用这些功能
 
 {% include alert.html text="You can include alert boxes" %}
 
-```html
 {% include info.html text="You can include info boxes" %}
-```
-
-{% include info.html text="You can include info boxes" %}
-
 
 ## FrontMatter
 FrontMatter 相当于每篇博文的配置文件，它控制着每篇博文该如何展现内容。
