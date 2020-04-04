@@ -26,6 +26,7 @@ markdown 文章格式遵从 markdown 格式，如不了解，请自行搜索相�
 
 ### Tweet 卡片
 
+
 输入 `{% twitter https://twitter.com/jakevdp/status/1204765621767901185?s=20 %}` 会显示如下内容
 
 
@@ -34,15 +35,14 @@ markdown 文章格式遵从 markdown 格式，如不了解，请自行搜索相�
 
 ### Boxes / Callouts
 
-{% include warning.html text="There will be no second warning!" %}
+    {% include alert.html text="You can include alert boxes" %}
 
-{% include important.html text="Pay attention! It's important." %}
+{% include alert.html text="You can include alert boxes" %}
 
-{% include tip.html text="This is my tip." %}
-
-{% include note.html text="Take note of this." %}
+    {% include info.html text="You can include info boxes" %}
 
 {% include info.html text="You can include info boxes" %}
+
 
 ## FrontMatter
 FrontMatter 相当于每篇博文的配置文件，它控制着每篇博文该如何展现内容。
