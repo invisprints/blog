@@ -137,8 +137,6 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#删除线">删除线</a></li>
 <li class="toc-entry toc-h3"><a href="#分隔线">分隔线</a></li>
 <li class="toc-entry toc-h3"><a href="#脚注footnote">脚注（Footnote）</a></li>
-<li class="toc-entry toc-h3"><a href="#注释和阅读更多">注释和阅读更多</a></li>
-<li class="toc-entry toc-h3"><a href="#toc">TOC</a></li>
 <li class="toc-entry toc-h3"><a href="#图片与图注">图片与图注</a></li>
 <li class="toc-entry toc-h3"><a href="#tweet-卡片">Tweet 卡片</a></li>
 <li class="toc-entry toc-h3"><a href="#boxes--callouts">Boxes / Callouts</a></li>
@@ -437,27 +435,6 @@ function fancyAlert(arg) {
 
 <p>这是一个脚注：<sup id="fnref:sample_footnote"><a href="#fn:sample_footnote" class="footnote">1</a></sup></p>
 
-<h3 id="注释和阅读更多">
-<a class="anchor" href="#%E6%B3%A8%E9%87%8A%E5%92%8C%E9%98%85%E8%AF%BB%E6%9B%B4%E5%A4%9A" aria-hidden="true"><span class="octicon octicon-link"></span></a>注释和阅读更多</h3>
-
-<!-- comment -->
-<!-- more -->
-
-<p>Actions-&gt;Insert Read More Comment <em>或者</em> <code class="highlighter-rouge">Command + .</code>
-<strong>注</strong> 阅读更多的功能只用在生成网站或博客时，插入时注意要后空一行。</p>
-
-<h3 id="toc">
-<a class="anchor" href="#toc" aria-hidden="true"><span class="octicon octicon-link"></span></a>TOC</h3>
-
-<p>Markdown 语法：</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[TOC]
-</code></pre></div></div>
-
-<p>效果如下：</p>
-
-<p>[TOC]</p>
-
 <p>除了标准markdown格式，fastpages还允许你增添一些额外的内容。</p>
 
 <h3 id="图片与图注">
@@ -470,25 +447,27 @@ function fancyAlert(arg) {
 <h3 id="tweet-卡片">
 <a class="anchor" href="#tweet-%E5%8D%A1%E7%89%87" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tweet 卡片</h3>
 
-<p>输入 `&lt;div class=’jekyll-twitter-plugin’&gt;&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Altair 4.0 is released! <a href="https://t.co/PCyrIOTcvv">https://t.co/PCyrIOTcvv</a><br>Try it with:<br><br>  pip install -U altair<br><br>The full list of changes is at <a href="https://t.co/roXmzcsT58">https://t.co/roXmzcsT58</a> …read on for some highlights. <a href="https://t.co/vWJ0ZveKbZ">pic.twitter.com/vWJ0ZveKbZ</a>&lt;/p&gt;— Jake VanderPlas (@jakevdp) <a href="https://twitter.com/jakevdp/status/1204765621767901185?ref_src=twsrc%5Etfw">December 11, 2019</a>&lt;/blockquote&gt;
+<div class="jekyll-twitter-plugin">
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">Altair 4.0 is released! <a href="https://t.co/PCyrIOTcvv">https://t.co/PCyrIOTcvv</a><br>Try it with:<br><br>  pip install -U altair<br><br>The full list of changes is at <a href="https://t.co/roXmzcsT58">https://t.co/roXmzcsT58</a> ...read on for some highlights. <a href="https://t.co/vWJ0ZveKbZ">pic.twitter.com/vWJ0ZveKbZ</a></p>— Jake VanderPlas (@jakevdp) <a href="https://twitter.com/jakevdp/status/1204765621767901185?ref_src=twsrc%5Etfw">December 11, 2019</a>
+</blockquote>
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-&lt;/div&gt;</p>
+</div>
 
 <h3 id="boxes--callouts">
 <a class="anchor" href="#boxes--callouts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Boxes / Callouts</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="Toast Toast--warning googoo"&gt;    &lt;span class="Toast-icon"&gt;&lt;svg class="octicon octicon-alert octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/span&gt;    &lt;span class="Toast-content"&gt;You can include alert boxes&lt;/span&gt;
-</code></pre></div></div>
-<p>&lt;/div&gt;</p>
-
 <div class="Toast Toast--warning googoo">
-   <span class="Toast-icon"><svg class="octicon octicon-alert octicon octicon-alert octicon octicon-alert" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>
+   <span class="Toast-icon"><svg class="octicon octicon-alert octicon octicon-alert" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>
    <span class="Toast-content">You can include alert boxes</span>
 </div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="Toast"&gt;    &lt;span class="Toast-icon"&gt;&lt;svg class="octicon octicon-info octicon octicon-info" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"&gt;&lt;path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/span&gt;    &lt;span class="Toast-content"&gt;You can include info boxes&lt;/span&gt;
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"Toast"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"Toast-icon"</span><span class="nt">&gt;&lt;svg</span> <span class="na">class=</span><span class="s">"octicon octicon-info octicon octicon-info"</span> <span class="na">viewBox=</span><span class="s">"0 0 14 16"</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">width=</span><span class="s">"14"</span> <span class="na">height=</span><span class="s">"16"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;path</span> <span class="na">fill-rule=</span><span class="s">"evenodd"</span> <span class="na">d=</span><span class="s">"M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"</span><span class="nt">&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/span&gt;</span>
+   <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"Toast-content"</span><span class="nt">&gt;</span>You can include info boxes<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
 </code></pre></div></div>
-<p>&lt;/div&gt;</p>
 
 <div class="Toast">
    <span class="Toast-icon"><svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>
