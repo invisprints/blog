@@ -260,27 +260,6 @@ Markdown 语法：
 [^sample_footnote]: 这里是脚注信息
 
 
-### 注释和阅读更多
-
-<!-- comment -->
-<!-- more -->
-
-Actions->Insert Read More Comment *或者* `Command + .`
-**注** 阅读更多的功能只用在生成网站或博客时，插入时注意要后空一行。
-
-### TOC
-
-Markdown 语法：
-
-```
-[TOC]
-```
-
-效果如下：
-
-[TOC]
-
-
 除了标准markdown格式，fastpages还允许你增添一些额外的内容。
 
 ### 图片与图注
@@ -292,20 +271,15 @@ Markdown 语法：
 
 ### Tweet 卡片
 
-
-输入 `\{% twitter https://twitter.com/jakevdp/status/1204765621767901185?s=20 %\}` 会显示如下内容
-
-
 {% twitter https://twitter.com/jakevdp/status/1204765621767901185?s=20 %}
-
 
 ### Boxes / Callouts
 
-    {% include alert.html text="You can include alert boxes" %}
-
 {% include alert.html text="You can include alert boxes" %}
 
-    {% include info.html text="You can include info boxes" %}
+```html
+{% include info.html text="You can include info boxes" %}
+```
 
 {% include info.html text="You can include info boxes" %}
 
