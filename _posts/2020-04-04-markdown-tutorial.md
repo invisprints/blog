@@ -257,6 +257,10 @@ Markdown 语法：
 
 $$	x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
 
+\\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } } \\]
+
 行内公式： $$\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$$
 
 ```
@@ -267,9 +271,11 @@ $$	x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
 
 $$	x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
 
-行内公式： $$\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$$
+\\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } } \\]
 
-可以看出目前fastpages(ver=0.2.10)对数学公式支持并不是很完善，希望未来版本能修复
+行内公式： $$\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$$
 
 
 ### 脚注（Footnote）
