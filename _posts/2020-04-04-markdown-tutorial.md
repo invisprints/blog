@@ -4,6 +4,7 @@ layout: post
 description: 如何在 fastpages 上发布 markdown 格式的博文
 categories: [markdown]
 title: markdown 博文发布教程
+comments: true
 ---
 
 ## 基本设置
@@ -14,7 +15,10 @@ fastpages 也会将存放在 `_notesbooks` 中的 jupyter notebook 和 `_word` �
 
 ## 格式
 markdown 文章格式遵从 markdown 格式，如不了解，请自行搜索相关内容。
-以下内容引用自MWeb
+
+---
+
+{% include info.html text="以下内容引用自MWeb" %}
 
 ### 标题
 
@@ -244,6 +248,29 @@ Markdown 语法：
 
 - - -
 
+### MathJax
+
+Markdown 语法：
+
+```
+块级公式：
+
+$$	x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+
+行内公式： $$\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$$
+
+```
+
+在 `_config.yml` 中设置 `use_math: true` 可开启渲染数学公式
+
+块级公式：
+
+$$	x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+
+行内公式： $$\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$$
+
+可以看出目前fastpages(ver=0.2.10)对数学公式支持并不是很完善，希望未来版本能修复
+
 
 ### 脚注（Footnote）
 
@@ -259,6 +286,9 @@ Markdown 语法：
 
 [^sample_footnote]: 这里是脚注信息
 
+{% include info.html text="以上内容引用自MWeb" %}
+
+---
 
 除了标准markdown格式，fastpages还允许你增添一些额外的内容。
 
@@ -270,12 +300,12 @@ Markdown 语法：
 ![]({{ site.baseurl }}/images/logo.png "fast.ai's logo")
 
 ### Tweet 卡片
-请查看源文件医疗界如何使用这些功能
+请查看原md文档以了解如何使用该功能
 
 {% twitter https://twitter.com/jakevdp/status/1204765621767901185?s=20 %}
 
 ### Boxes / Callouts
-请查看源文件医疗界如何使用这些功能
+请查看原md文档以了解如何使用该功能
 
 {% include alert.html text="You can include alert boxes" %}
 
