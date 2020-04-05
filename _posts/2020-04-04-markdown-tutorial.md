@@ -9,7 +9,7 @@ comments: true
 
 ## 基本设置
 fastpages 会将存放在 `_post` 文件夹内的 markdown 文章自动转换成博文，因此你应该将所有的markdown博文放在该文件夹下。
-fastpages 也会将存放在 `_notesbooks` 中的 jupyter notebook 和 `_word` 中的 word文章自动转换成博文。因此你的博文应该存放在这三个文件夹内。
+fastpages 也会将存放在 `_notebooks` 中的 jupyter notebook 和 `_word` 中的 word 文章自动转换成博文。因此你的博文应该存放在这三个文件夹内。
 
 所有的博文遵循同一套命名规范，即 `YYYY-MM-DD-filename.ext`，如本篇 markdown 教程的文件名为 `2020-04-04-markdown-tutorial.md`
 
@@ -277,6 +277,7 @@ $$	x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
 
 行内公式： $$\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$$
 
+{% include alert.html text="在本地测试时可能会遇到数学公式渲染出错的情况" %}
 
 ### 脚注（Footnote）
 
