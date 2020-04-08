@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>更新 fastpages 框架 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="更新 fastpages 框架" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="如何自动或手动更新 fastpages 到你现有的博客平台上" />
+<meta property="og:description" content="如何自动或手动更新 fastpages 到你现有的博客平台上" />
+<link rel="canonical" href="https://invisprints.github.io/blog/fastpages/2020/04/08/fastpages-upgrade.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/fastpages/2020/04/08/fastpages-upgrade.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-08T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"如何自动或手动更新 fastpages 到你现有的博客平台上","dateModified":"2020-04-08T00:00:00-05:00","datePublished":"2020-04-08T00:00:00-05:00","headline":"更新 fastpages 框架","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/fastpages/2020/04/08/fastpages-upgrade.html"},"url":"https://invisprints.github.io/blog/fastpages/2020/04/08/fastpages-upgrade.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>更新 fastpages 框架 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="更新 fastpages 框架" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="如何自动或手动更新 fastpages 到你现有的博客平台上" />
+<meta property="og:description" content="如何自动或手动更新 fastpages 到你现有的博客平台上" />
+<link rel="canonical" href="https://invisprints.github.io/blog/fastpages/2020/04/08/fastpages-upgrade.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/fastpages/2020/04/08/fastpages-upgrade.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-08T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"如何自动或手动更新 fastpages 到你现有的博客平台上","dateModified":"2020-04-08T00:00:00-05:00","datePublished":"2020-04-08T00:00:00-05:00","headline":"更新 fastpages 框架","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/fastpages/2020/04/08/fastpages-upgrade.html"},"url":"https://invisprints.github.io/blog/fastpages/2020/04/08/fastpages-upgrade.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">invisprints blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">🥳About Me</a><a class="page-link" href="/blog/search/">🔍 Search</a><a class="page-link" href="/blog/categories/">🏷️ Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">更新 fastpages 框架</h1><p class="page-description">如何自动或手动更新 fastpages 到你现有的博客平台上</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-04-08T00:00:00-05:00" itemprop="datePublished">
+        Apr 8, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#fastpages">fastpages</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#fastpages">fastpages</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#自动更新">自动更新</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#第一步使用-upgrade-template-提出-issue">第一步：使用 Upgrade Template 提出 Issue</a></li>
+<li class="toc-entry toc-h3"><a href="#第二步-点击-submit-new-issue-按钮">第二步: 点击 Submit new issue 按钮</a></li>
+<li class="toc-entry toc-h3"><a href="#第三步-查看自动生成的-pr">第三步: 查看自动生成的 PR</a></li>
+<li class="toc-entry toc-h3"><a href="#第四步-检查并合并-pr">第四步: 检查并合并 PR</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#手动更新">手动更新</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#直接在-github-网页上修改">直接在 GitHub 网页上修改</a></li>
+<li class="toc-entry toc-h3"><a href="#clone-到本地解决">clone 到本地解决</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h1 id="fastpages">
+<a class="anchor" href="#fastpages" aria-hidden="true"><span class="octicon octicon-link"></span></a>fastpages</h1>
+<p>fastpages 是一个在开发中的博客平台，因此会不断有新功能出现或修复现有的bug。fastpages 提供了 2 种更新方法，适用于新手的自动化更新和适用于自定义玩家的手动更新。</p>
+
+<p>本文参考 <a href="https://github.com/fastai/fastpages/blob/master/_fastpages_docs/UPGRADE.md">Upgrading fastpages</a></p>
+
+<h2 id="自动更新">
+<a class="anchor" href="#%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>自动更新</h2>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap octicon octicon-zap octicon octicon-zap" viewbox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z"></path></svg>
+    <strong>Important: </strong>自动更新适合那些没有修改网站 HTML 的博客。
+</div>
+
+<h3 id="第一步使用-upgrade-template-提出-issue">
+<a class="anchor" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E4%BD%BF%E7%94%A8-upgrade-template-%E6%8F%90%E5%87%BA-issue" aria-hidden="true"><span class="octicon octicon-link"></span></a>第一步：使用 Upgrade Template 提出 Issue</h3>
+<p>在你的博客 repo 中点击 New issue，并点击显示 <code class="highlighter-rouge">[fastpages] Automated Upgrade</code> 的 Get Started 按钮。
+<img src="/blog/images/15863377798922.png" alt=""></p>
+
+<h3 id="第二步-点击-submit-new-issue-按钮">
+<a class="anchor" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E7%82%B9%E5%87%BB-submit-new-issue-%E6%8C%89%E9%92%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>第二步: 点击 Submit new issue 按钮</h3>
+
+<p>不要对页面做任何改动
+<img src="/blog/images/15863380296697.png" alt=""></p>
+
+<h3 id="第三步-查看自动生成的-pr">
+<a class="anchor" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-%E6%9F%A5%E7%9C%8B%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%9A%84-pr" aria-hidden="true"><span class="octicon octicon-link"></span></a>第三步: 查看自动生成的 PR</h3>
+<p>接下来 GitHub 会打开 PR 自动更新，PR 界面如下
+<img src="/blog/images/15863381807304.png" alt=""></p>
+
+<p>此时可能会报 error，通常的原因有如下几点：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 已是最新版，error 上会显示 "nothing to commit".
+- 之前有未合并的自动更新 PR 请求
+</code></pre></div></div>
+
+<p>你可以在 <a href="https://forums.fast.ai/">fastai 社区</a> 提问。</p>
+
+<h3 id="第四步-检查并合并-pr">
+<a class="anchor" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E6%A3%80%E6%9F%A5%E5%B9%B6%E5%90%88%E5%B9%B6-pr" aria-hidden="true"><span class="octicon octicon-link"></span></a>第四步: 检查并合并 PR</h3>
+
+<ul>
+  <li>仔细检查 PR 中修改的文件，确保你自定义的部分没有被修改。之后点击<code class="highlighter-rouge">Merge pull request</code> 更新 fastpages。</li>
+  <li>如果 PR 中修改了你自定义的部分或不想被改动的部分，请采用手动更新。</li>
+</ul>
+
+<h2 id="手动更新">
+<a class="anchor" href="#%E6%89%8B%E5%8A%A8%E6%9B%B4%E6%96%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>手动更新</h2>
+<div class="Toast Toast--warning googoo">
+   <span class="Toast-icon"><svg class="octicon octicon-alert octicon octicon-alert octicon octicon-alert octicon octicon-alert" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>
+   <span class="Toast-content">手动更新适合那些修改过网站 HTML 的博客。</span>
+</div>
+
+<h3 id="直接在-github-网页上修改">
+<a class="anchor" href="#%E7%9B%B4%E6%8E%A5%E5%9C%A8-github-%E7%BD%91%E9%A1%B5%E4%B8%8A%E4%BF%AE%E6%94%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>直接在 GitHub 网页上修改</h3>
+<p>进行到自动更新的第四步之后，如果你发现 PR 中修改了你不想修改的内容，可以直接在 <code class="highlighter-rouge">Files changed</code> 标签页中修改 PR 内容，修改完成后等待 GitHub 冲突检查，解决完可能存在的冲突或失败之后就可以点击<code class="highlighter-rouge">Merge pull request</code> 更新 fastpages。</p>
+
+<h3 id="clone-到本地解决">
+<a class="anchor" href="#clone-%E5%88%B0%E6%9C%AC%E5%9C%B0%E8%A7%A3%E5%86%B3" aria-hidden="true"><span class="octicon octicon-link"></span></a>clone 到本地解决</h3>
+<p>参考 <a href="https://stackoverflow.com/questions/56577184/github-pull-changes-from-a-template-repository/56577320">GitHub - Pull changes from a template repository</a> 和 <a href="https://github.com/fastai/fastpages/issues/163#issuecomment-593766189">How to sync fastai/fastpages with forked FastPages</a></p>
+
+<p><strong>第一步</strong></p>
+
+<p>添加远程模版库</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git remote add template git@github.com:fastai/fastpages.git 
+<span class="nv">$ </span>git remote <span class="nt">-v</span> 
+origin	git@github.com:byteshiva/blog.git <span class="o">(</span>fetch<span class="o">)</span>
+origin	git@github.com:byteshiva/blog.git <span class="o">(</span>push<span class="o">)</span>
+template	git@github.com:fastai/fastpages.git <span class="o">(</span>fetch<span class="o">)</span>
+template	git@github.com:fastai/fastpages.git <span class="o">(</span>push<span class="o">)</span>
+upstream	git@github.com:fastai/fastpages.git <span class="o">(</span>fetch<span class="o">)</span>
+upstream	git@github.com:fastai/fastpages.git <span class="o">(</span>push<span class="o">)</span>
+</code></pre></div></div>
+
+<p><strong>第二步</strong></p>
+
+<p>更新</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git fetch <span class="nt">--all</span> 
+Fetching origin
+remote: Enumerating objects: 43, <span class="k">done</span><span class="nb">.</span>
+remote: Counting objects: 100% <span class="o">(</span>43/43<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+remote: Compressing objects: 100% <span class="o">(</span>11/11<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+remote: Total 26 <span class="o">(</span>delta 9<span class="o">)</span>, reused 24 <span class="o">(</span>delta 7<span class="o">)</span>, pack-reused 0
+Unpacking objects: 100% <span class="o">(</span>26/26<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+From github.com:byteshiva/blog
+   d7e8201..b67202a  gh-pages   -&gt; origin/gh-pages
+Fetching upstream
+remote: Enumerating objects: 86, <span class="k">done</span><span class="nb">.</span>
+remote: Counting objects: 100% <span class="o">(</span>86/86<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+remote: Compressing objects: 100% <span class="o">(</span>54/54<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+remote: Total 86 <span class="o">(</span>delta 38<span class="o">)</span>, reused 64 <span class="o">(</span>delta 27<span class="o">)</span>, pack-reused 0
+Unpacking objects: 100% <span class="o">(</span>86/86<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+From github.com:fastai/fastpages
+   e8bf9f8..bcdbc22  gh-pages   -&gt; upstream/gh-pages
+   5b4b79e..8f5a7bc  master     -&gt; upstream/master
+Fetching template
+From github.com:fastai/fastpages
+ <span class="k">*</span> <span class="o">[</span>new branch]      change-docker      -&gt; template/change-docker
+ <span class="k">*</span> <span class="o">[</span>new branch]      gh-pages           -&gt; template/gh-pages
+ <span class="k">*</span> <span class="o">[</span>new branch]      master             -&gt; template/master
+ <span class="k">*</span> <span class="o">[</span>new branch]      pin-jekyll-version -&gt; template/pin-jekyll-version
+ <span class="k">*</span> <span class="o">[</span>new branch]      search-highlight   -&gt; template/search-highlight
+</code></pre></div></div>
+
+<p><strong>第三步</strong></p>
+
+<p>合并</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git merge template/master 
+fatal: refusing to merge unrelated histories
+</code></pre></div></div>
+<p>如果出现 <code class="highlighter-rouge">fatal: refusing to merge unrelated histories</code>，则需要允许不关联的git 历史，参照第四步</p>
+
+<p><strong>第四步</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git merge template/master <span class="nt">--allow-unrelated-histories</span>
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>index.md
+Auto-merging index.md
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>assets/main.scss
+Auto-merging assets/main.scss
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>assets/js/search.js
+Auto-merging assets/js/search.js
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>_posts/2020-01-14-test-markdown-post.md
+Auto-merging _posts/2020-01-14-test-markdown-post.md
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>_notebooks/2020-02-20-test.ipynb
+Auto-merging _notebooks/2020-02-20-test.ipynb
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>_includes/youtube.html
+Auto-merging _includes/youtube.html
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>_includes/twitter.html
+Auto-merging _includes/twitter.html
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>_includes/notebook_github_link.html
+Auto-merging _includes/notebook_github_link.html
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>_includes/notebook_colab_link.html
+Auto-merging _includes/notebook_colab_link.html
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>_includes/favicons.html
+Auto-merging _includes/favicons.html
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>_config.yml
+Auto-merging _config.yml
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>_action_files/settings.ini
+Auto-merging _action_files/settings.ini
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>_action_files/nb2post.py
+Auto-merging _action_files/nb2post.py
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>_action_files/action_entrypoint.sh
+Auto-merging _action_files/action_entrypoint.sh
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>README.md
+Auto-merging README.md
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>Makefile
+Auto-merging Makefile
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in</span> .github/workflows/setup.yaml
+Auto-merging .github/workflows/setup.yaml
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in</span> .github/workflows/ci.yaml
+Auto-merging .github/workflows/ci.yaml
+Automatic merge failed<span class="p">;</span> fix conflicts and <span class="k">then </span>commit the result.
+</code></pre></div></div>
+
+<p><strong>第五步</strong></p>
+
+<p>显示冲突文件
+参考 <a href="https://stackoverflow.com/questions/3065650/whats-the-simplest-way-to-list-conflicted-files-in-git">List conflicted files in git</a></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff <span class="nt">--name-only</span> <span class="nt">--diff-filter</span><span class="o">=</span>U
+.github/workflows/ci.yaml
+.github/workflows/setup.yaml
+Makefile
+README.md
+_action_files/action_entrypoint.sh
+_action_files/nb2post.py
+_action_files/settings.ini
+_config.yml
+_includes/favicons.html
+_includes/notebook_colab_link.html
+_includes/notebook_github_link.html
+_includes/twitter.html
+_includes/youtube.html
+_notebooks/2020-02-20-test.ipynb
+_posts/2020-01-14-test-markdown-post.md
+assets/js/search.js
+assets/main.scss
+index.md
+</code></pre></div></div>
+
+<p><strong>第六步</strong></p>
+
+<p>用你擅长的方式解决冲突</p>
+
+<p><strong>第七步</strong></p>
+
+<p>合并并提交更新</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span> 
+git commit <span class="nt">-m</span> <span class="s2">" commit message comes here "</span>
+</code></pre></div></div>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="invisprints/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/fastpages/2020/04/08/fastpages-upgrade.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Github 探索</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
