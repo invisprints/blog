@@ -1,13 +1,7 @@
 ---
 layout: page
-title: About Me
+title: 🥳About Me
 permalink: /about/
 ---
 
-This is where you put the contents of your *About* page. Like all your pages, it's in [Markdown](https://guides.github.com/features/mastering-markdown/) format.
-
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
-
-
-
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+研究生·深度学习&NAS·Fastai·二次元·沉迷研究各种无用工具和学习方法
