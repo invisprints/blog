@@ -14,3 +14,4 @@ __pycache__
 .idea
 settings.ini
 images/copied_from_nb
+_notebooks/.DS_Store

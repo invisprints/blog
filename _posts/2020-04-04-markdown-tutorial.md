@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: 如何在 fastpages 上发布 markdown 格式的博文
-categories: [markdown]
+categories: [markdown, fastpages]
 title: markdown 博文发布教程
 comments: true
 ---
