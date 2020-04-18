@@ -3,19 +3,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Title | invisprints blog</title>
+<title>LSTM 模型预测 A 股走势 | invisprints blog</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Title" />
+<meta property="og:title" content="LSTM 模型预测 A 股走势" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="summary" />
-<meta property="og:description" content="summary" />
-<link rel="canonical" href="https://invisprints.github.io/blog/2020/04/17/LSTM-stock.html" />
-<meta property="og:url" content="https://invisprints.github.io/blog/2020/04/17/LSTM-stock.html" />
+<meta name="description" content="Pytorch 版 LSTM 模型预测 A 股走势" />
+<meta property="og:description" content="Pytorch 版 LSTM 模型预测 A 股走势" />
+<link rel="canonical" href="https://invisprints.github.io/blog/pytorch/stock/lstm/2020/04/17/LSTM-stock.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/pytorch/stock/lstm/2020/04/17/LSTM-stock.html" />
 <meta property="og:site_name" content="invisprints blog" />
+<meta property="og:image" content="https://invisprints.github.io/blog/images/stock.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-17T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"summary","dateModified":"2020-04-17T00:00:00-05:00","datePublished":"2020-04-17T00:00:00-05:00","headline":"Title","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/2020/04/17/LSTM-stock.html"},"url":"https://invisprints.github.io/blog/2020/04/17/LSTM-stock.html","@context":"https://schema.org"}</script>
+{"description":"Pytorch 版 LSTM 模型预测 A 股走势","dateModified":"2020-04-17T00:00:00-05:00","datePublished":"2020-04-17T00:00:00-05:00","headline":"LSTM 模型预测 A 股走势","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/pytorch/stock/lstm/2020/04/17/LSTM-stock.html"},"image":"https://invisprints.github.io/blog/images/stock.png","url":"https://invisprints.github.io/blog/pytorch/stock/lstm/2020/04/17/LSTM-stock.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -24,19 +25,20 @@
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
 
 <link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Title | invisprints blog</title>
+<title>LSTM 模型预测 A 股走势 | invisprints blog</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Title" />
+<meta property="og:title" content="LSTM 模型预测 A 股走势" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="summary" />
-<meta property="og:description" content="summary" />
-<link rel="canonical" href="https://invisprints.github.io/blog/2020/04/17/LSTM-stock.html" />
-<meta property="og:url" content="https://invisprints.github.io/blog/2020/04/17/LSTM-stock.html" />
+<meta name="description" content="Pytorch 版 LSTM 模型预测 A 股走势" />
+<meta property="og:description" content="Pytorch 版 LSTM 模型预测 A 股走势" />
+<link rel="canonical" href="https://invisprints.github.io/blog/pytorch/stock/lstm/2020/04/17/LSTM-stock.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/pytorch/stock/lstm/2020/04/17/LSTM-stock.html" />
 <meta property="og:site_name" content="invisprints blog" />
+<meta property="og:image" content="https://invisprints.github.io/blog/images/stock.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-17T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"summary","dateModified":"2020-04-17T00:00:00-05:00","datePublished":"2020-04-17T00:00:00-05:00","headline":"Title","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/2020/04/17/LSTM-stock.html"},"url":"https://invisprints.github.io/blog/2020/04/17/LSTM-stock.html","@context":"https://schema.org"}</script>
+{"description":"Pytorch 版 LSTM 模型预测 A 股走势","dateModified":"2020-04-17T00:00:00-05:00","datePublished":"2020-04-17T00:00:00-05:00","headline":"LSTM 模型预测 A 股走势","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/pytorch/stock/lstm/2020/04/17/LSTM-stock.html"},"image":"https://invisprints.github.io/blog/images/stock.png","url":"https://invisprints.github.io/blog/pytorch/stock/lstm/2020/04/17/LSTM-stock.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -113,7 +115,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="page-description">summary</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-04-17T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">LSTM 模型预测 A 股走势</h1><p class="page-description">Pytorch 版 LSTM 模型预测 A 股走势</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-04-17T00:00:00-05:00" itemprop="datePublished">
         Apr 17, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -123,6 +125,19 @@ window.onload = wrap_img;
     
 </span></p>
 
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#pytorch">pytorch</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#stock">stock</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#lstm">lstm</a>
+        
+      
+      </p>
     
 
     
@@ -150,7 +165,19 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#LSTM-模型预测-A-股走势">LSTM 模型预测 A 股走势 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#下载数据集">下载数据集 </a></li>
+<li class="toc-entry toc-h2"><a href="#处理数据集">处理数据集 </a></li>
+<li class="toc-entry toc-h2"><a href="#可视化">可视化 </a></li>
+<li class="toc-entry toc-h2"><a href="#建立-LSTM-模型">建立 LSTM 模型 </a></li>
+<li class="toc-entry toc-h2"><a href="#训练模型">训练模型 </a></li>
+<li class="toc-entry toc-h2"><a href="#查看训练效果">查看训练效果 </a></li>
+<li class="toc-entry toc-h2"><a href="#参考资料">参考资料 </a></li>
+</ul>
+</li>
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -166,45 +193,40 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Pytorch LSTM 模型预测 A 股走势</p>
-</blockquote>
-<ul>
-<li>toc:true - badges: true</li>
-<li>comments: true</li>
-<li>categories: [pytorch, stock, lstm]</li>
-<li>image: images/stock.png</li>
-</ul>
-
+<h1 id="LSTM-模型预测-A-股走势">
+<a class="anchor" href="#LSTM-%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B-A-%E8%82%A1%E8%B5%B0%E5%8A%BF" aria-hidden="true"><span class="octicon octicon-link"></span></a>LSTM 模型预测 A 股走势<a class="anchor-link" href="#LSTM-%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B-A-%E8%82%A1%E8%B5%B0%E5%8A%BF"> </a>
+</h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="LSTM-&#27169;&#22411;&#39044;&#27979;-A-&#32929;&#36208;&#21183;">LSTM &#27169;&#22411;&#39044;&#27979; A &#32929;&#36208;&#21183;<a class="anchor-link" href="#LSTM-&#27169;&#22411;&#39044;&#27979;-A-&#32929;&#36208;&#21183;"> </a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这几天闲来无事，看网上很多人都在评论股市的起起伏伏，于是心血来潮，想用深度学习看看能否预测股票走势。由于之前研究方向都是 CV 和 NAS，也想借用这个机会深入了解下 RNN 这个派系是怎么回事。</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>数日后</p>
-<hr />
+<hr>
 <p>经过我多日的观察，LSTM 似乎并不能预测 A 股走势。当然由于我在这方面还是初学者，所以代码有可能存在问题，欢迎大家指出！</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#19979;&#36733;&#25968;&#25454;&#38598;">&#19979;&#36733;&#25968;&#25454;&#38598;<a class="anchor-link" href="#&#19979;&#36733;&#25968;&#25454;&#38598;"> </a></h2><p>证券宝 www.baostock.com 是一个免费、开源的证券数据平台（无需注册）。其优点请访问<a href="http://baostock.com/baostock/index.php/首页">官网</a></p>
+<h2 id="下载数据集">
+<a class="anchor" href="#%E4%B8%8B%E8%BD%BD%E6%95%B0%E6%8D%AE%E9%9B%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>下载数据集<a class="anchor-link" href="#%E4%B8%8B%E8%BD%BD%E6%95%B0%E6%8D%AE%E9%9B%86"> </a>
+</h2>
+<p>证券宝 www.baostock.com 是一个免费、开源的证券数据平台（无需注册）。其优点请访问<a href="http://baostock.com/baostock/index.php/%E9%A6%96%E9%A1%B5">官网</a></p>
 <p>取消下面代码注释来安装 baostock 库</p>
 
 </div>
@@ -227,7 +249,8 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>按照官网教程下载一只股票的k线数据，这里取sz.002648 15年以后的数据。</p>
 
@@ -250,20 +273,20 @@ window.onload = wrap_img;
 <span class="c1">#### 获取沪深A股历史K线数据 ####</span>
 <span class="c1"># 详细指标参数，参见“历史行情指标参数”章节；“分钟线”参数与“日线”参数不同。</span>
 <span class="c1"># 分钟线指标：date,time,code,open,high,low,close,volume,amount,adjustflag</span>
-<span class="n">rs</span> <span class="o">=</span> <span class="n">bs</span><span class="o">.</span><span class="n">query_history_k_data_plus</span><span class="p">(</span><span class="s2">&quot;sz.002648&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;date,code,open,high,low,close,preclose,volume,amount,adjustflag,turn,tradestatus,pctChg,isST&quot;</span><span class="p">,</span>
-    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2015-01-01&#39;</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2020-4-14&#39;</span><span class="p">,</span>
-    <span class="n">frequency</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="n">adjustflag</span><span class="o">=</span><span class="s2">&quot;3&quot;</span><span class="p">)</span>
+<span class="n">rs</span> <span class="o">=</span> <span class="n">bs</span><span class="o">.</span><span class="n">query_history_k_data_plus</span><span class="p">(</span><span class="s2">"sz.002648"</span><span class="p">,</span>
+    <span class="s2">"date,code,open,high,low,close,preclose,volume,amount,adjustflag,turn,tradestatus,pctChg,isST"</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">'2015-01-01'</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="s1">'2020-4-14'</span><span class="p">,</span>
+    <span class="n">frequency</span><span class="o">=</span><span class="s2">"d"</span><span class="p">,</span> <span class="n">adjustflag</span><span class="o">=</span><span class="s2">"3"</span><span class="p">)</span>
 
 <span class="c1">#### 打印结果集 ####</span>
 <span class="n">data_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">rs</span><span class="o">.</span><span class="n">error_code</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">rs</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">rs</span><span class="o">.</span><span class="n">error_code</span> <span class="o">==</span> <span class="s1">'0'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">rs</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
     <span class="c1"># 获取一条记录，将记录合并在一起</span>
     <span class="n">data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rs</span><span class="o">.</span><span class="n">get_row_data</span><span class="p">())</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">rs</span><span class="o">.</span><span class="n">fields</span><span class="p">)</span>
 
 <span class="c1">#### 结果集输出到csv文件 ####   </span>
-<span class="c1"># result.to_csv(&quot;D:\\history_A_stock_k_data.csv&quot;, index=False)</span>
+<span class="c1"># result.to_csv("D:\\history_A_stock_k_data.csv", index=False)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
 <span class="c1">#### 登出系统 ####</span>
@@ -342,7 +365,8 @@ logout success!
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>下载的数据都是以字符串形式保存的，我们把需要的数据转换成整数和浮点数</p>
 
@@ -356,15 +380,15 @@ logout success!
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">float_type</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;open&#39;</span><span class="p">,</span><span class="s1">&#39;high&#39;</span><span class="p">,</span><span class="s1">&#39;low&#39;</span><span class="p">,</span><span class="s1">&#39;close&#39;</span><span class="p">,</span><span class="s1">&#39;preclose&#39;</span><span class="p">,</span><span class="s1">&#39;amount&#39;</span><span class="p">,</span><span class="s1">&#39;pctChg&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">float_type</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'open'</span><span class="p">,</span><span class="s1">'high'</span><span class="p">,</span><span class="s1">'low'</span><span class="p">,</span><span class="s1">'close'</span><span class="p">,</span><span class="s1">'preclose'</span><span class="p">,</span><span class="s1">'amount'</span><span class="p">,</span><span class="s1">'pctChg'</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">float_type</span><span class="p">:</span>
-    <span class="n">df</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'float'</span><span class="p">)</span>
 
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;amount&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;amount&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;turn&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;turn&quot;</span><span class="p">]]</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;buy_flag&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'amount'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'amount'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'volume'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'volume'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'turn'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">""</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">"turn"</span><span class="p">]]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'buy_flag'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
 
 <span class="c1"># df.tail()</span>
 </pre></div>
@@ -376,9 +400,13 @@ logout success!
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#22788;&#29702;&#25968;&#25454;&#38598;">&#22788;&#29702;&#25968;&#25454;&#38598;<a class="anchor-link" href="#&#22788;&#29702;&#25968;&#25454;&#38598;"> </a></h2><p>用 LSTM 预测价格显示是不合理的，因为价格的波动非常不可控，所以我们退而求其次，预测股票的走势，即涨还是跌。</p>
+<h2 id="处理数据集">
+<a class="anchor" href="#%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE%E9%9B%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>处理数据集<a class="anchor-link" href="#%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE%E9%9B%86"> </a>
+</h2>
+<p>用 LSTM 预测价格显示是不合理的，因为价格的波动非常不可控，所以我们退而求其次，预测股票的走势，即涨还是跌。</p>
 <p>但是怎么量化股票的涨跌是个问题，本人之前完全没接触过股票，所以这里就想当然用未来数天的平均股价表示股票的起伏。</p>
 
 </div>
@@ -403,7 +431,8 @@ logout success!
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>假设短期2天，中期6天，长期15天。如果未来15天平均价格大于未来6天平均价格大于未来2天平均价格，我们就可认为未来15天的股市走势很好。
 这里还要求有3%的涨幅，能一定程度上减少标签频繁波动。</p>
@@ -424,14 +453,14 @@ logout success!
 <span class="n">l_time</span> <span class="o">=</span> <span class="mi">15</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">-</span><span class="n">l_time</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;close&#39;</span><span class="p">,</span><span class="n">l_time</span><span class="p">)</span><span class="o">&gt;</span><span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;close&#39;</span><span class="p">,</span><span class="n">m_time</span><span class="p">)</span><span class="o">*</span><span class="mf">1.03</span><span class="o">&gt;</span><span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;close&#39;</span><span class="p">,</span><span class="n">s_time</span><span class="p">)</span><span class="o">*</span><span class="mf">1.03</span><span class="p">:</span>
-        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;buy_flag&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="k">elif</span> <span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;close&#39;</span><span class="p">,</span><span class="n">s_time</span><span class="p">)</span><span class="o">&gt;</span><span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;close&#39;</span><span class="p">,</span><span class="n">m_time</span><span class="p">):</span>
-        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;buy_flag&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">'close'</span><span class="p">,</span><span class="n">l_time</span><span class="p">)</span><span class="o">&gt;</span><span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">'close'</span><span class="p">,</span><span class="n">m_time</span><span class="p">)</span><span class="o">*</span><span class="mf">1.03</span><span class="o">&gt;</span><span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">'close'</span><span class="p">,</span><span class="n">s_time</span><span class="p">)</span><span class="o">*</span><span class="mf">1.03</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'buy_flag'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">'close'</span><span class="p">,</span><span class="n">s_time</span><span class="p">)</span><span class="o">&gt;</span><span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">'close'</span><span class="p">,</span><span class="n">m_time</span><span class="p">):</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'buy_flag'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;buy_flag&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;buy_flag&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;close&#39;</span><span class="p">,</span><span class="n">m_time</span><span class="p">)</span><span class="o">-</span><span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;close&#39;</span><span class="p">,</span><span class="n">s_time</span><span class="p">))</span><span class="o">/</span><span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;close&#39;</span><span class="p">,</span><span class="n">s_time</span><span class="p">)</span>
-<span class="c1">#     df.loc[i, &#39;buy_flag&#39;] = 10*(MA_next(df,i,&#39;close&#39;,m_time)+MA_next(df,i,&#39;close&#39;,l_time)-2*MA_next(df,i,&#39;close&#39;,s_time))/MA_next(df,i,&#39;close&#39;,s_time)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'buy_flag'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'buy_flag'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">'close'</span><span class="p">,</span><span class="n">m_time</span><span class="p">)</span><span class="o">-</span><span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">'close'</span><span class="p">,</span><span class="n">s_time</span><span class="p">))</span><span class="o">/</span><span class="n">MA_next</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">'close'</span><span class="p">,</span><span class="n">s_time</span><span class="p">)</span>
+<span class="c1">#     df.loc[i, 'buy_flag'] = 10*(MA_next(df,i,'close',m_time)+MA_next(df,i,'close',l_time)-2*MA_next(df,i,'close',s_time))/MA_next(df,i,'close',s_time)</span>
         
 <span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
@@ -586,9 +615,13 @@ logout success!
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#21487;&#35270;&#21270;">&#21487;&#35270;&#21270;<a class="anchor-link" href="#&#21487;&#35270;&#21270;"> </a></h2><p>使用 plotly 绘图</p>
+<h2 id="可视化">
+<a class="anchor" href="#%E5%8F%AF%E8%A7%86%E5%8C%96" aria-hidden="true"><span class="octicon octicon-link"></span></a>可视化<a class="anchor-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96"> </a>
+</h2>
+<p>使用 plotly 绘图</p>
 
 </div>
 </div>
@@ -602,17 +635,17 @@ logout success!
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Candlestick</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span>
-                <span class="nb">open</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;open&#39;</span><span class="p">],</span> <span class="n">high</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;high&#39;</span><span class="p">],</span>
-                <span class="n">low</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;low&#39;</span><span class="p">],</span> <span class="n">close</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;close&#39;</span><span class="p">],</span>
-                <span class="n">increasing_line_color</span><span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">decreasing_line_color</span><span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Candlestick</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'date'</span><span class="p">],</span>
+                <span class="nb">open</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'open'</span><span class="p">],</span> <span class="n">high</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'high'</span><span class="p">],</span>
+                <span class="n">low</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'low'</span><span class="p">],</span> <span class="n">close</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'close'</span><span class="p">],</span>
+                <span class="n">increasing_line_color</span><span class="o">=</span> <span class="s1">'red'</span><span class="p">,</span> <span class="n">decreasing_line_color</span><span class="o">=</span> <span class="s1">'green'</span><span class="p">)</span>
                      <span class="p">])</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;buy_flag&#39;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Flag&#39;</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'date'</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'buy_flag'</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Flag'</span><span class="p">))</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">xaxis_range</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2017-01-01&#39;</span><span class="p">,</span><span class="s1">&#39;2019-12-31&#39;</span><span class="p">],</span>
-    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_range</span><span class="o">=</span><span class="p">[</span><span class="s1">'2017-01-01'</span><span class="p">,</span><span class="s1">'2019-12-31'</span><span class="p">],</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">'Price'</span><span class="p">,</span>
 <span class="c1">#     xaxis_rangeslider_visible=False,</span>
 <span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -710,7 +743,8 @@ if (outputEl) {{
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>在 Fast.ai Part 1 课程中，提到一个能扩展日期特征的函数<code>add_datepart</code>，该函数能计算当前日期的年、月、日、一周第几天、周数、月初月末、一年当中的第几天等信息。我们用该函数扩展日期特征。</p>
 
@@ -726,12 +760,12 @@ if (outputEl) {{
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 增加日期特征</span>
 <span class="kn">from</span> <span class="nn">fastai.tabular</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">add_datepart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">add_datepart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">"date"</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">seq_length</span> <span class="o">=</span> <span class="mi">90</span>
 <span class="n">train_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">seq_length</span><span class="p">:</span><span class="o">-</span><span class="n">seq_length</span><span class="p">]</span>
 <span class="c1"># 丢掉不重要的特征</span>
-<span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;date&#39;</span><span class="p">,</span><span class="s1">&#39;code&#39;</span><span class="p">,</span><span class="s1">&#39;Is_month_end&#39;</span><span class="p">,</span> <span class="s1">&#39;Is_month_start&#39;</span><span class="p">,</span> <span class="s1">&#39;Is_quarter_end&#39;</span><span class="p">,</span>
-                          <span class="s1">&#39;Is_quarter_start&#39;</span><span class="p">,</span> <span class="s1">&#39;Is_year_end&#39;</span><span class="p">,</span> <span class="s1">&#39;Is_year_start&#39;</span><span class="p">,</span><span class="s1">&#39;Dayofyear&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'date'</span><span class="p">,</span><span class="s1">'code'</span><span class="p">,</span><span class="s1">'Is_month_end'</span><span class="p">,</span> <span class="s1">'Is_month_start'</span><span class="p">,</span> <span class="s1">'Is_quarter_end'</span><span class="p">,</span>
+                          <span class="s1">'Is_quarter_start'</span><span class="p">,</span> <span class="s1">'Is_year_end'</span><span class="p">,</span> <span class="s1">'Is_year_start'</span><span class="p">,</span><span class="s1">'Dayofyear'</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">train_df</span>
 </pre></div>
 
@@ -1042,7 +1076,8 @@ if (outputEl) {{
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>接下来我们为数据生成序列，用前<code>seq_length</code>天的信息作为输入序列，后1天的股市起伏<code>buy_flag</code>作为标签</p>
 
@@ -1076,7 +1111,8 @@ if (outputEl) {{
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>在 Pytorch 中，LSTM 默认的输入顺序是 <code>seq_length*batch_size*feature</code>，而我们通常生成的序列是<code>batch_size*seq_length*feature</code>，因此需要交换下输入数据纬度。</p>
 
@@ -1097,9 +1133,9 @@ if (outputEl) {{
 <span class="n">x_scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
 
 <span class="c1">#converting dataset into x_train and y_train</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;buy_flag&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'buy_flag'</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">x_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;buy_flag&#39;</span><span class="p">]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'buy_flag'</span><span class="p">]</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">y_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
 
@@ -1109,7 +1145,7 @@ if (outputEl) {{
 <span class="n">x_train</span><span class="p">,</span><span class="n">x_test</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">0.8</span><span class="p">)],</span><span class="n">x</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">0.8</span><span class="p">):]</span>
 
 <span class="c1"># lstm: seq, batch, feature</span>
-<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:0&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"cuda:0"</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">"cpu"</span><span class="p">)</span>
 
 <span class="n">dataX</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">dataY</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -1143,9 +1179,12 @@ if (outputEl) {{
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#24314;&#31435;-LSTM-&#27169;&#22411;">&#24314;&#31435; LSTM &#27169;&#22411;<a class="anchor-link" href="#&#24314;&#31435;-LSTM-&#27169;&#22411;"> </a></h2>
+<h2 id="建立-LSTM-模型">
+<a class="anchor" href="#%E5%BB%BA%E7%AB%8B-LSTM-%E6%A8%A1%E5%9E%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>建立 LSTM 模型<a class="anchor-link" href="#%E5%BB%BA%E7%AB%8B-LSTM-%E6%A8%A1%E5%9E%8B"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -1199,9 +1238,12 @@ if (outputEl) {{
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#35757;&#32451;&#27169;&#22411;">&#35757;&#32451;&#27169;&#22411;<a class="anchor-link" href="#&#35757;&#32451;&#27169;&#22411;"> </a></h2>
+<h2 id="训练模型">
+<a class="anchor" href="#%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>训练模型<a class="anchor-link" href="#%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -1241,7 +1283,7 @@ if (outputEl) {{
     <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
     
     <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Epoch: </span><span class="si">%d</span><span class="s2">, loss: </span><span class="si">%1.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Epoch: </span><span class="si">%d</span><span class="s2">, loss: </span><span class="si">%1.5f</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()))</span>
 </pre></div>
 
     </div>
@@ -1279,9 +1321,12 @@ Epoch: 14, loss: 0.13435
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#26597;&#30475;&#35757;&#32451;&#25928;&#26524;">&#26597;&#30475;&#35757;&#32451;&#25928;&#26524;<a class="anchor-link" href="#&#26597;&#30475;&#35757;&#32451;&#25928;&#26524;"> </a></h2>
+<h2 id="查看训练效果">
+<a class="anchor" href="#%E6%9F%A5%E7%9C%8B%E8%AE%AD%E7%BB%83%E6%95%88%E6%9E%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>查看训练效果<a class="anchor-link" href="#%E6%9F%A5%E7%9C%8B%E8%AE%AD%E7%BB%83%E6%95%88%E6%9E%9C"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -1296,7 +1341,7 @@ Epoch: 14, loss: 0.13435
 <span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
 
 <span class="n">lstm</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
-<span class="n">lstm</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cpu&#39;</span><span class="p">))</span>
+<span class="n">lstm</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">'cpu'</span><span class="p">))</span>
 <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
     <span class="n">dataY_pred</span> <span class="o">=</span> <span class="n">lstm</span><span class="p">(</span><span class="n">dataX</span><span class="p">)</span>
 
@@ -1307,12 +1352,12 @@ Epoch: 14, loss: 0.13435
 <span class="n">dataY_truth</span> <span class="o">=</span> <span class="n">y_scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">dataY_truth</span><span class="p">)</span>
 
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">dataY_truth</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ground Truth&#39;</span><span class="p">))</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">dataY_pred</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Predicted&#39;</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">dataY_truth</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">name</span><span class="o">=</span><span class="s1">'Ground Truth'</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">dataY_pred</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">name</span><span class="o">=</span><span class="s1">'Predicted'</span><span class="p">))</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">x0</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x_train</span><span class="p">),</span> <span class="n">x1</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x_train</span><span class="p">),</span> <span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">xref</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">yref</span><span class="o">=</span><span class="s1">&#39;paper&#39;</span><span class="p">,</span>
+        <span class="n">x0</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x_train</span><span class="p">),</span> <span class="n">x1</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x_train</span><span class="p">),</span> <span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">xref</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">yref</span><span class="o">=</span><span class="s1">'paper'</span><span class="p">,</span>
         <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)],</span> <span class="c1">#在图上划分训练集和测试集</span>
     <span class="n">xaxis_rangeslider_visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
@@ -1383,7 +1428,8 @@ if (outputEl) {{
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>发现预测值基本取标签的平均值，也就是说它并不会根据输入调整输出，而是直接输出标签的平均值，没有任何参考价值</p>
 
@@ -1402,7 +1448,7 @@ if (outputEl) {{
 <span class="n">i</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">testX</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
     <span class="n">y_pred</span> <span class="o">=</span> <span class="n">lstm</span><span class="p">(</span><span class="n">testX</span><span class="p">[:,</span><span class="n">i</span><span class="p">,::]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">testX</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">,</span><span class="n">testX</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;预测值:</span><span class="si">{0}</span><span class="s1">, 实际值:</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y_pred</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span><span class="n">testY</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'预测值:</span><span class="si">{0}</span><span class="s1">, 实际值:</span><span class="si">{1}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y_pred</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span><span class="n">testY</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
 </pre></div>
 
     </div>
@@ -1426,9 +1472,13 @@ if (outputEl) {{
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#21442;&#32771;&#36164;&#26009;">&#21442;&#32771;&#36164;&#26009;<a class="anchor-link" href="#&#21442;&#32771;&#36164;&#26009;"> </a></h2><p><a href="http://mp.weixin.qq.com/s?__biz=MzIxODM4MjA5MA==&amp;mid=2247492111&amp;idx=2&amp;sn=4cfd26f8b82433a8604e8051955a0b87&amp;chksm=97e9c86aa09e417c7319f999d09750c68c719c0f579dbd757da3cebef6094fe1a86f5b50b21b&amp;mpshare=1&amp;scene=1&amp;srcid=0125zRVoyCSWA6vpERxXS2EP&amp;sharer_sharetime=1579934883123&amp;sharer_shareid=0a6ce93be9f251e3983f43be7482e84b#rd">超生动图解LSTM和GPU，一文读懂循环神经网络！</a></p>
+<h2 id="参考资料">
+<a class="anchor" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>参考资料<a class="anchor-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"> </a>
+</h2>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIxODM4MjA5MA==&amp;mid=2247492111&amp;idx=2&amp;sn=4cfd26f8b82433a8604e8051955a0b87&amp;chksm=97e9c86aa09e417c7319f999d09750c68c719c0f579dbd757da3cebef6094fe1a86f5b50b21b&amp;mpshare=1&amp;scene=1&amp;srcid=0125zRVoyCSWA6vpERxXS2EP&amp;sharer_sharetime=1579934883123&amp;sharer_shareid=0a6ce93be9f251e3983f43be7482e84b#rd">超生动图解LSTM和GPU，一文读懂循环神经网络！</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/79064602">LSTM细节分析理解（pytorch版）</a></p>
 
 </div>
@@ -1438,7 +1488,15 @@ if (outputEl) {{
 
 
 
-  </div><a class="u-url" href="/blog/2020/04/17/LSTM-stock.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="invisprints/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/pytorch/stock/lstm/2020/04/17/LSTM-stock.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
