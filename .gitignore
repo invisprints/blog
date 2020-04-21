@@ -15,3 +15,4 @@ __pycache__
 settings.ini
 images/copied_from_nb
 _notebooks/.DS_Store
+.DS_Store
