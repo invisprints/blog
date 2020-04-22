@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: vim asyncrun
-categories: [others]
+categories: [vim]
 title: vim asyncrun
 comments: true
 ---

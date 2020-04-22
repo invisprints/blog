@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: "Vim: Session 和 viminfo"
-categories: [others]
+categories: [vim]
 title: "Vim: Session 和 viminfo"
 comments: true
 ---

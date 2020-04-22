@@ -1,9 +1,9 @@
 ---
 toc: true
 layout: post
-description: Vim: tagbar
-categories: [others]
-title: Vim: tagbar
+description: "Vim: tagbar"
+categories: [vim]
+title: "Vim: tagbar"
 comments: true
 ---
 
