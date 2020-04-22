@@ -1,9 +1,9 @@
 ---
 toc: true
 layout: post
-description: Vim: Session和 viminfo
+description: "Vim: Session 和 viminfo"
 categories: [others]
-title: Vim: Session和 viminfo
+title: "Vim: Session 和 viminfo"
 comments: true
 ---
 
