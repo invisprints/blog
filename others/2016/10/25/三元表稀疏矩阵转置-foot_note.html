@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>三元表稀疏矩阵转置[^foot_note] | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="三元表稀疏矩阵转置[^foot_note]" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="三元表稀疏矩阵转置[^foot_note]" />
+<meta property="og:description" content="三元表稀疏矩阵转置[^foot_note]" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-10-25T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"三元表稀疏矩阵转置[^foot_note]","@type":"BlogPosting","headline":"三元表稀疏矩阵转置[^foot_note]","dateModified":"2016-10-25T00:00:00-05:00","datePublished":"2016-10-25T00:00:00-05:00","url":"https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>三元表稀疏矩阵转置[^foot_note] | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="三元表稀疏矩阵转置[^foot_note]" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="三元表稀疏矩阵转置[^foot_note]" />
+<meta property="og:description" content="三元表稀疏矩阵转置[^foot_note]" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-10-25T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"三元表稀疏矩阵转置[^foot_note]","@type":"BlogPosting","headline":"三元表稀疏矩阵转置[^foot_note]","dateModified":"2016-10-25T00:00:00-05:00","datePublished":"2016-10-25T00:00:00-05:00","url":"https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">invisprints blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">🥳About Me</a><a class="page-link" href="/blog/search/">🔍 Search</a><a class="page-link" href="/blog/categories/">🏷️ Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">三元表稀疏矩阵转置[^foot_note]</h1><p class="page-description">三元表稀疏矩阵转置[^foot_note]</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2016-10-25T00:00:00-05:00" itemprop="datePublished">
+        Oct 25, 2016
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#others">others</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#三元表稀疏矩阵转置">三元表稀疏矩阵转置1</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#三元组顺序表">三元组顺序表</a></li>
+</ul>
+</li>
+</ul><h1 id="三元表稀疏矩阵转置">
+<a class="anchor" href="#%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>三元表稀疏矩阵转置<sup id="fnref:foot_note"><a href="#fn:foot_note" class="footnote">1</a></sup>
+</h1>
+
+<blockquote>
+  <p>如何在茫茫人海中用最少空间标记你的女友，前女友，前前女友……的位置？</p>
+</blockquote>
+
+<p>相对于普通矩阵还要保存其他人的信息，很明显，我们只需关注我的女友，前女友，前前女友的位置，其他人的位置我都不需要关注，因此我们建立一个顺序表，表中记录第几号女友和她的具体位置，这样我们可以节约大量空间。
+这种记录方法就是传说中的<strong>三元组顺序表</strong></p>
+
+<!-- more -->
+
+<h2 id="三元组顺序表">
+<a class="anchor" href="#%E4%B8%89%E5%85%83%E7%BB%84%E9%A1%BA%E5%BA%8F%E8%A1%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>三元组顺序表</h2>
+<p>三元组法是对于稀疏矩阵的一个有效记录方法，对于每一个非零元，我们分别记录下它的行坐标、列坐标和它的值。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define MAXSIZE 12500
+</span><span class="k">typedef</span> <span class="k">struct</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>       <span class="c1">//该非零元的行列坐标</span>
+    <span class="n">ElemType</span> <span class="n">e</span><span class="p">;</span>     <span class="c1">//非零元信息</span>
+<span class="p">}</span><span class="n">Triple</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="k">struct</span><span class="p">{</span>
+    <span class="n">Triple</span> <span class="n">data</span><span class="p">[</span><span class="n">MAXSIZE</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">mu</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">tu</span><span class="p">;</span> <span class="c1">//行，列，非零元个数</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>在这里默认三元组以行序为主序顺序排列</p>
+
+<p>##矩阵转置
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><msup><mo stretchy="false">)</mo><mi>T</mi></msup><mo>=</mo><mi>M</mi><mo stretchy="false">(</mo><mi>j</mi><mo separator="true">,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">M(i, j)^T =M(j, i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0913309999999998em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">i</span><span class="mclose">)</span></span></span></span>
+首先介绍个最容易想到的方法：
+##方法一：</p>
+<ol>
+  <li>元素互调：矩阵的行列值交换，如把元素行列值<code class="highlighter-rouge">i=1,j=2</code>换成<code class="highlighter-rouge">i=2,j=1</code>
+</li>
+  <li>重建三元组：重新将三元组以行序为主序排序</li>
+</ol>
+
+<p>这个算法的时间复杂度为 O(tu*log(tu))</p>
+
+<p>这个方法已经比数据结构书上的方法一好很多，但是本着做一个宇宙好公民，延缓宇宙熵增，我们要努力探究更好的方法</p>
+
+<p>##方法二
+如果在对i, j互调的过程中同时确定每一列<strong>第一个</strong>非零元的应有的位置，那么在重建三元组时就不需要排序。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>num[col]        //记录第col列非零元素的个数
+cpot[col]       //第col列第一个非零元在新三元组中的位置
+</code></pre></div></div>
+
+<p>易知num[col]和cpot[col]的关系式是</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cpot[1]=1;
+cpot[col]=cpot[col-1]+num[col-1];
+</code></pre></div></div>
+
+<p>时间复杂度就将为令人惊讶的 O(tu)</p>
+
+<p>###灵感分析
+在稀疏矩阵中有一种表示方法，它只记录每一行的个数和每一行开始的位置，在实现过程中的思路跟方法二一样</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:foot_note">
+      <p>本文在清华出版社出版的数据结构基础上结合个人经验完成 <a href="#fnref:foot_note" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="invisprints/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Github 探索</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

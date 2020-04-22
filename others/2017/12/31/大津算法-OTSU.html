@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>大津算法（OTSU） | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="大津算法（OTSU）" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="大津算法（OTSU）" />
+<meta property="og:description" content="大津算法（OTSU）" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2017/12/31/%E5%A4%A7%E6%B4%A5%E7%AE%97%E6%B3%95-OTSU.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2017/12/31/%E5%A4%A7%E6%B4%A5%E7%AE%97%E6%B3%95-OTSU.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-12-31T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"大津算法（OTSU）","@type":"BlogPosting","headline":"大津算法（OTSU）","dateModified":"2017-12-31T00:00:00-06:00","datePublished":"2017-12-31T00:00:00-06:00","url":"https://invisprints.github.io/blog/others/2017/12/31/%E5%A4%A7%E6%B4%A5%E7%AE%97%E6%B3%95-OTSU.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2017/12/31/%E5%A4%A7%E6%B4%A5%E7%AE%97%E6%B3%95-OTSU.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>大津算法（OTSU） | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="大津算法（OTSU）" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="大津算法（OTSU）" />
+<meta property="og:description" content="大津算法（OTSU）" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2017/12/31/%E5%A4%A7%E6%B4%A5%E7%AE%97%E6%B3%95-OTSU.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2017/12/31/%E5%A4%A7%E6%B4%A5%E7%AE%97%E6%B3%95-OTSU.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-12-31T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"大津算法（OTSU）","@type":"BlogPosting","headline":"大津算法（OTSU）","dateModified":"2017-12-31T00:00:00-06:00","datePublished":"2017-12-31T00:00:00-06:00","url":"https://invisprints.github.io/blog/others/2017/12/31/%E5%A4%A7%E6%B4%A5%E7%AE%97%E6%B3%95-OTSU.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2017/12/31/%E5%A4%A7%E6%B4%A5%E7%AE%97%E6%B3%95-OTSU.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">invisprints blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">🥳About Me</a><a class="page-link" href="/blog/search/">🔍 Search</a><a class="page-link" href="/blog/categories/">🏷️ Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">大津算法（OTSU）</h1><p class="page-description">大津算法（OTSU）</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2017-12-31T00:00:00-06:00" itemprop="datePublished">
+        Dec 31, 2017
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#others">others</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#大津算法otsu">大津算法（OTSU）</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#算法思想">算法思想</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#c语言实现">C语言实现</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h1 id="大津算法otsu">
+<a class="anchor" href="#%E5%A4%A7%E6%B4%A5%E7%AE%97%E6%B3%95otsu" aria-hidden="true"><span class="octicon octicon-link"></span></a>大津算法（OTSU）</h1>
+<p>在图像处理领域，我们会遇到如下需求：把图像中的目标物体和背景分开。比如背景用白色表示，目标物体用黑色表示。此时我们知道目标物体的灰度值相互接近，背景灰度值相互接近，那么用大津算法能很好把目标从背景当中区分开来。</p>
+
+<!-- more -->
+
+<h2 id="算法思想">
+<a class="anchor" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3" aria-hidden="true"><span class="octicon octicon-link"></span></a>算法思想</h2>
+<p>###目标
+比如对于下面这张灰度图片
+<img src="/blog/images/media/15146878957796/origin.png" alt="origin">
+目标物体是中间黑色的几何物体，我们想让这些物体和背景区分更明显一些，比如让物体为纯黑，背景全白。那么我们就需要找到一个合适的阈值，使图片上灰度值大于这个阈值的像素点为255（白色），灰度值小于阈值的像素点为0（黑色）。也就是变成下面这幅图：
+<img src="/blog/images/media/15146878957796/output.png" alt="output">
+那么大津算法需要处理的就是找到最佳的阈值，让目标和物体尽可能分离开。</p>
+
+<p>###灰度直方图
+为了找到合适的阈值，我们首先观察原图的灰度直方图📊：
+<img src="/blog/images/media/15146878957796/histogram.png" alt="histogram">
+这是用 Matlab 对原图形成的灰度直方图，灰度直方图的含义是统计图像中不同灰度值的分布情况。由图我们可以看出两个尖峰，在灰度值为0～20的地方存在一个尖峰，代表原图中有大量像素点灰度值为0～20，经观察我们可以认为这部分对应于目标物体。同理我们可以看出背景的灰度值大多集中于100～140之间，为了让目标和背景区分更加明显，我们想让目标物体的灰度值全为0，背景的灰度值全为255，这种处理手法也称为二值化法。</p>
+
+<p>那么阈值取多少合适呢？从图上看似乎取50～100中的任意一点都可以，但是实际情况并不想参考图那样明显，有些图片背景和目标物体较为接近，我们需要一个算法来找到最优阈值才行。</p>
+
+<p>###聚类
+首先我们思考什么样的东西才能成为一类，而我们又是怎么分类的。对于参考图来说，我们可以认为灰度值接近的为一类，灰度值不接近的不是同一类。那我们又是如何衡量灰度值接近的程度呢？这里面就需要用到方差的概念。
+方差相比大家都了解，同一类的物体方差小，不同类的物体方差大。所以对于此图我们希望分类的结果是对于灰度值相近的同一类物体，它的方差最小，称为类内方差最小。灰度值不接近的不同类物体，它的方差大，称为类间方差最大。</p>
+
+<p>###步骤
+所以步骤总结如下：
+首先我们要形成参考图的灰度直方图，这样方便我们找到最佳阈值。
+接下来我们通过穷举每一个灰度值，计算以此为阈值的类内和类间方差。
+找到能形成类内方差最小的或类间方差最大的阈值，这个就是我们要找的最佳阈值。</p>
+
+<p>##算法
+下面以两类分割讲解下具体的算法，实际上大津算法可以分割多类出来。</p>
+
+<p>我们定义$\delta_i^2 $为第 i 类的类内方差，$\delta_w^2 $为类内方差和，$\delta_b^2 $为类间方差和；$\omega_i$为第 i 类的概率分布，t 为当前假设的阈值，p(i) 为灰度值为 i 的概率密度。则对于 2 类问题：
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ω</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msubsup><mo>∑</mo><mn>0</mn><mi>t</mi></msubsup><mi>p</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo><mspace linebreak="newline"></mspace><msubsup><mi>δ</mi><mi>w</mi><mn>2</mn></msubsup><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>i</mi><mo>=</mo><mn>2</mn></mrow></msubsup><msub><mi>ω</mi><mi>i</mi></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><msubsup><mi>δ</mi><mi>i</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\omega_1(t)=\sum_0^t p(i)
+\\
+\delta_w^2(t)= \sum _{i=1}^{i=2}\omega_i(t)\delta_i^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.233166em;vertical-align:-0.29971000000000003em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.933456em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mclose">)</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.03785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02691em;">w</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.264274em;vertical-align:-0.29971000000000003em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.964564em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-2.441336em;margin-left:-0.03785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.258664em;"><span></span></span></span></span></span></span></span></span></span>
+而最小化类内方差和最大化类间方差是相同的，即
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>δ</mi><mi>b</mi><mn>2</mn></msubsup><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>δ</mi><mn>2</mn></msup><mo>−</mo><msubsup><mi>δ</mi><mi>w</mi><mn>2</mn></msubsup><mo>=</mo><msub><mi>ω</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><msub><mi>ω</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo stretchy="false">[</mo><msub><mi>μ</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><msup><mo stretchy="false">]</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\delta_b^2(t)=\delta^2-\delta_w^2=\omega_1(t)\omega_2(t)[\mu_1(t)-\mu_2(t)]^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.097216em;vertical-align:-0.2831079999999999em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-2.4168920000000003em;margin-left:-0.03785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">b</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2831079999999999em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.061108em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.03785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02691em;">w</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mopen">[</span><span class="mord"><span class="mord mathdefault">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>
+类均值$\mu_1(t)$：
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">[</mo><msubsup><mo>∑</mo><mn>0</mn><mi>t</mi></msubsup><mi>p</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo><mo>∗</mo><mi>i</mi><mo stretchy="false">]</mo><mi mathvariant="normal">/</mi><msub><mi>ω</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\mu_1(t)=[\sum_0^t p(i)*i]/\omega_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.233166em;vertical-align:-0.29971000000000003em;"></span><span class="mopen">[</span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.933456em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">i</span><span class="mclose">]</span><span class="mord">/</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+
+<p>遍历 t 所有的可能值，找到最小$\delta_w^2$或最大$\delta_b^2$所对应的 t 值，就是我们的最佳阈值。</p>
+
+<p>##代码实现</p>
+<h3 id="c语言实现">
+<a class="anchor" href="#c%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>C语言实现</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* OTSU 算法
+ * *src 存储灰度图像，width 图像宽，height 图像长
+ * 返回最佳阈值
+ */</span>
+<span class="kt">int</span> <span class="nf">otsu</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">src</span><span class="p">,</span> <span class="kt">int</span> <span class="n">width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">height</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">histogram</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span> <span class="c1">//存储灰度直方图，这里为256色灰度</span>
+    <span class="kt">int</span> <span class="n">t</span><span class="p">,</span><span class="n">thred</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">wf</span><span class="p">,</span><span class="n">wb</span><span class="p">,</span><span class="n">ub</span><span class="p">,</span><span class="n">uf</span><span class="p">,</span><span class="n">curVal</span><span class="p">,</span><span class="n">maxVal</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">sumb</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">sumf</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">sumW</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">sumPixel</span><span class="o">=</span><span class="n">width</span><span class="o">*</span><span class="n">height</span><span class="p">;</span>
+    <span class="n">wb</span><span class="o">=</span><span class="n">wf</span><span class="o">=</span><span class="n">maxVal</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">;</span>
+    
+    <span class="c1">//求灰度直方图</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">histogram</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">histogram</span><span class="p">));</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">width</span><span class="o">*</span><span class="n">height</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">histogram</span><span class="p">[</span><span class="n">src</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">256</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">sumW</span><span class="o">+=</span><span class="n">i</span><span class="o">*</span><span class="n">histogram</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    
+    <span class="c1">//枚举每个灰度    </span>
+    <span class="k">for</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">t</span><span class="o">&lt;</span><span class="mi">256</span><span class="p">;</span><span class="n">t</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//求两类类概率密度</span>
+        <span class="n">wb</span><span class="o">+=</span><span class="n">histogram</span><span class="p">[</span><span class="n">t</span><span class="p">];</span>
+        <span class="n">wf</span><span class="o">=</span><span class="n">sumPixel</span><span class="o">-</span><span class="n">wb</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">wb</span><span class="o">==</span><span class="mi">0</span><span class="o">||</span><span class="n">wf</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">continue</span><span class="p">;</span>
+        
+        <span class="c1">//求类均值</span>
+        <span class="n">sumb</span><span class="o">+=</span><span class="n">i</span><span class="o">*</span><span class="n">histogram</span><span class="p">[</span><span class="n">t</span><span class="p">];</span>
+        <span class="n">sumf</span><span class="o">=</span><span class="n">sumW</span><span class="o">-</span><span class="n">sumb</span><span class="p">;</span>
+        <span class="n">ub</span><span class="o">=</span><span class="n">sumb</span><span class="o">/</span><span class="n">wb</span><span class="p">;</span>
+        <span class="n">uf</span><span class="o">=</span><span class="n">sumf</span><span class="o">/</span><span class="n">wf</span><span class="p">;</span>
+        
+        <span class="c1">//求当前类间方差</span>
+        <span class="n">curVal</span><span class="o">=</span><span class="n">wb</span><span class="o">*</span><span class="n">wf</span><span class="o">*</span><span class="p">(</span><span class="n">ub</span><span class="o">-</span><span class="n">uf</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">ub</span><span class="o">-</span><span class="n">uf</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">curVal</span><span class="o">&gt;</span><span class="n">maxVal</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">thred</span><span class="o">=</span><span class="n">t</span><span class="p">;</span>
+            <span class="n">maxVal</span><span class="o">=</span><span class="n">curVal</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">thred</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="invisprints/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/others/2017/12/31/%E5%A4%A7%E6%B4%A5%E7%AE%97%E6%B3%95-OTSU.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Github 探索</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

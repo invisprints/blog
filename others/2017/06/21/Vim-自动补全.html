@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Vim 自动补全 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Vim 自动补全" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Vim 自动补全" />
+<meta property="og:description" content="Vim 自动补全" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2017/06/21/Vim-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2017/06/21/Vim-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-06-21T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Vim 自动补全","@type":"BlogPosting","headline":"Vim 自动补全","dateModified":"2017-06-21T00:00:00-05:00","datePublished":"2017-06-21T00:00:00-05:00","url":"https://invisprints.github.io/blog/others/2017/06/21/Vim-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2017/06/21/Vim-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Vim 自动补全 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Vim 自动补全" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Vim 自动补全" />
+<meta property="og:description" content="Vim 自动补全" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2017/06/21/Vim-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2017/06/21/Vim-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-06-21T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Vim 自动补全","@type":"BlogPosting","headline":"Vim 自动补全","dateModified":"2017-06-21T00:00:00-05:00","datePublished":"2017-06-21T00:00:00-05:00","url":"https://invisprints.github.io/blog/others/2017/06/21/Vim-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2017/06/21/Vim-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">invisprints blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">🥳About Me</a><a class="page-link" href="/blog/search/">🔍 Search</a><a class="page-link" href="/blog/categories/">🏷️ Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Vim 自动补全</h1><p class="page-description">Vim 自动补全</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2017-06-21T00:00:00-05:00" itemprop="datePublished">
+        Jun 21, 2017
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#others">others</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#vim-自动补全">Vim 自动补全</a></li>
+</ul><h1 id="vim-自动补全">
+<a class="anchor" href="#vim-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vim 自动补全</h1>
+<p>虽然vim跟IDE相比智能补全是一个硬伤，但是对那些补全需求不那么挑剔的人，Vim的补全已经能应付绝大多数场景了。另外在非code领域的补全我还没有见过能跟Vim相抗衡的对手。</p>
+
+<p>[toc]</p>
+
+<!-- more -->
+
+<p>##触发自动补全
+常见的是用<code class="highlighter-rouge">&lt;C-p&gt;</code>和<code class="highlighter-rouge">&lt;C-n&gt;</code>，这两个命令已经能应付绝大多数的场景了。另外还有如下实用命令：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>补全类型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;C-n&gt;</code></td>
+      <td>普通关键字</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;C-x&gt;&lt;C-n&gt;</code></td>
+      <td>当前缓冲区关键字</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;C-x&gt;&lt;C-i&gt;</code></td>
+      <td>当前文件关键字</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;C-x&gt;&lt;C-]&gt;</code></td>
+      <td>标签文件关键字</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;C-x&gt;&lt;C-k&gt;</code></td>
+      <td>字典查找</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;C-x&gt;&lt;C-l&gt;</code></td>
+      <td>整行补全</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;C-x&gt;&lt;C-f&gt;</code></td>
+      <td>文件名补全</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;C-x&gt;&lt;C-o&gt;</code></td>
+      <td>全能补全</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>触发Vim的自动补全命令后，会弹出候选菜单，此时可以用<code class="highlighter-rouge">C-n</code>和<code class="highlighter-rouge">C-p</code>选择菜单下一项或上一项。</p>
+
+<p>##与自动补全菜单进行交互
+常用的有<code class="highlighter-rouge">&lt;C-n&gt;</code>, <code class="highlighter-rouge">&lt;C-p&gt;</code>, <code class="highlighter-rouge">&lt;C-e&gt;</code>。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>按键操作</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;C-n&gt;</code></td>
+      <td>使用补全列表下一个匹配项</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;C-p&gt;</code></td>
+      <td>使用补全列表上一个匹配项</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;C-e&gt;</code></td>
+      <td>退出自动补全</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>##自动补全来源
+###缓冲区列表
+缓冲区列表代表当前Vim会话打开的所有文件
+可用如下命令查看缓冲区列表</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:ls!
+</code></pre></div></div>
+
+<p>###包含文件
+通过设置<code class="highlighter-rouge">include</code>选项让Vim了解相应语言的对应提示符。</p>
+
+<p>###标签文件
+如用 ctags 建立代码库索引，一是让浏览代码变得简单，二是产生一份可用于自动补全的关键字列表。</p>
+
+<p>普通关键字补全会把上述的补全组合在一起，并生成补全建议。
+而全能补全往往配合插件使用，从而提供更高级的补全方式。</p>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="invisprints/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/others/2017/06/21/Vim-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Github 探索</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

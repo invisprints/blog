@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>计算机网络： IPv6 简述 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="计算机网络： IPv6 简述" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="计算机网络： IPv6 简述" />
+<meta property="og:description" content="计算机网络： IPv6 简述" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2017/07/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-IPv6-%E7%AE%80%E8%BF%B0.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2017/07/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-IPv6-%E7%AE%80%E8%BF%B0.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-07-23T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"计算机网络： IPv6 简述","@type":"BlogPosting","headline":"计算机网络： IPv6 简述","dateModified":"2017-07-23T00:00:00-05:00","datePublished":"2017-07-23T00:00:00-05:00","url":"https://invisprints.github.io/blog/others/2017/07/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-IPv6-%E7%AE%80%E8%BF%B0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2017/07/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-IPv6-%E7%AE%80%E8%BF%B0.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>计算机网络： IPv6 简述 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="计算机网络： IPv6 简述" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="计算机网络： IPv6 简述" />
+<meta property="og:description" content="计算机网络： IPv6 简述" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2017/07/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-IPv6-%E7%AE%80%E8%BF%B0.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2017/07/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-IPv6-%E7%AE%80%E8%BF%B0.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-07-23T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"计算机网络： IPv6 简述","@type":"BlogPosting","headline":"计算机网络： IPv6 简述","dateModified":"2017-07-23T00:00:00-05:00","datePublished":"2017-07-23T00:00:00-05:00","url":"https://invisprints.github.io/blog/others/2017/07/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-IPv6-%E7%AE%80%E8%BF%B0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2017/07/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-IPv6-%E7%AE%80%E8%BF%B0.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">invisprints blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">🥳About Me</a><a class="page-link" href="/blog/search/">🔍 Search</a><a class="page-link" href="/blog/categories/">🏷️ Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">计算机网络： IPv6 简述</h1><p class="page-description">计算机网络： IPv6 简述</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2017-07-23T00:00:00-05:00" itemprop="datePublished">
+        Jul 23, 2017
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#others">others</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#计算机网络-ipv6-简述">计算机网络： IPv6 简述</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#ipv6-与-ipv4">IPv6 与 IPv4</a></li>
+<li class="toc-entry toc-h2"><a href="#ipv4-迁移到-ipv6">IPv4 迁移到 IPv6</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#双栈">双栈</a></li>
+<li class="toc-entry toc-h3"><a href="#隧道">隧道</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h1 id="计算机网络-ipv6-简述">
+<a class="anchor" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-ipv6-%E7%AE%80%E8%BF%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>计算机网络： IPv6 简述</h1>
+<p>IPv6 作为替代 IPv4 的协议，目前正在全球高速普及，它以近乎无穷的 IP 地址数和简单高效的结构被全球各大互联网企业推广。
+<img src="http://ww1.sinaimg.cn/large/a2c78f10ly1fhu3z20yaij20i207847t.jpg" alt=""></p>
+
+<!-- more -->
+
+<p>##IPv6 来源
+开发 IPv6 的起因是因为 IPv4 不够用了，我们知道 IPv4 的 IP 地址长度为 32bit，因此最多有 2^32 种，而且在 2011 年的时候 IPv4 已经被分配完了。目前已经无法申请获得新的 IPv4 的地址了，基于此原因，IPv6 应运而生。</p>
+
+<h2 id="ipv6-与-ipv4">
+<a class="anchor" href="#ipv6-%E4%B8%8E-ipv4" aria-hidden="true"><span class="octicon octicon-link"></span></a>IPv6 与 IPv4</h2>
+<p>下面是一些 IPv6 与 IPv4 的对比。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">描述</th>
+      <th style="text-align: center">IPv4</th>
+      <th style="text-align: center">IPv6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">地址长度</td>
+      <td style="text-align: center">32位</td>
+      <td style="text-align: center">128位</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">地址数</td>
+      <td style="text-align: center">2^10</td>
+      <td style="text-align: center">2^128</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">IP 报头</td>
+      <td style="text-align: center">20~60可变长度</td>
+      <td style="text-align: center">40固定长度</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">分片/重组</td>
+      <td style="text-align: center">由发送方（主机或路由器）对其分段，以适应要传输的下一链路</td>
+      <td style="text-align: center">只能在源节点进行分段，且只能在目标节点完成重新装配。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>从上面的对比可以看出，IPv6 占用的空间更大，其可用数目也更多，而且它固定长度的报头和分片重组策略能加快数据包的处理。</p>
+
+<h2 id="ipv4-迁移到-ipv6">
+<a class="anchor" href="#ipv4-%E8%BF%81%E7%A7%BB%E5%88%B0-ipv6" aria-hidden="true"><span class="octicon octicon-link"></span></a>IPv4 迁移到 IPv6</h2>
+<p>虽然 IPv6 有诸多好处，但是目前整个互联网基本上是基于 IPv4 的，而且 IP 就像房子的基石一样，稍有不慎整栋大楼就会崩塌，所以目前 IPv6 的推广主要以下面两种形式展开。</p>
+
+<h3 id="双栈">
+<a class="anchor" href="#%E5%8F%8C%E6%A0%88" aria-hidden="true"><span class="octicon octicon-link"></span></a>双栈</h3>
+<p>这是目前最常用方法，使用该方法的 IPv6 结点还具有完整的 IPv4 实现，在于 IPv4 结点互操作时，使用 IPv4 数据报，与 IPv6 结点则使用 IPv6数据报。因此它同时具有 IPv6 和 IPv4 两种地址。
+需要注意的是，如果发送方或接收方中任意一个（包括传输路径上的）仅支持 IPv4，则必须使用 IPv4 数据报。如下图，从 A 发往 F 只能用 IPv6，其原因是 IPv6 在转换成 IPv4 时一些特定字段会丢失。
+<img src="/blog/images/media/15003459221152/15003702292579.jpg" alt=""></p>
+
+<h3 id="隧道">
+<a class="anchor" href="#%E9%9A%A7%E9%81%93" aria-hidden="true"><span class="octicon octicon-link"></span></a>隧道</h3>
+<p>这是前几年常用的方法。
+但是建隧道这个方法解决了上面双栈面临的问题。假定两个 IPv6 结点中间经过 IPv4 路由器，如上图的 B 和 E，则把中间的 IPv4 路由器的集合当成隧道。在隧道发送端的 IPv6 结点可将整个 IPv6 数据报放到一个 IPv4 数据报的数据字段中。隧道接收端的 IPv6 结点最终收到该 IPv4 数据报，在确定了数据报中含有 IPv6 数据报后，从中取出 IPv6 数据报，再为该 IPv6 数据报提供路由，如下如所示：
+<img src="/blog/images/media/15003459221152/15003783953715.jpg" alt=""></p>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="invisprints/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/others/2017/07/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-IPv6-%E7%AE%80%E8%BF%B0.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Github 探索</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

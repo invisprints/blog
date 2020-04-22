@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>macOS 下 OpenCV 环境搭建 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="macOS 下 OpenCV 环境搭建" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="macOS 下 OpenCV 环境搭建" />
+<meta property="og:description" content="macOS 下 OpenCV 环境搭建" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2017/12/16/macOS-%E4%B8%8B-OpenCV-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2017/12/16/macOS-%E4%B8%8B-OpenCV-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-12-16T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"macOS 下 OpenCV 环境搭建","@type":"BlogPosting","headline":"macOS 下 OpenCV 环境搭建","dateModified":"2017-12-16T00:00:00-06:00","datePublished":"2017-12-16T00:00:00-06:00","url":"https://invisprints.github.io/blog/others/2017/12/16/macOS-%E4%B8%8B-OpenCV-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2017/12/16/macOS-%E4%B8%8B-OpenCV-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>macOS 下 OpenCV 环境搭建 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="macOS 下 OpenCV 环境搭建" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="macOS 下 OpenCV 环境搭建" />
+<meta property="og:description" content="macOS 下 OpenCV 环境搭建" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2017/12/16/macOS-%E4%B8%8B-OpenCV-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2017/12/16/macOS-%E4%B8%8B-OpenCV-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-12-16T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"macOS 下 OpenCV 环境搭建","@type":"BlogPosting","headline":"macOS 下 OpenCV 环境搭建","dateModified":"2017-12-16T00:00:00-06:00","datePublished":"2017-12-16T00:00:00-06:00","url":"https://invisprints.github.io/blog/others/2017/12/16/macOS-%E4%B8%8B-OpenCV-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2017/12/16/macOS-%E4%B8%8B-OpenCV-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">invisprints blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">🥳About Me</a><a class="page-link" href="/blog/search/">🔍 Search</a><a class="page-link" href="/blog/categories/">🏷️ Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">macOS 下 OpenCV 环境搭建</h1><p class="page-description">macOS 下 OpenCV 环境搭建</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2017-12-16T00:00:00-06:00" itemprop="datePublished">
+        Dec 16, 2017
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#others">others</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#macos-下-opencv-环境搭建">macOS 下 OpenCV 环境搭建</a></li>
+</ul><h1 id="macos-下-opencv-环境搭建">
+<a class="anchor" href="#macos-%E4%B8%8B-opencv-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA" aria-hidden="true"><span class="octicon octicon-link"></span></a>macOS 下 OpenCV 环境搭建</h1>
+<p>因为专业的原因，需要搭建个图像处理的开发环境。上网研究了下相关资料，再结合符合中国特色社会主义的时代背景，决定在 macOS 下用 Clion 搭建 OpenCV 等图像开发环境。</p>
+
+<!-- more -->
+
+<p>##安装 Clion
+Clion 是 JetBrains 公司近几年推出的 C/C++ 跨平台 IDE，由于学生免费使用并且包含 Vim 插件，所以相对于 Xcode 神一般的操作逻辑，我最终选择了 Clion。
+有人问为什么不用我最喜欢的 Vim 骚遍全场呢，原因是 Vim 擅长处理小项目和临时打开一些文件，对于这种图像处理之类的大项目，还是用 IDE 来的方便，当然必须要有 Vim 插件！！！
+<a href="https://www.jetbrains.com/clion/">Clion 官方主页</a>
+<a href="https://www.jetbrains.com/clion/download/">下载地址</a></p>
+
+<p>##安装 OpenCV
+对于这种著名的开源的又不知道从何开始安装的鬼东西，我们一律用 HomeBrew 安装，省时省力又简单。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install opencv
+</code></pre></div></div>
+
+<p>安装的 OpenCV 版本应该是 3.3.1 或以后的。</p>
+
+<p>##创建第一个项目
+安装好后怎么用呢？其实我也不太会，照着网上的教程一步一步来呗。</p>
+
+<ol>
+  <li>用 Clion 创建一个空白项目。</li>
+  <li>
+    <p>打开 CMakeLists.txt 配置文件，增加如下语句</p>
+
+    <div class="highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> find_package(OpenCV)
+ include_directories( ${OpenCV_INCLUDE_DIRS} )
+    
+ target_link_libraries( Myexe ${OpenCV_LIBS} )
+</code></pre></div>    </div>
+
+    <p>其中 Myexe 替换成你的可执行文件的名称。</p>
+  </li>
+  <li>将图片（如 demo.png）拷贝到项目的工作目录下（你也可以不拷贝，但是下面的图片路径就需要你自己指定）。</li>
+  <li>
+    <p>在 main.cpp 中输入如下代码:</p>
+
+    <div class="language-cpp highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="cp">#include &lt;iostream&gt;
+</span> <span class="cp">#include &lt;opencv2/opencv.hpp&gt;       //调用 OpenCV 的库
+</span>    
+ <span class="k">using</span> <span class="k">namespace</span> <span class="n">cv</span><span class="p">;</span>
+    
+ <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="n">Mat</span> <span class="n">image</span><span class="p">;</span>      <span class="c1">// OpenCV 中图片格式为 Mat</span>
+    
+     <span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span> <span class="s">"../demo.png"</span><span class="p">);</span> <span class="c1">//读取图片</span>
+     <span class="k">if</span><span class="p">(</span> <span class="n">image</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="p">)</span>             <span class="c1">//检查是否读取成功</span>
+     <span class="p">{</span>
+         <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span>  <span class="s">"Could not open or find the image"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="p">;</span>
+         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="n">imshow</span><span class="p">(</span><span class="s">"demo"</span><span class="p">,</span><span class="n">image</span><span class="p">);</span>   <span class="c1">//显示图片</span>
+    
+     <span class="n">waitKey</span><span class="p">();</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>运行程序，这下我们的第一个基于 OpenCV 的工程就搭建好了！</li>
+</ol>
+
+<p>##OpenCV 进阶
+更多的内容请访问<a href="https://docs.opencv.org/master/d9/df8/tutorial_root.html">OpenCV 官网教程</a>，教程给得很详细，而且有可以练手的地方，是很好的入门教程。</p>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="invisprints/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/others/2017/12/16/macOS-%E4%B8%8B-OpenCV-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Github 探索</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

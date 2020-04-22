@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>LEDE 系统 IPV6 搭建方法 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="LEDE 系统 IPV6 搭建方法" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="LEDE 系统 IPV6 搭建方法" />
+<meta property="og:description" content="LEDE 系统 IPV6 搭建方法" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2018/01/07/LEDE-%E7%B3%BB%E7%BB%9F-IPV6-%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2018/01/07/LEDE-%E7%B3%BB%E7%BB%9F-IPV6-%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-01-07T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"LEDE 系统 IPV6 搭建方法","@type":"BlogPosting","headline":"LEDE 系统 IPV6 搭建方法","dateModified":"2018-01-07T00:00:00-06:00","datePublished":"2018-01-07T00:00:00-06:00","url":"https://invisprints.github.io/blog/others/2018/01/07/LEDE-%E7%B3%BB%E7%BB%9F-IPV6-%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2018/01/07/LEDE-%E7%B3%BB%E7%BB%9F-IPV6-%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>LEDE 系统 IPV6 搭建方法 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="LEDE 系统 IPV6 搭建方法" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="LEDE 系统 IPV6 搭建方法" />
+<meta property="og:description" content="LEDE 系统 IPV6 搭建方法" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2018/01/07/LEDE-%E7%B3%BB%E7%BB%9F-IPV6-%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2018/01/07/LEDE-%E7%B3%BB%E7%BB%9F-IPV6-%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-01-07T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"LEDE 系统 IPV6 搭建方法","@type":"BlogPosting","headline":"LEDE 系统 IPV6 搭建方法","dateModified":"2018-01-07T00:00:00-06:00","datePublished":"2018-01-07T00:00:00-06:00","url":"https://invisprints.github.io/blog/others/2018/01/07/LEDE-%E7%B3%BB%E7%BB%9F-IPV6-%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2018/01/07/LEDE-%E7%B3%BB%E7%BB%9F-IPV6-%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">invisprints blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">🥳About Me</a><a class="page-link" href="/blog/search/">🔍 Search</a><a class="page-link" href="/blog/categories/">🏷️ Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">LEDE 系统 IPV6 搭建方法</h1><p class="page-description">LEDE 系统 IPV6 搭建方法</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2018-01-07T00:00:00-06:00" itemprop="datePublished">
+        Jan 7, 2018
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#others">others</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#lede-系统-ipv6-搭建方法">LEDE 系统 IPV6 搭建方法</a></li>
+</ul><h1 id="lede-系统-ipv6-搭建方法">
+<a class="anchor" href="#lede-%E7%B3%BB%E7%BB%9F-ipv6-%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>LEDE 系统 IPV6 搭建方法</h1>
+<p>对于需要认证才能用 IPv6 的华科来说，不需要点奇技淫巧是不行的。</p>
+
+<!-- more -->
+
+<p>参考博文 <a href="https://lixingcong.github.io/2017/04/24/ipv6-nat-lede/">LEDE 下的 ipv6 NAT6</a></p>
+
+<p>看参考博文标题就知道，正常认证后是路由器能上 IPv6 网，但下游终端设备还不行。因此需要搭建 NAT 来拯救世界！</p>
+
+<p>在锐捷认证过后，路由器应该能直接上 IPv6 网了，测试一下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ping6 ipv6.google.com
+</code></pre></div></div>
+
+<p>不行的话检查是否真的连上网了。</p>
+
+<p>##安装软件包
+先安装必要软件，ip6tables 和 kmode-ipt-nat6：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>opkg install ip6tables kmod-ipt-nat6
+</code></pre></div></div>
+
+<p>##设置ULA prefix
+这步可以不做，据说做了后网站会尽量走 IPv6 通道。</p>
+
+<p>在 Network-&gt;Interface 界面下，将 ULA prefix 前缀改成 2fff::/64 内的任意网段。
+<img src="http://ww1.sinaimg.cn/large/a2c78f10ly1ffytm1wax7j21gy19rqqe.jpg" alt=""></p>
+
+<p>##宣告默认路由
+在 Network-&gt;Interface-LAN 的 DHCP Server 界面下，选择 IPv6 Settings 标签，勾选 Always announce default router
+<img src="http://ww1.sinaimg.cn/large/a2c78f10ly1felefmc7okj20ze0qgdiz.jpg" alt=""></p>
+
+<p>##宣告默认网关
+查看当前IPv6默认路由如下</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip -6 route | grep "default from"
+</code></pre></div></div>
+
+<p>若结果是这样的</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>default from [ipv6 range] via [gateway] dev [intf] proto static  metric 512
+</code></pre></div></div>
+
+<p>就需要向下一级宣告默认网关，中括号的内容请自行替换为上面结果。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip -6 r add default via [gateway] dev [intf]
+</code></pre></div></div>
+
+<p>##搭建 NAT
+利用 ip6tables 进行内网 NAT，括号内容为上面的结果</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip6tables -t nat -A POSTROUTING -o [intf] -j MASQUERADE
+</code></pre></div></div>
+
+<p>这时候终端应该就可以访问 IPv6 网站了。
+<a href="http://ipv6-test.com/">点此测试你的IPv6配置</a></p>
+
+<p>##开机自动设置 IPv6
+（可选步骤）
+在<code class="highlighter-rouge">/etc/hotplug.d/iface</code>目录下建立 90-ipv6 文件，并填入以下内容：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="c"># filename: /etc/hotplug.d/iface/90-ipv6</span>
+<span class="c"># please make sure this file has permission 644</span>
+
+<span class="c"># check if it is the intf which has a public ipv6 address like "2001:da8:100d:aaaa:485c::1/64"</span>
+<span class="nv">interface_public</span><span class="o">=</span><span class="s2">"wan6"</span>
+<span class="o">[</span> <span class="s2">"</span><span class="nv">$INTERFACE</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"</span><span class="nv">$interface_public</span><span class="s2">"</span> <span class="o">]</span> <span class="o">||</span> <span class="nb">exit </span>0
+
+<span class="nv">res</span><span class="o">=</span><span class="sb">`</span>ip <span class="nt">-6</span> route | <span class="nb">grep</span> <span class="s2">"default from"</span><span class="sb">`</span>
+<span class="nv">gateway</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$res</span> | <span class="nb">awk</span> <span class="s1">'{print $5}'</span><span class="sb">`</span>
+<span class="nv">interface</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$res</span> | <span class="nb">awk</span> <span class="s1">'{print $7}'</span><span class="sb">`</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$ACTION</span><span class="s2">"</span> <span class="o">=</span> ifup <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span>ip <span class="nt">-6</span> r add default via <span class="nv">$gateway</span> dev <span class="nv">$interface</span>
+    <span class="k">if</span> <span class="o">!(</span>ip6tables-save <span class="nt">-t</span> nat | <span class="nb">grep</span> <span class="nt">-q</span> <span class="s2">"v6NAT"</span><span class="o">)</span><span class="p">;</span> <span class="k">then
+        </span>ip6tables <span class="nt">-t</span> nat <span class="nt">-A</span> POSTROUTING <span class="nt">-o</span> <span class="nv">$interface</span> <span class="nt">-m</span> comment <span class="nt">--comment</span> <span class="s2">"v6NAT"</span> <span class="nt">-j</span> MASQUERADE
+    <span class="k">fi
+else
+    </span>ip6tables <span class="nt">-t</span> nat <span class="nt">-D</span> POSTROUTING <span class="nt">-o</span> <span class="nv">$interface</span> <span class="nt">-m</span> comment <span class="nt">--comment</span> <span class="s2">"v6NAT"</span> <span class="nt">-j</span> MASQUERADE
+    ip <span class="nt">-6</span> r del default via <span class="nv">$gateway</span> dev <span class="nv">$interface</span>
+<span class="k">fi</span>
+
+</code></pre></div></div>
+
+<p>上面的脚本使用要注意，变量 interface_pulbic 是带有公网 IPV6 地址的接口地址，比如我的是在 wan6 上，那么变量 interface_pulbic 是 wan6。
+最后记得修改权限：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod 644 /etc/hotplug.d/iface/90-ipv6
+</code></pre></div></div>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="invisprints/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/others/2018/01/07/LEDE-%E7%B3%BB%E7%BB%9F-IPV6-%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Github 探索</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

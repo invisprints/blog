@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>ssh 远程连接 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="ssh 远程连接" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ssh 远程连接" />
+<meta property="og:description" content="ssh 远程连接" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2017/02/25/ssh-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2017/02/25/ssh-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-02-25T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"ssh 远程连接","@type":"BlogPosting","headline":"ssh 远程连接","dateModified":"2017-02-25T00:00:00-06:00","datePublished":"2017-02-25T00:00:00-06:00","url":"https://invisprints.github.io/blog/others/2017/02/25/ssh-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2017/02/25/ssh-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>ssh 远程连接 | invisprints blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="ssh 远程连接" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ssh 远程连接" />
+<meta property="og:description" content="ssh 远程连接" />
+<link rel="canonical" href="https://invisprints.github.io/blog/others/2017/02/25/ssh-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5.html" />
+<meta property="og:url" content="https://invisprints.github.io/blog/others/2017/02/25/ssh-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5.html" />
+<meta property="og:site_name" content="invisprints blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-02-25T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"ssh 远程连接","@type":"BlogPosting","headline":"ssh 远程连接","dateModified":"2017-02-25T00:00:00-06:00","datePublished":"2017-02-25T00:00:00-06:00","url":"https://invisprints.github.io/blog/others/2017/02/25/ssh-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2017/02/25/ssh-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">invisprints blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">🥳About Me</a><a class="page-link" href="/blog/search/">🔍 Search</a><a class="page-link" href="/blog/categories/">🏷️ Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">ssh 远程连接</h1><p class="page-description">ssh 远程连接</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2017-02-25T00:00:00-06:00" itemprop="datePublished">
+        Feb 25, 2017
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#others">others</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#查看ssh客户端版本">查看SSH客户端版本</a></li>
+<li class="toc-entry toc-h2"><a href="#查看服务器是否安装sshserver">查看服务器是否安装sshserver</a></li>
+<li class="toc-entry toc-h2"><a href="#用ssh登录到远程主机">用SSH登录到远程主机</a></li>
+<li class="toc-entry toc-h2"><a href="#用ssh退出符切换ssh会话">用SSH退出符切换SSH会话</a></li>
+</ul><p>#ssh 远程连接
+从最易上手的开始讲，比如我们想连接一个服务器，服务器IP地址是192.168.1.1，账号username，那么我们输入如下两个命令中的一个命令即可</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh username@192.168.1.1
+ssh -l username 192.168.1.1
+</code></pre></div></div>
+
+<!-- more -->
+
+<p>如果远程服务器指定了端口，我们只需添加<code class="highlighter-rouge">-p</code>命令即可
+例如登陆极路由后台（抱歉打了软广）</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh root@192.168.199.1 -p 1022 
+</code></pre></div></div>
+
+<p>以root身份登录到IP为192.168.199.1的服务器中，连接端口为1022</p>
+
+<h2 id="查看ssh客户端版本">
+<a class="anchor" href="#%E6%9F%A5%E7%9C%8Bssh%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%88%E6%9C%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>查看SSH客户端版本</h2>
+<p>使用<code class="highlighter-rouge">ssh -V</code>命令可以得到版本号。需要注意的是，Linux和macOS一般自带的是OpenSSH。下面的例子即表明该系统正在使用OpenSSH：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ssh -V
+OpenSSH_7.3p1, LibreSSL 2.4.1
+</code></pre></div></div>
+
+<h2 id="查看服务器是否安装sshserver">
+<a class="anchor" href="#%E6%9F%A5%E7%9C%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85sshserver" aria-hidden="true"><span class="octicon octicon-link"></span></a>查看服务器是否安装sshserver</h2>
+<p>有些时候我们无法用ssh 连接远程服务器，原因可能是服务器上并没有安装ssh服务端，特别是用最小安装包安装系统时，一般都没有安装ssh服务端。</p>
+
+<p>在服务器终端输入</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh localhost
+</code></pre></div></div>
+
+<p>如果出现下面信息则没有安装sshserver</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh: connect to hostlocalhost port 22: Connection refused 
+</code></pre></div></div>
+
+<p>##安装sshserver
+ubuntu:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install openssh-server
+</code></pre></div></div>
+
+<p>安装完成后启动服务</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service ssh start
+</code></pre></div></div>
+
+<h2 id="用ssh登录到远程主机">
+<a class="anchor" href="#%E7%94%A8ssh%E7%99%BB%E5%BD%95%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA" aria-hidden="true"><span class="octicon octicon-link"></span></a>用SSH登录到远程主机</h2>
+<p>当你第一次使用ssh登录远程主机时，会出现没有找到主机密钥的提示信息。输入”yes”后，系统会将远程主机的密钥加入到你的主目录下的 <code class="highlighter-rouge">.ssh/know_hosts</code>下，这样你就可以继续操作了。
+当你第二次登陆远程主机时，只需要你输入远程主机的登录密码即可。</p>
+
+<p>##ssh无密码登入</p>
+<blockquote>
+  <p>事实再一次证明英文帮助文档常常把一个简单的功能解释的又臭又长</p>
+</blockquote>
+
+<ul>
+  <li>该方面目前适用于macOS 10.12以后的版本！！！</li>
+</ul>
+
+<p>使用命令生成ssh登录的公钥和密钥</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen -t rsa -C "uesrname@remotehost"
+</code></pre></div></div>
+
+<p>接下来按照提示完成想要的设置
+执行命令将密钥添加到Mac的keychain，其中id-rsa是你生成的密钥地址</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add -K ~/.ssh/id_rsa
+ssh-add -A 
+</code></pre></div></div>
+
+<p>编辑配置文件，在<code class="highlighter-rouge">~/.ssh/config</code>中添加如下命令</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host * 
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+</code></pre></div></div>
+
+<h2 id="用ssh退出符切换ssh会话">
+<a class="anchor" href="#%E7%94%A8ssh%E9%80%80%E5%87%BA%E7%AC%A6%E5%88%87%E6%8D%A2ssh%E4%BC%9A%E8%AF%9D" aria-hidden="true"><span class="octicon octicon-link"></span></a>用SSH退出符切换SSH会话</h2>
+<p>这个技巧非常实用。尤其是远程登陆到一台主机A，然后从A登陆到B，如果希望在A上做一些操作，还得再开一个终端，很是麻烦。
+当你使用ssh从本机登录到远程主机时，你可能希望切换到本地做一些操作，然后再重新回到远程主机。这个时候，你不需要中断ssh连接，只需要按照如下步骤操作即可：
+当你已经登录到了远程主机时，你可能想要回到本地主机进行一些操作，然后又继续回到远程主机。在这种情况下，没有必要断开远程主机的会话，你可以用下面的办法来完成：</p>
+
+<p>登入远程主机：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>localhost$ ssh -l username remotehost 已连接远程主机：
+
+remotehost$ 要临时回到本地主机，输入退出符号：`~`与`Control-Z`组合。 当你输入`~`你不会立即在屏幕上看到，当你按下`Control-Z`并且按回车之后才一起显示。如下，在远程主机中以此输入`~&lt;Control-Z&gt;`
+
+	remotehost$ ~^Z
+	[1]+ Stopped ssh -l username remotehost
+	localhost$
+</code></pre></div></div>
+
+<p>现在你已经退回到了本地主机，ssh远程客户端会话就在UNIX后台中运行，你可以向下面那样查看它：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	localhost$ jobs
+	\[1]+ Stopped ssh -l username remotehost 你可以将后台运行的ssh会话进程切换到前台，重新回到远程主机，而无需输入密码
+
+	localhost$ fg %1
+	ssh -l username remotehost
+	remotehost$
+</code></pre></div></div>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="invisprints/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/others/2017/02/25/ssh-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Github 探索</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/invisprints" title="invisprints"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
