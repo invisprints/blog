@@ -16,14 +16,14 @@ comments: true
 
 [项目官网](https://github.com/skywind3000/asyncrun.vim)
 
-##安装
+## 安装
 把 `asyncrun.vim` 丢进 `~/.vim/plugin` 或
 用 Vundle 安装，在 `vimrc` 合适位置添加下面语句
 
     	Plugin 'skywind3000/asyncrun.vim'
 
 
-##简单使用
+## 简单使用
 输入 `:AsyncRun` 后面跟其他命令就相当于在后台进行了。AsyncRun 的命令格式是
 
     :AsyncRun[!] [options] {cmd} ...
@@ -53,8 +53,8 @@ comments: true
 
 ctags 在大项目时生成较慢，让它在后台运行最适合不过，cscope 同理。此语句会让 ctags 在当前目录下生成标签。
 
-##进阶
-###项目根目录
+## 进阶
+### 项目根目录
 vim 对于项目的多级目录管理不是很好，Asyncrun 能够设置项目根目录位置，方便项目的编译等操作。
 
     :AsyncRun -cwd=<root> make
@@ -62,14 +62,14 @@ vim 对于项目的多级目录管理不是很好，Asyncrun 能够设置项目�
 
 上面的两条语句都是在项目根目录位置编译，而不是在当前工作目录处编译。其中项目根目录位置可配置。
 
-####查找根目录
+#### 查找根目录
 AsyncRun 会自动往上层查找含有 `.svn .git .hg .root .project` 的最近目录，并设置为项目根目录。如果没有找到，则自动设置当前工作目录为项目根目录。可用
 
     :echo asyncrun#get_root('%')
 
 打印项目根目录位置。
 
-####配置根目录
+#### 配置根目录
 可用如下语句告诉 AsyncRun 如何寻找根目录：
 
     :let g:asyncrun_rootmarkers = ['.svn', '.git', '.root', '.bzr', '_darcs', 'build.xml']
