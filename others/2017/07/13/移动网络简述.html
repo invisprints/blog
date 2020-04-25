@@ -136,7 +136,28 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#移动网络简述">移动网络简述</a></li>
+<li class="toc-entry toc-h1"><a href="#移动网络简述">移动网络简述</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#架构">架构</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#基站">基站</a></li>
+<li class="toc-entry toc-h3"><a href="#终端">终端</a></li>
+<li class="toc-entry toc-h3"><a href="#基础设备">基础设备</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#内部结构">内部结构</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#rlc">RLC</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#透明模式">透明模式</a></li>
+<li class="toc-entry toc-h4"><a href="#非确认模式">非确认模式</a></li>
+<li class="toc-entry toc-h4"><a href="#确认模式">确认模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul><h1 id="移动网络简述">
 <a class="anchor" href="#%E7%A7%BB%E5%8A%A8%E7%BD%91%E7%BB%9C%E7%AE%80%E8%BF%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>移动网络简述</h1>
 <p>最近在研究 4G 和 5G 协议中的 RLC 部分，分享下自己学习的东西。</p>
@@ -145,38 +166,47 @@ window.onload = wrap_img;
 
 <!-- more -->
 
-<p>##架构
-整个移动网络可以看做三个部分，基站、终端和基础设备。</p>
+<h2 id="架构">
+<a class="anchor" href="#%E6%9E%B6%E6%9E%84" aria-hidden="true"><span class="octicon octicon-link"></span></a>架构</h2>
+<p>整个移动网络可以看做三个部分，基站、终端和基础设备。</p>
 
-<p>###基站
-先解决个坑，这个简单的东西困惑了我很久。3G 基站叫 NB，LTE（4G）基站叫 eNB，5G 基站叫 gNB。
+<h3 id="基站">
+<a class="anchor" href="#%E5%9F%BA%E7%AB%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>基站</h3>
+<p>先解决个坑，这个简单的东西困惑了我很久。3G 基站叫 NB，LTE（4G）基站叫 eNB，5G 基站叫 gNB。
 基站负责无线终端的通信传输。它从无线设备接收数据并向它发送数据。</p>
 
-<p>###终端
-终端简称 UE，它就是无线设备，比如我们生活中的手机啊上网卡啊之类的。</p>
+<h3 id="终端">
+<a class="anchor" href="#%E7%BB%88%E7%AB%AF" aria-hidden="true"><span class="octicon octicon-link"></span></a>终端</h3>
+<p>终端简称 UE，它就是无线设备，比如我们生活中的手机啊上网卡啊之类的。</p>
 
-<p>###基础设备
-可以看做基站的后台，基站本身是做不了什么事情的，相关的网络传输都是由基础设备完成。</p>
+<h3 id="基础设备">
+<a class="anchor" href="#%E5%9F%BA%E7%A1%80%E8%AE%BE%E5%A4%87" aria-hidden="true"><span class="octicon octicon-link"></span></a>基础设备</h3>
+<p>可以看做基站的后台，基站本身是做不了什么事情的，相关的网络传输都是由基础设备完成。</p>
 
-<p>##内部结构
-这个主要说的是 UE 和 eNB 的内部处理结构。类似于著名的五层因特网协议栈和七层 ISO OSI 参考模型，移动网络由如下五层构成：SDAP, PDCP, RLC, MAC, PHY。
+<h2 id="内部结构">
+<a class="anchor" href="#%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84" aria-hidden="true"><span class="octicon octicon-link"></span></a>内部结构</h2>
+<p>这个主要说的是 UE 和 eNB 的内部处理结构。类似于著名的五层因特网协议栈和七层 ISO OSI 参考模型，移动网络由如下五层构成：SDAP, PDCP, RLC, MAC, PHY。
 中文名字我觉得没必要了解，了解了也是不知道什么意思。RLC 层和 MAC 层的中文名字可以说一下，因为这样有助于理解。RLC 层中文意思是无线链路层控制协议，MAC 层是媒体介入控制层。
 <img src="http://ww1.sinaimg.cn/large/a2c78f10ly1fhicut6y0fj205003vt8l.jpg" alt=""></p>
 
-<p>###RLC
-RLC 层主要负责对不同数据采用相适应的协议发送和解析，可靠的协议传输慢，传输快的数据可靠性不高，RLC 就是对这些数据分配不同协议的。
+<h3 id="rlc">
+<a class="anchor" href="#rlc" aria-hidden="true"><span class="octicon octicon-link"></span></a>RLC</h3>
+<p>RLC 层主要负责对不同数据采用相适应的协议发送和解析，可靠的协议传输慢，传输快的数据可靠性不高，RLC 就是对这些数据分配不同协议的。
 RLC 传输有三种模式，分别是透明模式（TM），非确认模式（UM）和确认模式（AM）。</p>
 
-<p>####透明模式
-这个最简单了，来什么我发送什么，不作任何处理，速度最快，但是没有任何数据的重复传输和丢失检测。</p>
+<h4 id="透明模式">
+<a class="anchor" href="#%E9%80%8F%E6%98%8E%E6%A8%A1%E5%BC%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>透明模式</h4>
+<p>这个最简单了，来什么我发送什么，不作任何处理，速度最快，但是没有任何数据的重复传输和丢失检测。</p>
 
-<p>####非确认模式
-发送端会对将要发送的数据进行分级重组，以便让每一个分组得到最大利用，同时添加了数据的顺序。
+<h4 id="非确认模式">
+<a class="anchor" href="#%E9%9D%9E%E7%A1%AE%E8%AE%A4%E6%A8%A1%E5%BC%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>非确认模式</h4>
+<p>发送端会对将要发送的数据进行分级重组，以便让每一个分组得到最大利用，同时添加了数据的顺序。
 接收端会对数据进行重排序，去除重复接收的并把数据按发送端的发送数据排好。然后再把数据交由上层处理。
 该模式速度相对于透明模式慢了不少，但是数据有了顺序并且避免了重复接收。但是由于是单项通讯，不可避免数据丢失。</p>
 
-<p>####确认模式
-发送端不仅将新数据进行分级重组发送，还会接收接收端的消息。也就是说，发送端和接收端会双向通讯。发送端会主动发送询问接收端没有收到相应的数据，如果没有发送端会重新发送数据。
+<h4 id="确认模式">
+<a class="anchor" href="#%E7%A1%AE%E8%AE%A4%E6%A8%A1%E5%BC%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>确认模式</h4>
+<p>发送端不仅将新数据进行分级重组发送，还会接收接收端的消息。也就是说，发送端和接收端会双向通讯。发送端会主动发送询问接收端没有收到相应的数据，如果没有发送端会重新发送数据。
 接收端不仅要完成数据的去重复和排序，还要向发送段发送是否丢失数据，接收发送端发来的重传数据。</p>
 
 <p>想要更深入了解直接看协议文档吧。我画了一个思维导图，估计有帮助大家理解。

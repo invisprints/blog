@@ -136,7 +136,12 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#vim-asyncrun">vim asyncrun</a></li>
+<li class="toc-entry toc-h1"><a href="#vim-asyncrun">vim asyncrun</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#安装">安装</a></li>
+<li class="toc-entry toc-h2"><a href="#简单使用">简单使用</a></li>
+</ul>
+</li>
 </ul><h1 id="vim-asyncrun">
 <a class="anchor" href="#vim-asyncrun" aria-hidden="true"><span class="octicon octicon-link"></span></a>vim asyncrun</h1>
 <p>利用 Vim8.0 新增的异步特性，可以让很多东西后台运行。瞬间 Vim 可以做很多很牛逼的事情。</p>
@@ -147,15 +152,17 @@ window.onload = wrap_img;
 
 <p><a href="https://github.com/skywind3000/asyncrun.vim">项目官网</a></p>
 
-<p>##安装
-把 <code class="highlighter-rouge">asyncrun.vim</code> 丢进 <code class="highlighter-rouge">~/.vim/plugin</code> 或
+<h2 id="安装">
+<a class="anchor" href="#%E5%AE%89%E8%A3%85" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装</h2>
+<p>把 <code class="highlighter-rouge">asyncrun.vim</code> 丢进 <code class="highlighter-rouge">~/.vim/plugin</code> 或
 用 Vundle 安装，在 <code class="highlighter-rouge">vimrc</code> 合适位置添加下面语句</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	Plugin 'skywind3000/asyncrun.vim'
 </code></pre></div></div>
 
-<p>##简单使用
-输入 <code class="highlighter-rouge">:AsyncRun</code> 后面跟其他命令就相当于在后台进行了。AsyncRun 的命令格式是</p>
+<h2 id="简单使用">
+<a class="anchor" href="#%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>简单使用</h2>
+<p>输入 <code class="highlighter-rouge">:AsyncRun</code> 后面跟其他命令就相当于在后台进行了。AsyncRun 的命令格式是</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:AsyncRun[!] [options] {cmd} ...
 </code></pre></div></div>
@@ -188,8 +195,8 @@ window.onload = wrap_img;
 
 ctags 在大项目时生成较慢，让它在后台运行最适合不过，cscope 同理。此语句会让 ctags 在当前目录下生成标签。
 
-##进阶
-###项目根目录
+## 进阶
+### 项目根目录
 vim 对于项目的多级目录管理不是很好，Asyncrun 能够设置项目根目录位置，方便项目的编译等操作。
 
     :AsyncRun -cwd=<root> make
@@ -197,14 +204,14 @@ vim 对于项目的多级目录管理不是很好，Asyncrun 能够设置项目�
 
 上面的两条语句都是在项目根目录位置编译，而不是在当前工作目录处编译。其中项目根目录位置可配置。
 
-####查找根目录
+#### 查找根目录
 AsyncRun 会自动往上层查找含有 `.svn .git .hg .root .project` 的最近目录，并设置为项目根目录。如果没有找到，则自动设置当前工作目录为项目根目录。可用
 
     :echo asyncrun#get_root('%')
 
 打印项目根目录位置。
 
-####配置根目录
+#### 配置根目录
 可用如下语句告诉 AsyncRun 如何寻找根目录：
 
     :let g:asyncrun_rootmarkers = ['.svn', '.git', '.root', '.bzr', '_darcs', 'build.xml']
