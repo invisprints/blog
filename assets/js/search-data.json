@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Motrix 1.5.7 自编译版本",
-            "content": "Motrix 1.5.7 自编译版本 . Motrix 虽然在快速开发中，但不知什么原因迟迟没有发布最新版，截止目前(2020-05-04)，Motrix 的预编译版本仍在 2019-06-24 的 1.4.1 版本，而 master 分支其实已经开发到 1.5.7 版本了。 . 下面提供我在 macOS 和 Ubuntu 平台下编译的 Motrix . 下载界面 Motrix_1.5.7_mac.zip Motrix_1.5.7.dmg Motrix_1.5.7_amd64.snap Motrix_1.5.7.AppImage Motrix_1.5.7_amd64.deb . P.S. Motrix 作者似乎想搞 GitHub Action 自动 release Motrix 软件包，但不知什么原因没有 work，有能力的小伙伴可以去提交 PR。 .",
+            "content": "Motrix 虽然在快速开发中，但不知什么原因迟迟没有发布最新版，截止目前(2020-05-04)，Motrix 的预编译版本仍在 2019-06-24 的 1.4.1 版本，而 master 分支其实已经开发到 1.5.7 版本了。 . 下面提供我在 macOS 和 Ubuntu 平台下编译的 Motrix . 下载界面 Motrix_1.5.7_mac.zip . Motrix_1.5.7.dmg . Motrix_1.5.7_amd64.snap . Motrix_1.5.7.AppImage . Motrix_1.5.7_amd64.deb . P.S. Motrix 作者似乎想搞 GitHub Action 自动 release Motrix 软件包，但不知什么原因没有 work，有能力的小伙伴可以去提交 PR。 .",
             "url": "https://invisprints.github.io/blog/apps/2020/05/04/motrix.html",
             "relUrl": "/apps/2020/05/04/motrix.html",
             "date": " • May 4, 2020"
