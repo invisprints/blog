@@ -14,6 +14,6 @@ comments: true
 
 ## 调试服务器上的代码
 
-其实方法很简单，在按着上述官网教程创建新项目、建立ssh链接、配置python编译器环境后，在 setting 设置中找到 Build, Execution, Deployment 节点，在 Deployment 标签页中设置好连接选项（一般就是修改下root path），然后在mappings中将远程路径指向远程项目所在路径。
+其实方法很简单，在按着上述官网教程创建新项目，在新建项目时选择远程 python 解释器环境环境。之后在 setting 设置检查解释器是否设置正确，没有问题的话找到 Build, Execution, Deployment 节点，在 Deployment 标签页中设置好连接选项（一般就是修改下root path），然后在mappings中将远程路径指向远程项目所在路径。
 
 待 pycharm 建立好本地与远程的映射关系后，在 Tools-Deployment 中选择 Download from，这样就可以把远程代码同步到本地。
