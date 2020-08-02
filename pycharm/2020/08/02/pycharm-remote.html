@@ -150,7 +150,7 @@ window.onload = wrap_img;
 <h2 id="调试服务器上的代码">
 <a class="anchor" href="#%E8%B0%83%E8%AF%95%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E4%BB%A3%E7%A0%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>调试服务器上的代码</h2>
 
-<p>其实方法很简单，在按着上述官网教程创建新项目、建立ssh链接、配置python编译器环境后，在 setting 设置中找到 Build, Execution, Deployment 节点，在 Deployment 标签页中设置好连接选项（一般就是修改下root path），然后在mappings中将远程路径指向远程项目所在路径。</p>
+<p>其实方法很简单，在按着上述官网教程创建新项目，在新建项目时选择远程 python 解释器环境环境。之后在 setting 设置检查解释器是否设置正确，没有问题的话找到 Build, Execution, Deployment 节点，在 Deployment 标签页中设置好连接选项（一般就是修改下root path），然后在mappings中将远程路径指向远程项目所在路径。</p>
 
 <p>待 pycharm 建立好本地与远程的映射关系后，在 Tools-Deployment 中选择 Download from，这样就可以把远程代码同步到本地。</p>
 
