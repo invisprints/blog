@@ -5,6 +5,7 @@ description: 打开 macOS 上的 App 后，让 1Password 自动找到对应的�
 categories: [apps]
 title: 1Password 使用技巧
 comments: true
+image: https://blog.1password.com/posts/2020/big-sur-autofill/header.png
 ---
 
 1Password 是一款非常好用的密码管理软件，虽然有着高昂的订阅价格，但其美观的设计和丰富的功能吸引了大批忠实用户。
