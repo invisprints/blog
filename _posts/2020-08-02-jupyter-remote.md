@@ -7,7 +7,7 @@ title: 远程连接 Jupyter lab/notebook
 comments: true
 ---
 
-### **直接连接**
+### 直接连接
 
 首先运行远程的 Jupyter Lab 或者 Jupyter Notebook
 
@@ -34,7 +34,7 @@ ssh -f usr@remote_server -N -L port_num:localhost:port_num
 
 在本地浏览器中打开之前记下的 jupyter 地址，即可使用 JupyterLab。
 
-### **跳转连接**
+### 跳转连接
 （未测试）
 有时需要先登录某个中转服务器，才能登录到你想要的服务器。这时候与前者类似，只是需要多建立一层ssh连接。首先建立与中转服务器的连接
 
