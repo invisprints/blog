@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-10-25T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"三元表稀疏矩阵转置[^foot_note]","@type":"BlogPosting","headline":"三元表稀疏矩阵转置[^foot_note]","dateModified":"2016-10-25T00:00:00-05:00","datePublished":"2016-10-25T00:00:00-05:00","url":"https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html"},"@context":"https://schema.org"}</script>
+{"headline":"三元表稀疏矩阵转置[^foot_note]","dateModified":"2016-10-25T00:00:00-05:00","description":"三元表稀疏矩阵转置[^foot_note]","datePublished":"2016-10-25T00:00:00-05:00","@type":"BlogPosting","url":"https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-10-25T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"三元表稀疏矩阵转置[^foot_note]","@type":"BlogPosting","headline":"三元表稀疏矩阵转置[^foot_note]","dateModified":"2016-10-25T00:00:00-05:00","datePublished":"2016-10-25T00:00:00-05:00","url":"https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html"},"@context":"https://schema.org"}</script>
+{"headline":"三元表稀疏矩阵转置[^foot_note]","dateModified":"2016-10-25T00:00:00-05:00","description":"三元表稀疏矩阵转置[^foot_note]","datePublished":"2016-10-25T00:00:00-05:00","@type":"BlogPosting","url":"https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/others/2016/10/25/%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE-foot_note.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -144,7 +144,7 @@ window.onload = wrap_img;
 </ul>
 </li>
 </ul><h1 id="三元表稀疏矩阵转置">
-<a class="anchor" href="#%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>三元表稀疏矩阵转置<sup id="fnref:foot_note"><a href="#fn:foot_note" class="footnote">1</a></sup>
+<a class="anchor" href="#%E4%B8%89%E5%85%83%E8%A1%A8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>三元表稀疏矩阵转置<sup id="fnref:foot_note" role="doc-noteref"><a href="#fn:foot_note" class="footnote">1</a></sup>
 </h1>
 
 <blockquote>
@@ -204,10 +204,10 @@ cpot[col]=cpot[col-1]+num[col-1];
 <p>###灵感分析
 在稀疏矩阵中有一种表示方法，它只记录每一行的个数和每一行开始的位置，在实现过程中的思路跟方法二一样</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:foot_note">
-      <p>本文在清华出版社出版的数据结构基础上结合个人经验完成 <a href="#fnref:foot_note" class="reversefootnote">↩</a></p>
+    <li id="fn:foot_note" role="doc-endnote">
+      <p>本文在清华出版社出版的数据结构基础上结合个人经验完成 <a href="#fnref:foot_note" class="reversefootnote" role="doc-backlink">↩</a></p>
     </li>
   </ol>
 </div>
