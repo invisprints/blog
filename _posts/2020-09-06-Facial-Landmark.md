@@ -1,9 +1,10 @@
 ---
 toc: true
 layout: post
-description: 自己编译 code server，在网页上进行远程开发
-categories: [apps]
+description: 人脸关键点检测简述
+categories: [computer vision, keypoints]
 title: 人脸关键点检测
+hide: true
 comments: true
 ---
 
