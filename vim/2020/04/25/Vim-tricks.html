@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="twitter:card" content="summary" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Vim: 小技巧 | invisprints blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Vim: 小技巧" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Vim: 小技巧" />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-25T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Vim: 小技巧","dateModified":"2020-04-25T00:00:00-05:00","description":"Vim: 小技巧","datePublished":"2020-04-25T00:00:00-05:00","@type":"BlogPosting","url":"https://invisprints.github.io/blog/vim/2020/04/25/Vim-tricks.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/vim/2020/04/25/Vim-tricks.html"},"@context":"https://schema.org"}</script>
+{"description":"Vim: 小技巧","url":"https://invisprints.github.io/blog/vim/2020/04/25/Vim-tricks.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/vim/2020/04/25/Vim-tricks.html"},"headline":"Vim: 小技巧","dateModified":"2020-04-25T00:00:00-05:00","datePublished":"2020-04-25T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -24,34 +24,12 @@
 
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
 
-<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Vim: 小技巧 | invisprints blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Vim: 小技巧" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Vim: 小技巧" />
-<meta property="og:description" content="Vim: 小技巧" />
-<link rel="canonical" href="https://invisprints.github.io/blog/vim/2020/04/25/Vim-tricks.html" />
-<meta property="og:url" content="https://invisprints.github.io/blog/vim/2020/04/25/Vim-tricks.html" />
-<meta property="og:site_name" content="invisprints blog" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-04-25T00:00:00-05:00" />
-<script type="application/ld+json">
-{"headline":"Vim: 小技巧","dateModified":"2020-04-25T00:00:00-05:00","description":"Vim: 小技巧","datePublished":"2020-04-25T00:00:00-05:00","@type":"BlogPosting","url":"https://invisprints.github.io/blog/vim/2020/04/25/Vim-tricks.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/vim/2020/04/25/Vim-tricks.html"},"@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
-
-
-
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement( document.body, {
@@ -184,40 +162,40 @@ window.onload = wrap_img;
   <li>\^M 输入方法： ctrl+V ,ctrl+M</li>
 </ol>
 
-<p>若要将<code class="highlighter-rouge">^M</code>换成回车，则输入下面语句</p>
+<p>若要将<code class="language-plaintext highlighter-rouge">^M</code>换成回车，则输入下面语句</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:%s/^M/[ctrl-v]+[enter]/g
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:%s/^M/[ctrl-v]+[enter]/g
 </code></pre></div></div>
 
 <p>或</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:%s/^M/\r/g
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:%s/^M/\r/g
 </code></pre></div></div>
 
-<p>若想查找回车，用户<code class="highlighter-rouge">\n</code>代替<code class="highlighter-rouge">\r</code>。</p>
+<p>若想查找回车，用户<code class="language-plaintext highlighter-rouge">\n</code>代替<code class="language-plaintext highlighter-rouge">\r</code>。</p>
 
 <h2 id="转换文件格式">
 <a class="anchor" href="#%E8%BD%AC%E6%8D%A2%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>转换文件格式</h2>
 <p>通过输入下面命令查看 vim 支持格式：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set fileformats
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set fileformats
 </code></pre></div></div>
 
 <p>转换：
 dos-&gt;unix:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set ff=unix
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set ff=unix
 </code></pre></div></div>
 
 <p>unix-&gt;dos:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set ff=dos
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set ff=dos
 </code></pre></div></div>
 
 <h2 id="自动补全">
 <a class="anchor" href="#%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>自动补全</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Ctrl-x&gt;&lt;Ctrl-k&gt;:字典查找 需要运行`:set spell`启动补全
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Ctrl-x&gt;&lt;Ctrl-k&gt;:字典查找 需要运行`:set spell`启动补全
 
 &lt;Ctrl-x&gt;&lt;Ctrl-l&gt;：整行补全
 </code></pre></div></div>
@@ -239,9 +217,9 @@ dos-&gt;unix:</p>
 <p>我选用syntax来定义折叠，这种方式比较简单，但是当配置完这个值后，你打开代码，就会发现vim默认把所有代码都折叠了，这显然不是我想要的，设置foldlevelstart为99后，打开默认没有折叠。</p>
 
 <div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"使用语法高亮定义代码折叠</span>
-<span class="k">set</span> foldmethod<span class="p">=</span>syntax
+<span class="k">set</span> <span class="nb">foldmethod</span><span class="p">=</span><span class="nb">syntax</span>
 <span class="c">"打开文件是默认不折叠代码</span>
-<span class="k">set</span> foldlevelstart<span class="p">=</span><span class="m">99</span>
+<span class="k">set</span> <span class="nb">foldlevelstart</span><span class="p">=</span><span class="m">99</span>
 </code></pre></div></div>
 
 <p>这里提供最简单的折叠命令：
@@ -251,7 +229,7 @@ za 打开/关闭折叠互相切换</p>
 
 <h2 id="不离开插入模式粘贴寄存器中的内容">
 <a class="anchor" href="#%E4%B8%8D%E7%A6%BB%E5%BC%80%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F%E7%B2%98%E8%B4%B4%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>不离开插入模式，粘贴寄存器中的内容</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;C-r&gt;0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;C-r&gt;0
 </code></pre></div></div>
 
 <h2 id="深入理解寄存器">
@@ -261,14 +239,14 @@ za 打开/关闭折叠互相切换</p>
 <h2 id="转换单词大小写">
 <a class="anchor" href="#%E8%BD%AC%E6%8D%A2%E5%8D%95%E8%AF%8D%E5%A4%A7%E5%B0%8F%E5%86%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>转换单词大小写</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:guaw
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:guaw
 :gUaw
 </code></pre></div></div>
 
 <h2 id="替换">
 <a class="anchor" href="#%E6%9B%BF%E6%8D%A2" aria-hidden="true"><span class="octicon octicon-link"></span></a>替换</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>：%s/[1]/[2]/gc %：范围为整个文件，否则为当前行 [1]:查找内容，为空则为上次查找的内容 [2]:替换内容 g：作用于一行所有匹配项，否则为一行第一项 c：手动确认
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>：%s/[1]/[2]/gc %：范围为整个文件，否则为当前行 [1]:查找内容，为空则为上次查找的内容 [2]:替换内容 g：作用于一行所有匹配项，否则为一行第一项 c：手动确认
 </code></pre></div></div>
 
 <h2 id="文本排序">
@@ -276,89 +254,89 @@ za 打开/关闭折叠互相切换</p>
 
 <p>假设对下面内容进行排序</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>first name,last name,email
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>first name,last name,email
 john,smith,john@example.com
 drew,neil,drew@vimcasts.org
 jane,doe,jane@example.com
 </code></pre></div></div>
 
-<p>假设我们想基于第二个字段”last name”来重排这些记录。我们可以用<code class="highlighter-rouge">-t',' k2</code>参数进行排序（有关sort的具体命令请在命令行输入<code class="highlighter-rouge">man sort</code>查阅），由于文件的第一行是标题信息，我们想把它们保留的文件顶部，因此需要用到范围<code class="highlighter-rouge">:2,$</code>指定范围</p>
+<p>假设我们想基于第二个字段”last name”来重排这些记录。我们可以用<code class="language-plaintext highlighter-rouge">-t',' k2</code>参数进行排序（有关sort的具体命令请在命令行输入<code class="language-plaintext highlighter-rouge">man sort</code>查阅），由于文件的第一行是标题信息，我们想把它们保留的文件顶部，因此需要用到范围<code class="language-plaintext highlighter-rouge">:2,$</code>指定范围</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:2,$!sort -t',' -k2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:2,$!sort -t',' -k2
 </code></pre></div></div>
 
 <h3 id="相关知识">
 <a class="anchor" href="#%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>相关知识</h3>
-<p>这个是在vim中运行Shell命令的一个用法。当给定一个范围时，<code class="highlighter-rouge">:!{cmd}</code>命令具有特殊含义，由[range]所指定的行会传给{cmd}作为标准输入，又会用{cmd}的输出覆盖[range]内原本的内容</p>
+<p>这个是在vim中运行Shell命令的一个用法。当给定一个范围时，<code class="language-plaintext highlighter-rouge">:!{cmd}</code>命令具有特殊含义，由[range]所指定的行会传给{cmd}作为标准输入，又会用{cmd}的输出覆盖[range]内原本的内容</p>
 
 <h2 id="数字加减">
 <a class="anchor" href="#%E6%95%B0%E5%AD%97%E5%8A%A0%E5%87%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>数字加减</h2>
 <p>在普通模式下光标指向该数字，按</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctrl-a  //加1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctrl-a  //加1
 ctrl-x  //减1
 </code></pre></div></div>
 
 <h2 id="选中单词">
 <a class="anchor" href="#%E9%80%89%E4%B8%AD%E5%8D%95%E8%AF%8D" aria-hidden="true"><span class="octicon octicon-link"></span></a>选中单词</h2>
-<p><code class="highlighter-rouge">aw</code>这个命令可以表示选中单词的意思，如
+<p><code class="language-plaintext highlighter-rouge">aw</code>这个命令可以表示选中单词的意思，如
 复制单词</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yaw
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yaw
 </code></pre></div></div>
 
 <p>转换大写</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gUaw
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gUaw
 </code></pre></div></div>
 
 <h2 id="vim多文件搜索字符串">
 <a class="anchor" href="#vim%E5%A4%9A%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%AD%97%E7%AC%A6%E4%B8%B2" aria-hidden="true"><span class="octicon octicon-link"></span></a>vim多文件搜索字符串</h2>
 <h3 id="vimgrep">
 <a class="anchor" href="#vimgrep" aria-hidden="true"><span class="octicon octicon-link"></span></a>vimgrep</h3>
-<p>vim自带的<code class="highlighter-rouge">vimgrep</code>命令除了搜索速度慢，其他的都很好用
+<p>vim自带的<code class="language-plaintext highlighter-rouge">vimgrep</code>命令除了搜索速度慢，其他的都很好用
 vimgrep命令格式如下:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vimgrep /搜索字符串/gj 文件
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vimgrep /搜索字符串/gj 文件
 </code></pre></div></div>
 
-<p>上面的<code class="highlighter-rouge">g</code>和<code class="highlighter-rouge">j</code>参数都是可选的,</p>
+<p>上面的<code class="language-plaintext highlighter-rouge">g</code>和<code class="language-plaintext highlighter-rouge">j</code>参数都是可选的,</p>
 
 <ul>
-  <li>/g : 加上g参数的话, 如果一行有多个匹配, 那么这些匹配会都出现在搜索结果里, 所以一般不用加<code class="highlighter-rouge">/g</code>参数;</li>
-  <li>/j : 如果不加j参数, 执行完vimgrep会自动跳转到第一个匹配处, 所以一般都会加上<code class="highlighter-rouge">/j</code>参数;</li>
+  <li>/g : 加上g参数的话, 如果一行有多个匹配, 那么这些匹配会都出现在搜索结果里, 所以一般不用加<code class="language-plaintext highlighter-rouge">/g</code>参数;</li>
+  <li>/j : 如果不加j参数, 执行完vimgrep会自动跳转到第一个匹配处, 所以一般都会加上<code class="language-plaintext highlighter-rouge">/j</code>参数;</li>
 </ul>
 
-<p>比如<code class="highlighter-rouge">vimgrep /keyword/j *.php</code>表示仅在当前目录下的所有php文件里搜索”keyword”, 且不自动跳转到搜索结果.
-如果也要在子目录递归搜索, <code class="highlighter-rouge">**</code>表示在当前目录以及子目录递归, 比如<code class="highlighter-rouge">**/*.php</code></p>
+<p>比如<code class="language-plaintext highlighter-rouge">vimgrep /keyword/j *.php</code>表示仅在当前目录下的所有php文件里搜索”keyword”, 且不自动跳转到搜索结果.
+如果也要在子目录递归搜索, <code class="language-plaintext highlighter-rouge">**</code>表示在当前目录以及子目录递归, 比如<code class="language-plaintext highlighter-rouge">**/*.php</code></p>
 
 <p>一些栗子:</p>
 
 <ul>
-  <li>当前目录下递归搜索: <code class="highlighter-rouge">vimgrep /字符串/j **/*.php</code>
+  <li>当前目录下递归搜索: <code class="language-plaintext highlighter-rouge">vimgrep /字符串/j **/*.php</code>
 </li>
-  <li>仅当前目录, 不递归: <code class="highlighter-rouge">vimgrep /字符串/g *.php</code>
+  <li>仅当前目录, 不递归: <code class="language-plaintext highlighter-rouge">vimgrep /字符串/g *.php</code>
 </li>
-  <li>如果要搜索多个文件扩展名, 用空格分开即可: <code class="highlighter-rouge">vimgrep /字符串/j **/*.cpp **/*.php</code>
+  <li>如果要搜索多个文件扩展名, 用空格分开即可: <code class="language-plaintext highlighter-rouge">vimgrep /字符串/j **/*.cpp **/*.php</code>
 </li>
-  <li>Linux绝对路径, 递归搜索: <code class="highlighter-rouge">vimgrep /字符串/j /home/user/**/*.cpp</code>
+  <li>Linux绝对路径, 递归搜索: <code class="language-plaintext highlighter-rouge">vimgrep /字符串/j /home/user/**/*.cpp</code>
 </li>
-  <li>Win绝对路径, 递归搜索: <code class="highlighter-rouge">vimgrep /字符串/j D:\home\user/**/*.cpp</code>
+  <li>Win绝对路径, 递归搜索: <code class="language-plaintext highlighter-rouge">vimgrep /字符串/j D:\home\user/**/*.cpp</code>
 </li>
 </ul>
 
-<p>搜索完成后vim会将搜索结果存放在quickfix中，输入命令<code class="highlighter-rouge">:cw</code>即可打开quickfix</p>
+<p>搜索完成后vim会将搜索结果存放在quickfix中，输入命令<code class="language-plaintext highlighter-rouge">:cw</code>即可打开quickfix</p>
 
 <h2 id="搜索">
 <a class="anchor" href="#%E6%90%9C%E7%B4%A2" aria-hidden="true"><span class="octicon octicon-link"></span></a>搜索</h2>
 <h3 id="不区分大小写">
 <a class="anchor" href="#%E4%B8%8D%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>不区分大小写</h3>
-<p>在最后面添加<code class="highlighter-rouge">\c</code>，如</p>
+<p>在最后面添加<code class="language-plaintext highlighter-rouge">\c</code>，如</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/goodday\c
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/goodday\c
 </code></pre></div></div>
 
-<p>就可以搜索到<code class="highlighter-rouge">GoodDay</code>，<code class="highlighter-rouge">goodday</code>等字符串</p>
+<p>就可以搜索到<code class="language-plaintext highlighter-rouge">GoodDay</code>，<code class="language-plaintext highlighter-rouge">goodday</code>等字符串</p>
 
 
   </div>

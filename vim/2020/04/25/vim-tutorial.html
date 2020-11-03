@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="twitter:card" content="summary" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Vim 搭建教程 | invisprints blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Vim 搭建教程" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="搭建一个轻量、少插件的 vim 终端环境" />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-25T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Vim 搭建教程","dateModified":"2020-04-25T00:00:00-05:00","description":"搭建一个轻量、少插件的 vim 终端环境","datePublished":"2020-04-25T00:00:00-05:00","@type":"BlogPosting","url":"https://invisprints.github.io/blog/vim/2020/04/25/vim-tutorial.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/vim/2020/04/25/vim-tutorial.html"},"@context":"https://schema.org"}</script>
+{"description":"搭建一个轻量、少插件的 vim 终端环境","url":"https://invisprints.github.io/blog/vim/2020/04/25/vim-tutorial.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/vim/2020/04/25/vim-tutorial.html"},"headline":"Vim 搭建教程","dateModified":"2020-04-25T00:00:00-05:00","datePublished":"2020-04-25T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -24,34 +24,12 @@
 
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
 
-<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Vim 搭建教程 | invisprints blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Vim 搭建教程" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="搭建一个轻量、少插件的 vim 终端环境" />
-<meta property="og:description" content="搭建一个轻量、少插件的 vim 终端环境" />
-<link rel="canonical" href="https://invisprints.github.io/blog/vim/2020/04/25/vim-tutorial.html" />
-<meta property="og:url" content="https://invisprints.github.io/blog/vim/2020/04/25/vim-tutorial.html" />
-<meta property="og:site_name" content="invisprints blog" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-04-25T00:00:00-05:00" />
-<script type="application/ld+json">
-{"headline":"Vim 搭建教程","dateModified":"2020-04-25T00:00:00-05:00","description":"搭建一个轻量、少插件的 vim 终端环境","datePublished":"2020-04-25T00:00:00-05:00","@type":"BlogPosting","url":"https://invisprints.github.io/blog/vim/2020/04/25/vim-tutorial.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/vim/2020/04/25/vim-tutorial.html"},"@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
-
-
-
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement( document.body, {
@@ -166,18 +144,18 @@ window.onload = wrap_img;
 <h2 id="搭建">
 <a class="anchor" href="#%E6%90%AD%E5%BB%BA" aria-hidden="true"><span class="octicon octicon-link"></span></a>搭建</h2>
 <ol>
-  <li>下载<code class="highlighter-rouge">.vimrc</code>配置文件</li>
+  <li>下载<code class="language-plaintext highlighter-rouge">.vimrc</code>配置文件</li>
   <li>安装 Plug 插件管理器</li>
   <li>安装插件</li>
   <li>开始远程编辑</li>
 </ol>
 
-<p>这是笔者多年经验精简下来的<code class="highlighter-rouge">.vimrc</code>配置文件，没有多余的快捷键配置，零上手难度。</p>
+<p>这是笔者多年经验精简下来的<code class="language-plaintext highlighter-rouge">.vimrc</code>配置文件，没有多余的快捷键配置，零上手难度。</p>
 
 <div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">" Configuration file for vim</span>
 <span class="c">" Normally we use vim-extensions. If you want true vi-compatibility</span>
 <span class="c">" remove change the following statements</span>
-<span class="k">set</span> nocompatible              " 去除VI一致性<span class="p">,</span>必须
+<span class="k">set</span> <span class="nb">nocompatible</span>              " 去除VI一致性<span class="p">,</span>必须
 
 <span class="c">"===========设置包括vundle=========</span>
 <span class="k">call</span> plug#begin<span class="p">(</span><span class="s1">'~/.vim/plugged'</span><span class="p">)</span>
@@ -187,7 +165,7 @@ window.onload = wrap_img;
 	Plug <span class="s1">'joshdick/onedark.vim'</span>
 	Plug <span class="s1">'neoclide/coc.nvim'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'branch'</span><span class="p">:</span> <span class="s1">'release'</span><span class="p">}</span>
 <span class="c">" 你的所有插件需要在下面这行之前</span>
-<span class="k">call</span> plug#<span class="k">end</span><span class="p">()</span>            " 必须
+<span class="k">call</span> plug#end<span class="p">()</span>            " 必须
 <span class="c">"</span>
 <span class="c">" 简要帮助文档</span>
 <span class="c">" :PluginList       - 列出所有已配置的插件</span>
@@ -196,31 +174,31 @@ window.onload = wrap_img;
 <span class="c">" :PluginClean      - 清除未使用插件,需要确认; 追加 `!` 自动批准移除未使用插件</span>
 
 <span class="c">"=======主题等设置========</span>
-syntax <span class="k">on</span>
+<span class="nb">syntax</span> <span class="k">on</span>
 <span class="k">colorscheme</span> onedark
 
-<span class="k">set</span> hlsearch  "高亮匹配项
-<span class="k">set</span> autoindent                " always <span class="k">set</span> autoindenting <span class="k">on</span>
+<span class="k">set</span> <span class="nb">hlsearch</span>  "高亮匹配项
+<span class="k">set</span> <span class="nb">autoindent</span>                " always <span class="k">set</span> autoindenting <span class="k">on</span>
 <span class="k">set</span> <span class="k">nu</span>        " 显示行号
-<span class="k">set</span> relativenumber   " 相对行号
-<span class="k">set</span> showmatch        " 设置匹配模式，显示匹配的括号
-<span class="k">set</span> tabstop<span class="p">=</span><span class="m">4</span>        " 设置制表符<span class="p">(</span>tab键<span class="p">)</span>的宽度
-<span class="k">set</span> softtabstop<span class="p">=</span><span class="m">4</span>     " 设置软制表符的宽度
-<span class="k">set</span> shiftwidth<span class="p">=</span><span class="m">4</span>    " <span class="p">(</span>自动<span class="p">)</span> 缩进使用的<span class="m">4</span>个空格
-<span class="k">set</span> scrolloff<span class="p">=</span><span class="m">3</span>		"保持最后<span class="m">3</span>行可见
-<span class="k">set</span> guifont<span class="p">=</span>SourceCodeProForPowerline<span class="p">-</span>Regular<span class="p">:</span>h16
-<span class="k">set</span> backspace<span class="p">=</span>indent<span class="p">,</span>eol<span class="p">,</span><span class="k">start</span>
-<span class="k">set</span> cursorline "高亮当前行
-<span class="k">set</span> cursorcolumn "高亮当前列
+<span class="k">set</span> <span class="nb">relativenumber</span>   " 相对行号
+<span class="k">set</span> <span class="nb">showmatch</span>        " 设置匹配模式，显示匹配的括号
+<span class="k">set</span> <span class="nb">tabstop</span><span class="p">=</span><span class="m">4</span>        " 设置制表符<span class="p">(</span>tab键<span class="p">)</span>的宽度
+<span class="k">set</span> <span class="nb">softtabstop</span><span class="p">=</span><span class="m">4</span>     " 设置软制表符的宽度
+<span class="k">set</span> <span class="nb">shiftwidth</span><span class="p">=</span><span class="m">4</span>    " <span class="p">(</span>自动<span class="p">)</span> 缩进使用的<span class="m">4</span>个空格
+<span class="k">set</span> <span class="nb">scrolloff</span><span class="p">=</span><span class="m">3</span>		"保持最后<span class="m">3</span>行可见
+<span class="k">set</span> <span class="nb">guifont</span><span class="p">=</span>SourceCodeProForPowerline<span class="p">-</span>Regular<span class="p">:</span>h16
+<span class="k">set</span> <span class="nb">backspace</span><span class="p">=</span><span class="nb">indent</span><span class="p">,</span><span class="nb">eol</span><span class="p">,</span>start
+<span class="k">set</span> <span class="nb">cursorline</span> "高亮当前行
+<span class="k">set</span> <span class="nb">cursorcolumn</span> "高亮当前列
 
 <span class="c">"=====系统设置=====</span>
-<span class="k">set</span> foldmethod<span class="p">=</span>indent  "使用缩进定义代码折叠
+<span class="k">set</span> <span class="nb">foldmethod</span><span class="p">=</span><span class="nb">indent</span>  "使用缩进定义代码折叠
 
-<span class="k">set</span> foldlevelstart<span class="p">=</span><span class="m">99</span> "默认代码不折叠
+<span class="k">set</span> <span class="nb">foldlevelstart</span><span class="p">=</span><span class="m">99</span> "默认代码不折叠
 <span class="c">"set tags=tags; "不断递归向上查找tags</span>
-<span class="k">set</span> showcmd    "显示正在输入的命令
-<span class="k">set</span> clipboard<span class="p">=</span>unnamed "共用系统剪贴板 ubuntu<span class="p">:</span>unnamedplus
-<span class="k">set</span> fileencodings<span class="p">=</span>ucs<span class="p">-</span>bom<span class="p">,</span>utf<span class="m">-8</span><span class="p">,</span>cp936<span class="p">,</span>gb18030<span class="p">,</span>big5<span class="p">,</span>euc<span class="p">-</span>jp<span class="p">,</span>euc<span class="p">-</span>kr<span class="p">,</span>latin1
+<span class="k">set</span> <span class="nb">showcmd</span>    "显示正在输入的命令
+<span class="k">set</span> <span class="nb">clipboard</span><span class="p">=</span>unnamed "共用系统剪贴板 ubuntu<span class="p">:</span>unnamedplus
+<span class="k">set</span> <span class="nb">fileencodings</span><span class="p">=</span>ucs<span class="p">-</span>bom<span class="p">,</span>utf<span class="m">-8</span><span class="p">,</span>cp936<span class="p">,</span>gb18030<span class="p">,</span>big5<span class="p">,</span>euc<span class="p">-</span>jp<span class="p">,</span>euc<span class="p">-</span>kr<span class="p">,</span>latin1
 
 <span class="c">"===插件配置====</span>
 <span class="c">"====tagbar</span>

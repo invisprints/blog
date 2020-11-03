@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="twitter:card" content="summary" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>KMP 算法 | invisprints blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="KMP 算法" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="KMP 算法" />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-11-13T00:00:00-06:00" />
 <script type="application/ld+json">
-{"headline":"KMP 算法","dateModified":"2016-11-13T00:00:00-06:00","description":"KMP 算法","datePublished":"2016-11-13T00:00:00-06:00","@type":"BlogPosting","url":"https://invisprints.github.io/blog/algorithm/2016/11/13/KMP-%E7%AE%97%E6%B3%95.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/algorithm/2016/11/13/KMP-%E7%AE%97%E6%B3%95.html"},"@context":"https://schema.org"}</script>
+{"description":"KMP 算法","url":"https://invisprints.github.io/blog/algorithm/2016/11/13/KMP-%E7%AE%97%E6%B3%95.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/algorithm/2016/11/13/KMP-%E7%AE%97%E6%B3%95.html"},"headline":"KMP 算法","dateModified":"2016-11-13T00:00:00-06:00","datePublished":"2016-11-13T00:00:00-06:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -24,34 +24,12 @@
 
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
 
-<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>KMP 算法 | invisprints blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="KMP 算法" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="KMP 算法" />
-<meta property="og:description" content="KMP 算法" />
-<link rel="canonical" href="https://invisprints.github.io/blog/algorithm/2016/11/13/KMP-%E7%AE%97%E6%B3%95.html" />
-<meta property="og:url" content="https://invisprints.github.io/blog/algorithm/2016/11/13/KMP-%E7%AE%97%E6%B3%95.html" />
-<meta property="og:site_name" content="invisprints blog" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-11-13T00:00:00-06:00" />
-<script type="application/ld+json">
-{"headline":"KMP 算法","dateModified":"2016-11-13T00:00:00-06:00","description":"KMP 算法","datePublished":"2016-11-13T00:00:00-06:00","@type":"BlogPosting","url":"https://invisprints.github.io/blog/algorithm/2016/11/13/KMP-%E7%AE%97%E6%B3%95.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/algorithm/2016/11/13/KMP-%E7%AE%97%E6%B3%95.html"},"@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
-
-
-
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement( document.body, {
@@ -167,7 +145,7 @@ KMP算法是我遇到的第一个看了算法导论和网上一些资料后还�
 
 <p>出于对Matrix67大神的崇拜，直接引用他的例子说事。当前有两个字符串A=”abababaababacb”，B=”ababacb”，首先看看朴素算法是怎么工作的。我们用两个指针i和j分别表示，A[i-j+ 1..i]与B[1..j]完全相等。刚开始我们先从i=j=1开始比较，当我们发现i=j=5时，A和B的下一个字符就不相等了。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i = 1 2 3 4 5 6 7 8 9 ……
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i = 1 2 3 4 5 6 7 8 9 ……
 A = a b a b a b a a b a b …
 B = a b a b a c b
 j = 1 2 3 4 5 6 7
@@ -175,7 +153,7 @@ j = 1 2 3 4 5 6 7
 
 <p>那么此时我们就要把i倒退回i=2，j倒退回j=1重新开始比较。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i = 1 2 3 4 5 6 7 8 9 ……
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i = 1 2 3 4 5 6 7 8 9 ……
 A = a b a b a b a a b a b …
   B = a b a b a c b
   j = 1 2 3 4 5 6 7
@@ -254,7 +232,7 @@ KMP算法高效解决了字符串匹配中不断回退的问题，也就是上�
 
 <p>我们看一看当 i=j=5时的情况。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i = 1 2 3 4 5 6 7 8 9 ……
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i = 1 2 3 4 5 6 7 8 9 ……
 A = a b a b a b a a b a b …
 B = a b a b a c b
 j = 1 2 3 4 5 6 7
@@ -262,7 +240,7 @@ j = 1 2 3 4 5 6 7
 
 <p>此时，A[6]!=B[6]。这表明，此时j不能等于5了，我们要把j改成比它小的值j’。j’可能是多少呢？仔细想一下，我们发现，j’必须要使得B[1..j]中的头j’个字母和末j’个字母完全相等（这样j变成了j’后才能继续保持i和j的性质）。这个j’当然要越大越好。而这恰好是部分匹配表的性质，即我们要找既是最优前缀又是最优后缀的最长字符串。在这里，B [1..5]=”ababa”，”aba”就是我们想要的，于是j=next[j]。而当新的j为3时，A[6]恰好和B[4]相等。于是，i变成了6，而j则变成了 4：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i = 1 2 3 4 5 6 7 8 9 ……
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i = 1 2 3 4 5 6 7 8 9 ……
 A = a b a b a b a a b a b …
       B = a b a b a c b
       j = 1 2 3 4 5 6 7
