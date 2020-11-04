@@ -5,7 +5,7 @@ description: 在 Microsoft Word 下插入公式，满足大部分论文要求
 categories: [Word]
 title: Word 下插入公式
 comments: true
-hide: true
+image: https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5f%2FMicrosoft_Office_logo_%25282019%25E2%2580%2593present%2529.svg%2F1200px-Microsoft_Office_logo_%25282019%25E2%2580%2593present%2529.svg.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOffice_365&tbnid=rKc37nXtue5WSM&vet=12ahUKEwjzw66s6ufsAhWzy4sBHWKGBNgQMygCegUIARCUAQ..i&docid=EDV94_axbgP0ZM&w=1200&h=1200&q=microsoft%20365%20logo&client=safari&ved=2ahUKEwjzw66s6ufsAhWzy4sBHWKGBNgQMygCegUIARCUAQ
 ---
 
 Microsoft 365/ 2019 如今已经非常强大，近几年的更新中加入了对 [LaTeX 公式的支持](https://support.microsoft.com/zh-cn/office/编写方程式或公式-1d01cabc-ceb1-458d-bc70-7f9737722702)，基本上可以摆脱对 [mathtype](https://www.dessci.com/en/products/mathtype/) 或其他专业公式编辑器的依赖。
@@ -31,3 +31,7 @@ h=F(x_1,x_2,\cdots,x_n)#(7)
 
 ## 导出
 对于使用自定义公式字体的 Word 文档，导出成 pdf 时可能会遇到公式模糊，锯齿感严重等问题。这时只需将导出改成【文件】- 【打印】，然后选择打印机为 Microsoft Print to PDF ，点击打印，即可完美实现 PDF 输出。
+
+## 参考
+文中所有链接
+[Microoft Word 数学公式完美解决方案](https://github.com/LittleNewton/Replace_MathType)
