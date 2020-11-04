@@ -5,7 +5,7 @@ description: 在 Microsoft Word 下插入公式，满足大部分论文要求
 categories: [Word]
 title: Word 下插入公式
 comments: true
-image: https://en.wikipedia.org/wiki/File:Microsoft_Office_2013_logo_and_wordmark.svg
+image: https://upload.wikimedia.org/wikipedia/commons/4/42/Microsoft_Office_2013_logo_and_wordmark.svg
 ---
 
 Microsoft 365/ 2019 如今已经非常强大，近几年的更新中加入了对 [LaTeX 公式的支持](https://support.microsoft.com/zh-cn/office/编写方程式或公式-1d01cabc-ceb1-458d-bc70-7f9737722702)，基本上可以摆脱对 [mathtype](https://www.dessci.com/en/products/mathtype/) 或其他专业公式编辑器的依赖。
