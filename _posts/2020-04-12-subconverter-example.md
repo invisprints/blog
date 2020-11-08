@@ -10,6 +10,8 @@ comments: true
 # subconverter
 subconverter 是在各种订阅格式之间进行转换的实用程序
 
+本文已更新到兼容 subconverter v0.6.4，更新日期 2020-11-08
+
 [github 项目地址](https://github.com/tindy2013/subconverter/blob/master/README-cn.md)
 
 [公共 API](https://gfwsb.114514.best/)
@@ -32,7 +34,9 @@ readme 中介绍了大量本地运行的情况，但是对于众多用户来说�
 既然需要用到配置档案，我们自然就不能使用 heroku 一键部署的功能（不然怎么添加本地文件？）。在[heroku-subconverter](https://github.com/tindy2013/heroku-subconverter)页面，点击 `use this template` 将该模版 copy 自己的仓库下，这里建议将仓库权限设置为 `Private`，不然全世界人们都可以看见你的配置档案了。
 
 **step 2**
-所有的配置档案都应保存在 base 文件夹中。但目前该版本[51f4b54](https://github.com/tindy2013/heroku-subconverter/tree/51f4b54d2f8b1d5d642c116d3246a0c0ab4daa7a)不支持 base 中包含其它子文件夹，如果你希望在里面添加其它子文件夹，需要修改 Dockerfile 中`COPY base/* /base/`成`COPY base/ /base/`
+所有的配置档案都应保存在 base 文件夹中，因为 base 文件夹是软件运行的根目录。
+
+修改 README.md 中的部署地址为 https://heroku.com/deploy?template=自己的仓库地址，这样在配置完成后点击 README 中 `Deploy to Heroku` 即可将服务部署在 Heroku 上。
 
 **step 3**
 根据你的喜好在 base 中添加相应的配置档案。
@@ -41,8 +45,7 @@ readme 中介绍了大量本地运行的情况，但是对于众多用户来说�
 {% include info.html text="建议在本地调试好后再上传云端。" %}
 
 **step 4**
-在 heroku 中关联你的 GitHub 账户。新建 app 后将此 app 关联到你在 **step 1** 中新建的仓库，这样你有什么修改都能轻松同步到 heroku 中。
-进行完相关设置后点击 deploy，不一会儿你将用有云端转换程序。
+在 Heroku 中关联 GitHub 的方法已经失效。每次修改完成后都需点击 `Deploy to Heroku` 将 Docker 部署到云端。
 
 **step 5**
 至此部署云端 API 基本完成，这里有几个注意事项。
@@ -51,7 +54,6 @@ readme 中介绍了大量本地运行的情况，但是对于众多用户来说�
 * 为了安全考虑，建议修改`token`默认密码
 * 订阅时直接在订阅链接里输入云端 API 地址即可，如`https://***.herokuapp.com/getprofile?name=example_profile.ini&token=***`
 * 你可以建立多个配置文件，让不同软件使用不同配置文件。
-
 
 ### 自定义规则
 在 subconverter 说明文档中对自定义规则有少许描述，这里给出一个完整的自定义规则配置过程。
@@ -67,7 +69,8 @@ url=ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpwYXNzd29yZA@www.example.com:1080#Example
 config=config/example_external_config.ini
 ```
 
-仿照默认的配置文件编辑自定义配置文件，默认配置文件在`pref.ini`由`surge_ruleset`和`custom_proxy_group`指出
+仿照默认的配置文件编辑自定义配置文件，默认配置文件在`pref.ini`由`surge_ruleset`和`custom_proxy_group`指出。
+比如我们不想添加广告过滤。
 ```ini
 [custom]
 ; 自定义策略组
@@ -84,7 +87,7 @@ custom_proxy_group=🐟 漏网之鱼`select`[]🎯 全球直连`[]🔰 节点选
 ;Options for custom rulesets
 ; 自定义规则片段
 enable_rule_generator=true
-overwrite_original_rules=false
+overwrite_original_rules=true
 
 surge_ruleset=🎯 全球直连,rules/LocalAreaNetwork.list
 surge_ruleset=Ⓜ️ 微软服务,rules/MSServices.list
@@ -101,7 +104,15 @@ surge_ruleset=🐟 漏网之鱼,[]FINAL
 ```
 至此在调用配置档案时，会调用自定义配置档案并覆盖掉原始配置档案。
 
+### 管理订阅节点
+如果多份配置文件都要使用同一套订阅节点，比如我同时用到 Clash，surge，quanx，shadowrocket 等，在每处配置文件的 `url` 处都加上订阅节点显得有些繁琐，特别是节点有修改时就很容易出错。
+
+方法是将节点信息添加进`pref.ini`中，这是全局配置文件，根据需求在`default_url`或`insert_url`添加相应的节点信息即可。支持如下格式：
+- 机场订阅：https://dler.cloud/subscribe/ABCDE?surge=ss
+- 节点链接：ss://YWVzLTEyOC1nY206dGVzdA==@192.168.100.1:8888#Example1
+- 文件路径：config/nodes.txt
+
+其中文件里的节点内容支持 Clash 和 Quanx 格式（其它格式可能也支持，但我没有测试）
+
 ## 小结
 subconverter 还有很多高级玩法，这篇文章只是抛砖引玉补充一些基础自定义案例，方便读者了解部分高级 API 的使用。
-
-最近 subconverter 0.5 引入强大的模版功能，但同样缺少完整的使用教程。由于笔者精力有限+上述功能已满足自身需要，因此暂不研究如何使用模版。
