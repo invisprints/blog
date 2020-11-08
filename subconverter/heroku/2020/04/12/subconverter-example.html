@@ -125,6 +125,7 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h3"><a href="#云端运行">云端运行</a></li>
 <li class="toc-entry toc-h3"><a href="#自定义规则">自定义规则</a></li>
+<li class="toc-entry toc-h3"><a href="#管理订阅节点">管理订阅节点</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#小结">小结</a></li>
@@ -133,6 +134,8 @@ window.onload = wrap_img;
 </ul><h1 id="subconverter">
 <a class="anchor" href="#subconverter" aria-hidden="true"><span class="octicon octicon-link"></span></a>subconverter</h1>
 <p>subconverter 是在各种订阅格式之间进行转换的实用程序</p>
+
+<p>本文已更新到兼容 subconverter v0.6.4，更新日期 2020-11-08</p>
 
 <p><a href="https://github.com/tindy2013/subconverter/blob/master/README-cn.md">github 项目地址</a></p>
 
@@ -158,7 +161,9 @@ window.onload = wrap_img;
 既然需要用到配置档案，我们自然就不能使用 heroku 一键部署的功能（不然怎么添加本地文件？）。在<a href="https://github.com/tindy2013/heroku-subconverter">heroku-subconverter</a>页面，点击 <code class="language-plaintext highlighter-rouge">use this template</code> 将该模版 copy 自己的仓库下，这里建议将仓库权限设置为 <code class="language-plaintext highlighter-rouge">Private</code>，不然全世界人们都可以看见你的配置档案了。</p>
 
 <p><strong>step 2</strong>
-所有的配置档案都应保存在 base 文件夹中。但目前该版本<a href="https://github.com/tindy2013/heroku-subconverter/tree/51f4b54d2f8b1d5d642c116d3246a0c0ab4daa7a">51f4b54</a>不支持 base 中包含其它子文件夹，如果你希望在里面添加其它子文件夹，需要修改 Dockerfile 中<code class="language-plaintext highlighter-rouge">COPY base/* /base/</code>成<code class="language-plaintext highlighter-rouge">COPY base/ /base/</code></p>
+所有的配置档案都应保存在 base 文件夹中，因为 base 文件夹是软件运行的根目录。</p>
+
+<p>修改 README.md 中的部署地址为 https://heroku.com/deploy?template=自己的仓库地址，这样在配置完成后点击 README 中 <code class="language-plaintext highlighter-rouge">Deploy to Heroku</code> 即可将服务部署在 Heroku 上。</p>
 
 <p><strong>step 3</strong>
 根据你的喜好在 base 中添加相应的配置档案。
@@ -170,8 +175,7 @@ window.onload = wrap_img;
 </div>
 
 <p><strong>step 4</strong>
-在 heroku 中关联你的 GitHub 账户。新建 app 后将此 app 关联到你在 <strong>step 1</strong> 中新建的仓库，这样你有什么修改都能轻松同步到 heroku 中。
-进行完相关设置后点击 deploy，不一会儿你将用有云端转换程序。</p>
+在 Heroku 中关联 GitHub 的方法已经失效。每次修改完成后都需点击 <code class="language-plaintext highlighter-rouge">Deploy to Heroku</code> 将 Docker 部署到云端。</p>
 
 <p><strong>step 5</strong>
 至此部署云端 API 基本完成，这里有几个注意事项。</p>
@@ -199,7 +203,8 @@ subconverter 的默认配置规则为神机规则，里面包含了大量与广�
 </span><span class="py">config</span><span class="p">=</span><span class="s">config/example_external_config.ini</span>
 </code></pre></div></div>
 
-<p>仿照默认的配置文件编辑自定义配置文件，默认配置文件在<code class="language-plaintext highlighter-rouge">pref.ini</code>由<code class="language-plaintext highlighter-rouge">surge_ruleset</code>和<code class="language-plaintext highlighter-rouge">custom_proxy_group</code>指出</p>
+<p>仿照默认的配置文件编辑自定义配置文件，默认配置文件在<code class="language-plaintext highlighter-rouge">pref.ini</code>由<code class="language-plaintext highlighter-rouge">surge_ruleset</code>和<code class="language-plaintext highlighter-rouge">custom_proxy_group</code>指出。
+比如我们不想添加广告过滤。</p>
 <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[custom]</span>
 <span class="c">; 自定义策略组
 </span><span class="py">custom_proxy_group</span><span class="p">=</span><span class="s">🔰 节点选择`select`[]♻️ 自动选择`[]🎯 全球直连`.*</span>
@@ -215,7 +220,7 @@ subconverter 的默认配置规则为神机规则，里面包含了大量与广�
 <span class="c">;Options for custom rulesets
 ; 自定义规则片段
 </span><span class="py">enable_rule_generator</span><span class="p">=</span><span class="s">true</span>
-<span class="py">overwrite_original_rules</span><span class="p">=</span><span class="s">false</span>
+<span class="py">overwrite_original_rules</span><span class="p">=</span><span class="s">true</span>
 
 <span class="py">surge_ruleset</span><span class="p">=</span><span class="s">🎯 全球直连,rules/LocalAreaNetwork.list</span>
 <span class="py">surge_ruleset</span><span class="p">=</span><span class="s">Ⓜ️ 微软服务,rules/MSServices.list</span>
@@ -232,11 +237,22 @@ subconverter 的默认配置规则为神机规则，里面包含了大量与广�
 </code></pre></div></div>
 <p>至此在调用配置档案时，会调用自定义配置档案并覆盖掉原始配置档案。</p>
 
+<h3 id="管理订阅节点">
+<a class="anchor" href="#%E7%AE%A1%E7%90%86%E8%AE%A2%E9%98%85%E8%8A%82%E7%82%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>管理订阅节点</h3>
+<p>如果多份配置文件都要使用同一套订阅节点，比如我同时用到 Clash，surge，quanx，shadowrocket 等，在每处配置文件的 <code class="language-plaintext highlighter-rouge">url</code> 处都加上订阅节点显得有些繁琐，特别是节点有修改时就很容易出错。</p>
+
+<p>方法是将节点信息添加进<code class="language-plaintext highlighter-rouge">pref.ini</code>中，这是全局配置文件，根据需求在<code class="language-plaintext highlighter-rouge">default_url</code>或<code class="language-plaintext highlighter-rouge">insert_url</code>添加相应的节点信息即可。支持如下格式：</p>
+<ul>
+  <li>机场订阅：https://dler.cloud/subscribe/ABCDE?surge=ss</li>
+  <li>节点链接：ss://YWVzLTEyOC1nY206dGVzdA==@192.168.100.1:8888#Example1</li>
+  <li>文件路径：config/nodes.txt</li>
+</ul>
+
+<p>其中文件里的节点内容支持 Clash 和 Quanx 格式（其它格式可能也支持，但我没有测试）</p>
+
 <h2 id="小结">
 <a class="anchor" href="#%E5%B0%8F%E7%BB%93" aria-hidden="true"><span class="octicon octicon-link"></span></a>小结</h2>
 <p>subconverter 还有很多高级玩法，这篇文章只是抛砖引玉补充一些基础自定义案例，方便读者了解部分高级 API 的使用。</p>
-
-<p>最近 subconverter 0.5 引入强大的模版功能，但同样缺少完整的使用教程。由于笔者精力有限+上述功能已满足自身需要，因此暂不研究如何使用模版。</p>
 
   </div>
 
