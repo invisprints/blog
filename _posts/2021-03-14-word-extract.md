@@ -1,0 +1,34 @@
+---
+title: "从英文文章中提取单词"
+description: 从英文阅读材料中提取单词，并加入到常用的背单词软件中
+comments: true
+toc: false
+layout: post
+hide: true
+categories: [English]
+image: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png
+author: "<a href='https://twitter.com/invisprints'>invisprints</a>"
+permalink: /drafts
+---
+
+英语学习有很多方法，其中有2种方法在中国甚为流行：一个是在语境中学习，另一个用背单词软件快速刷大量单词。这2种方法各有优缺点，不过最为主要的区别是语境法易于学习，背单词善于复习。本文的目的在于将阅读材料中的单词提取出来，然后加入到背单词软件中。这样部分实现现在阅读材料中学习，然后在背单词软件中复习的效果。
+
+## 提取工具
+
+提取工具来源于[txt2dic](https://github.com/cndaqiang/txt2dic)，该工具为python脚本，未来可能会在该项目的基础上优化，不过暂时没必要。
+
+## 提取方法
+
+参照[txt2dic](https://github.com/cndaqiang/txt2dic)中的readme吧，亲测很好用
+
+## 背单词软件
+这里提一下支持批量导入单词的比较好用的背单词软件，都是笔者至少坚持使用3个月以上的软件。
+
+### 墨墨背单词
+相当成熟的背单词软件，各方面几乎完美，唯一的缺点是可能需要花钱买单词上限。
+
+### 不背单词
+可以在[不背单词网站](https://bbdc.cn/#)上面批量导入单词，界面相当漂亮且主打语境学习
+
+### 欧路词典
+其实不想推荐这软件的，词典中的王者，背单词中的青铜，背单词算法有明显的问题。推荐的理由是API相当齐全，不仅支持导入单词，也支持导出单词，且可加入自己的词书辅助记忆。
