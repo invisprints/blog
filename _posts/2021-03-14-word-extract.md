@@ -7,7 +7,6 @@ layout: post
 hide: true
 categories: [English]
 image: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png
-author: "<a href='https://twitter.com/invisprints'>invisprints</a>"
 permalink: /drafts
 ---
 
@@ -16,6 +15,8 @@ permalink: /drafts
 ## 提取工具
 
 提取工具来源于[txt2dic](https://github.com/cndaqiang/txt2dic)，该工具为python脚本，未来可能会在该项目的基础上优化，不过暂时没必要。
+
+目前使用的缺点是对于不规范的格式，如“3apple”中无法提取正确的单词，这也是以后会优化的地方。
 
 ## 提取方法
 
