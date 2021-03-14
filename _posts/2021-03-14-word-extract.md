@@ -4,10 +4,9 @@ description: 从英文阅读材料中提取单词，并加入到常用的背单�
 comments: true
 toc: false
 layout: post
-hide: true
+hide: false
 categories: [English]
 image: https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png
-permalink: /drafts
 ---
 
 英语学习有很多方法，其中有2种方法在中国甚为流行：一个是在语境中学习，另一个用背单词软件快速刷大量单词。这2种方法各有优缺点，不过最为主要的区别是语境法易于学习，背单词善于复习。本文的目的在于将阅读材料中的单词提取出来，然后加入到背单词软件中。这样部分实现现在阅读材料中学习，然后在背单词软件中复习的效果。
