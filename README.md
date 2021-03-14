@@ -44,6 +44,7 @@ Note: you may want to remove example blog posts from the `_posts`,  `_notebooks`
   - [Annotations and Highlighting With hypothes.is](#annotations-and-highlighting-with-hypothesis)
   - [Subscribing with RSS](#subscribing-with-rss)
   - [Syntax Highlighting](#syntax-highlighting)
+  - [Dark Mode](#dark-mode)
   - [Adding Citations via BibTeX](#adding-citations-via-bibtex)
   - [Writing Blog Posts With Jupyter](#writing-blog-posts-with-jupyter)
     - [Hide Input/Output Cells](#hide-inputoutput-cells)
@@ -68,7 +69,7 @@ Note: you may want to remove example blog posts from the `_posts`,  `_notebooks`
 
 ## Setup Instructions
 
-1.  Generate a copy of this repo by clicking [on this link](https://github.com/fastai/fastpages/generate).  Name your repo anything you like **except** {your-username}.github.io.
+1.  Generate a copy of this repo by clicking [on this link](https://github.com/fastai/fastpages/generate). Make sure to sign in to your account, or you will see a 404 error. Name your repo anything you like **except** {your-username}.github.io.
 
 2. **GitHub Actions will automatically open a PR** on your new repository ~ 30 seconds after the copy is created.  Follow the instructions in that PR to continue.
 
@@ -364,6 +365,10 @@ You can direct your readers to subscribe with [RSS feeds](https://en.wikipedia.o
   ```
 - If you don't like either of these themes, you can add your own CSS in [`_sass/minima/custom-styles.scss`](_sass/minima/custom-styles.scss).  See [customizing fastpages](#customizing-fastpages) for more details.
 
+## Dark Mode
+
+[This blog post](https://prudhvirampey.com/blog/colours/jekyll/css/fastpages/2020/10/30/hello-dark-mode.html) describes how to enable Dark Mode for fastpages.
+
 ## Adding Citations via BibTeX
 
 Users who prefer to use the citation system BibTeX may do so; it requires enabling the [jekyll-scholar](https://github.com/inukshuk/jekyll-scholar) plugin. Please see [Citations in Fastpages via BibTeX and jekyll-scholar](https://drscotthawley.github.io/devblog4/2020/07/01/Citations-Via-Bibtex.html) for instructions on implementing this.
@@ -384,6 +389,7 @@ You may want some code to be hidden in a collapsed element that the user can exp
 
 - To include code in a collapsable cell that **is collapsed by default**, place the comment `#collapse` at the top of the code cell.
 - To include code in a collapsable cell that **is open by default**, place the comment `#collapse_show` or `#collapse-show` at the top of the code cell.
+- To include the output under a collapsable element that is closed by default, place the comment `#collapse_output` or `#collapse-output` at the top of the code cell.
 
 ### Embedded Twitter and YouTube Content
 In a markdown cell in your notebook, use the following markdown shortcuts to embed Twitter cards and YouTube Videos.
