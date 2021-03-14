@@ -17,13 +17,22 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-02-20T00:00:00-06:00" />
 <script type="application/ld+json">
-{"description":"A tutorial of fastpages for Jupyter notebooks.","url":"https://invisprints.github.io/blog/jupyter/2020/02/20/test.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/jupyter/2020/02/20/test.html"},"headline":"Fastpages Notebook Blog Post","dateModified":"2020-02-20T00:00:00-06:00","datePublished":"2020-02-20T00:00:00-06:00","image":"https://invisprints.github.io/blog/images/chart-preview.png","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/jupyter/2020/02/20/test.html"},"url":"https://invisprints.github.io/blog/jupyter/2020/02/20/test.html","@type":"BlogPosting","headline":"Fastpages Notebook Blog Post","dateModified":"2020-02-20T00:00:00-06:00","datePublished":"2020-02-20T00:00:00-06:00","image":"https://invisprints.github.io/blog/images/chart-preview.png","description":"A tutorial of fastpages for Jupyter notebooks.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
 
 
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162812190-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-162812190-1');
+</script>
+
 
 <link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -213,7 +222,9 @@ window.onload = wrap_img;
 <pre><code># "My Title"
 &gt; "Awesome summary"
 
-- toc:true- branch: master- badges: true- comments: true
+- toc:true- branch: master
+- badges: true
+- comments: true
 - author: Hamel Husain &amp; Jeremy Howard
 - categories: [fastpages, jupyter]</code></pre>
 <ul>
@@ -321,6 +332,49 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+    </details>
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>place a <code>#collapse-output</code> flag at the top of any cell if you want to put the output under a collapsable element that is closed by default, but give the reader the option to open it:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'The comment #collapse-output was used to collapse the output of this cell by default but you can expand it.'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Output" data-close="Show Output"></summary>
+        <p>
+</p>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The comment #collapse-output was used to collapse the output of this cell by default but you can expand it.
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

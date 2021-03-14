@@ -18,13 +18,22 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-03-06T00:00:00-06:00" />
 <script type="application/ld+json">
-{"description":"A Tutorial on GitHub Actions For Data Scientists","url":"https://invisprints.github.io/blog/actions/markdown/2020/03/06/fastpages-actions.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/actions/markdown/2020/03/06/fastpages-actions.html"},"headline":"GitHub Actions: Providing Data Scientists With New Superpowers","dateModified":"2020-03-06T00:00:00-06:00","datePublished":"2020-03-06T00:00:00-06:00","author":{"@type":"Person","name":"Hamel Husain & Jeremy Howard"},"image":"https://invisprints.github.io/blog/images/fastpages_posts/actions/actions_logo.png","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"https://invisprints.github.io/blog/actions/markdown/2020/03/06/fastpages-actions.html"},"url":"https://invisprints.github.io/blog/actions/markdown/2020/03/06/fastpages-actions.html","@type":"BlogPosting","headline":"GitHub Actions: Providing Data Scientists With New Superpowers","dateModified":"2020-03-06T00:00:00-06:00","datePublished":"2020-03-06T00:00:00-06:00","image":"https://invisprints.github.io/blog/images/fastpages_posts/actions/actions_logo.png","author":{"@type":"Person","name":"Hamel Husain & Jeremy Howard"},"description":"A Tutorial on GitHub Actions For Data Scientists","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://invisprints.github.io/blog/feed.xml" title="invisprints blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
 
 
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162812190-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162812190-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-162812190-1');
+</script>
+
 
 <link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -269,7 +278,7 @@ window.onload = wrap_img;
 <h3 id="part-1-define-workflow-triggers">
 <a class="anchor" href="#part-1-define-workflow-triggers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Part 1: Define Workflow Triggers</h3>
 
-<p>blog, <a href="https://github.com/fastai/fastpages/blob/master/.github/workflows/ci.yaml">defined in ci.yaml</a>.  Like all Actions workflows, this is YAML file is located in the .github/workflows directory of the GitHub repo.</p>
+<p>First, we define triggers in <a href="https://github.com/fastai/fastpages/blob/master/.github/workflows/ci.yaml">ci.yaml</a>. Like all Actions workflows, this is a YAML file located in the .github/workflows directory of the GitHub repo.</p>
 
 <p>The top of this YAML file looks like this:</p>
 
