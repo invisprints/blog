@@ -4,7 +4,6 @@ description: 如何搜索博客中的中文内容
 comments: false
 toc: false
 layout: post
-hide: true
 categories: [others]
 image: https://lunrjs.com/images/moon.jpg
 author: "<a href='https://twitter.com/invisprints'>invisprints</a>"
@@ -20,4 +19,4 @@ sticky_rank: 1
 
 语法：site:
 
-在相应网站或网域前加上 site:。这里有两种用法，一种是查询具体的网站，比如我想看看本博客中有多少关于“技巧”的内容，输入 `技巧 site:invisprints.github.io` 。如果不输出任何关键词，那么可以了解到这个网站有多少个页面被搜索引擎收录了。
+在相应网站或网域前加上 site:。这里有两种用法，一种是查询具体的网站，比如我想看看本博客中有多少关于“技巧”的内容，输入 `技巧 site:invisprints.github.io` ，需要注意的是，site和后面的网址之间不能有空格。如果不输出任何关键词，那么可以了解到这个网站有多少个页面被搜索引擎收录了。
