@@ -6,108 +6,51 @@ toc: false
 layout: post
 hide: true
 categories: [Anki]
-image: images/pawel.png
+image: https://apps.ankiweb.net/img/anki-logo.png
 author: "<a href='https://twitter.com/invisprints'>invisprints</a>"
 permalink: /drafts
 ---
 
-Anki 是使用相当广泛的卡片类复习记忆软件，被广泛应用于平常的知识点记忆和各种考试前夕冲刺。很明显，Anki 默认的一套复习参数
+Anki 是使用相当广泛的卡片类复习记忆软件，被广泛应用于平常的知识点记忆和各种考试前夕冲刺。很明显，Anki 默认的一套复习参数并不全适用于各类复习计划。因为对于不同的任务，要求的复习时间与强度都是千差万别。本文拟针对一些常用场景，给出一些更适合的参数设定，希望这有助于读者更进一步。
 
-## Introduction
+## 默认参数怎么样
 
-> Literate programming is a programming paradigm introduced by [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth) in which a computer program is given an explanation of its logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which compilable source code can be generated.  According to Knuth, literate programming provides higher-quality programs by forcing programmers to explicitly state the thoughts behind the program.  This process makes poorly thought-out design decisions more obvious. Knuth also claims that literate programming provides a first-rate documentation system, which is not an add-on, but is grown naturally in the process of exposition of one's thoughts during a program's creation. [^1]
+首先我们要讨论的就是，默认参数怎么样？弄清楚默认参数的优势和适用范围，我们能节省大量的时间和精力。毕竟乱改参数导致的结果往往是事倍功半。
 
-When I first learned about literate programming, I was quite skeptical.  For the longest time, I had wrongly equated [Jupyter notebooks](https://jupyter.org/) with literate programming.  Indeed, Jupyter is a brilliant interactive computing system, which was awarded the Association of Computing Machinery (ACM) [Software System Award](https://blog.jupyter.org/jupyter-receives-the-acm-software-system-award-d433b0dfe3a2), and is loved by many developers. However, Jupyter falls short of the literate programming paradigm for the following reasons:[^2]
+根据笔者大量的实践经验和一些[资料查询](https://www.zhihu.com/question/429347879/answer/1564939676)，Anki的默认参数足以应对大部分的场景。因此如果你刚接触 Anki 不久或者一点都不了解 Anki 的复习参数，笔者建议先按照默认设定复习，然后在了解了相关参数的含义后再做适当调整。
 
-- It can be difficult to compile source code from notebooks.
-- It can be difficult to diff and use version control with notebooks because they are not stored in plain text.
-- It is not clear how to automatically generate documentation from notebooks.
-- It is not clear how to properly run tests suites when writing code in notebooks.
+默认参数参考：[【硬核】参数模拟——每天 40 张新卡片，365 天后我要复习多少？](https://zhuanlan.zhihu.com/p/78398403)
 
-My skepticism quickly evaporated when I began using [nbdev](https://nbdev.fast.ai/), a project that extends notebooks to complete the literate programming ideal.  I spent a month, full time, using nbdev while contributing to the python library [fastcore](https://github.com/fastai/fastcore), and can report that Donald Knuth was definitely onto something.  The process of writing prose and tests alongside code forced me to deeply understand why the code does what it does, and to think deeply about its design.  Furthermore, the reduced cognitive load and speed of iteration of having documentation, code, and tests in one location boosted my productivity to levels I have never before experienced as a software developer.  Furthermore, I found that developing this way bolstered collaboration such that code reviews not only happened faster but were more meaningful.  In short, nbdev may be the most profound productivity tool I have ever used.  
+## 优化方案一
 
-As a teaser, look how easy it is to instantiate this literate programming environment, which includes a notebook, a docs site and an IDE with all dependencies pre-installed! :point_down:
+{% include info.html text="该方案适用于一年之内考试的同学" %}
 
-{% include video.html url="https://github.com/machine-learning-apps/demo-videos/raw/master/codespaces-nbdev/e2e_small.mp4" %}
+方案特点：复习时量大重复次数多，复习中期谨慎添加新卡片
 
-<p><br></p>
+新卡片页面参数
 
-## Features of nbdev
+- 数量上限自定
+- 毕业间隔Graduating interval —— 1
+- 简单间隔Easy ———— 3
+- 开始简化Starting ease —— 200%~230%
 
-As discussed in the [docs](https://nbdev.fast.ai/), nbdev provides the following features:
+复习页面参数
 
-- Searchable, hyperlinked documentation, which can be automatically hosted on [GitHub Pages](https://docs.github.com/en/github/working-with-github-pages) for free.
-- Python modules, following best practices such as [automatically defining `__all__`](http://xion.io/post/code/python-all-wild-imports.html) with your exported functions, classes, and variables.
-- Pip and Conda installers.
-- Tests defined directly in notebooks which run in parallel.  This testing system has been thoroughly tested with [GitHub Actions](https://github.com/features/actions).
-- Navigate and edit your code in a standard text editor or IDE, and export any changes automatically back into your notebooks.
+- 复习最大值自取
+- 简单奖励Easy bonus 100%~120% （越低每日重复频率越低）
+- 间隔修饰符Interval modifier
+    1. 找插件 “True Retention” 安装后查看Retention是多少。
+    2. 自己计算公式：log(预期保留率%) / log(现有保留率%)
+    3. 保留率可以理解为你能够记忆的多少，90%保留率可理解为90%的卡片我都能差不多记住。
+    4. 0.65-0.95之间，初试请使用0.95（百分比），公式算出数值后自行修改并以公式算出数值为准。
 
-Since you are in a notebook, you can also add charts, text, links, images, videos, etc, that are included automatically in the documentation of your library, along with standardized documentation generated automatically from your code.  [This site](https://docs.fast.ai/) is an example of docs generated automatically by nbdev.
+- 最大间隔：30-60天之间。
 
-## GitHub Codespaces
+Lapses失误
 
-Thanks to [Conda](https://docs.conda.io/en/latest/) and [nbdev_template](https://github.com/fastai/nbdev_template), setting up a development environment with nbdev is far easier than it used to be. However, we realized it could be even easier, thanks to a new GitHub product called [Codespaces](https://github.com/features/codespaces).  Codespaces is a fully functional development environment in your browser, accessible directly from GitHub, that provides the following features:
+- 步伐：5到8之间 或10即原样不动（越低当天重复次数越高）
+- 新间隔 0
+- 最小间隔 1
+- 失误次数 维持原样或调高到10-15
 
-1. A full VS Code IDE.
-2. An environment that has files from the repository mounted into the environment, along with your GitHub credentials.
-3. A development environment with dependencies pre-installed, backed by [Docker](https://www.docker.com/).
-4. The ability to serve additional applications on arbitrary ports.  For nbdev, we serve a Jupyter notebook server as well as a [Jekyll](https://jekyllrb.com/) based documentation site.
-5. A shared file system, which facilitates editing code in one browser tab and rendering the results in another.
-6. ... [and more](https://docs.github.com/en/github/developing-online-with-codespaces).
-
-Codespaces enables developers to immediately participate in a project without wasting time on DevOps or complicated setup steps.  Most importantly, CodeSpaces with nbdev allows developers to quickly get started with creating their own software with literate programming.
-
-## A demo of nbdev + Codespaces
-
-This demo uses the project [fastai/fastcore](https://github.com/fastai/fastcore), which was built with nbdev, as an example.   First, we can navigate to this repo and launch a Codespace:
-
-{% include video.html url="https://github.com/machine-learning-apps/demo-videos/raw/master/codespaces-nbdev/1_open.mp4" %}
-
-<p><br></p>
-
-If you are launching a fresh Codespace, it may take several minutes to set up. Once the environment is ready, we can verify that all dependencies we want are installed (in this case `fastcore` and `nbdev`):
-
-{% include video.html url="https://github.com/machine-learning-apps/demo-videos/raw/master/codespaces-nbdev/2_verify.mp4" %}
-
-<p><br></p>
-
-Additionally, we can serve an arbitrary number of applications on user-specified ports, which we can open through VSCode as shown below:
-
-{% include video.html url="https://github.com/machine-learning-apps/demo-videos/raw/master/codespaces-nbdev/3_nb_small.mp4" %}
-
-<p><br></p>
-
-In this case, these applications are a notebook and docs site.  Changes to a notebook are reflected immediately in the data docs.  Furthermore, we can use the cli command `nbdev_build_lib` to sync our notebooks with python modules.  This functionality is shown below:
-
-{% include video.html url="https://github.com/machine-learning-apps/demo-videos/raw/master/codespaces-nbdev/4_reload_small.mp4" %}
-
-<p><br></p>
-
-This is amazing!  With a click of a button, I was able to:
-
-1. Launch an IDE with all dependencies pre-installed.
-2. Launch two additional applications: a Jupyter Notebook server on port 8080 and a docs site on port 4000.
-3. Automatically update the docs and modules every time I make a change to a Jupyter notebook.
-
-This is just the tip of the iceberg.  There are additional utilities for [writing and executing tests](https://nbdev.fast.ai/test.html), [diffing notebooks](https://nbdev.fast.ai/sync.html#Diff-notebook---library), [special flags](https://nbdev.fast.ai/magic_flags.html#How-do-comment-flags-correspond-to-magic-flags?) for hiding, showing, and collapsing cells in the generated docs, as well as [git hooks](https://nbdev.fast.ai/cli.html#nbdev_install_git_hooks) for automation.  This and more functionality is covered in [the nbdev docs](https://nbdev.fast.ai/).
-
-## Give It A Try For Yourself
-
-To try out nbdev yourself, [take this tutorial](https://nbdev.fast.ai/tutorial.html), which will walk you through everything you need to know.  The tutorial also shows you how to use a repository template with the configuration files necessary to enable Codespaces with nbdev.
-
-## You Can Write Blogs With Notebooks, Too!
-
-This blog post was written in [fastpages](https://github.com/fastai/fastpages) which is also built on nbdev!  We recommend [fastpages](https://github.com/fastai/fastpages) if you want an easy way to blog with Jupyter notebooks.
-
-## Additional Resources
-
-1. The [GitHub Codepaces site](https://github.com/features/codespaces).
-1. The official [docs for Codespaces](https://docs.github.com/en/github/developing-online-with-codespaces).
-1. The nbdev [docs](https://nbdev.fast.ai/).
-2. The nbdev [GitHub repo](https://github.com/fastai/nbdev).
-3. [fastpages](https://github.com/fastai/fastpages): The project used to write this blog.
-4. The GitHub repo [fastai/fastcore](https://github.com/fastai/fastcore), which is what we used in this blog post as an example.
-
-----
-[^1]: Wikipedia article: [Literate Programming](https://en.wikipedia.org/wiki/Literate_programming)
-[^2]: This is not a criticism of Jupyter.  Jupyter doesn't claim to be a full literate programming system.  However, people can sometimes (unfairly) judge Jupyter according to this criteria.
+方案参考：[个人使用Anki方法+考试党“专用”参数](https://zhuanlan.zhihu.com/p/24020791)
